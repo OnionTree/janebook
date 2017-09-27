@@ -33,7 +33,6 @@ public class StartController {
     public ModelAndView indexPage() {
         log_.info("indexPage invoke ....");
         List<TArticle> at = articleService.getHomeArticle();
-        System.out.println("at.size---------------"+at.size());
         ModelAndView mv = new ModelAndView();
         mv.setViewName("MainHome");
         mv.addObject("TArticle",at);
@@ -48,28 +47,28 @@ public class StartController {
 
     //用户登录
     @RequestMapping("/loginer")
-    public String login(TUser tuser, HttpServletRequest request) {
+    public ModelAndView login(TUser tuser, HttpServletRequest request) {
         log_.info("loginer Page.");
-        System.out.println("Controller"+tuser.getUserId());
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(tuser.getUserId(), tuser.getPassword());
         System.out.println("Controller"+tuser.getUserId());
         System.out.println("Controller"+tuser.getPassword());
+        ModelAndView mv = new ModelAndView();
         try {
             //调用subject.login(token)进行登录，会自动委托给securityManager,调用之前
            subject.login(token);//会跳到我们自定义的realm中
             request.getSession().setAttribute("tuser", tuser);
-            if(tuser.getUserId().equals("admin")){
-                return "/hello";
-            }
-            else{
-                return "/MainHome-login";
-            }
+            List<TArticle> at = articleService.getHomeArticle();
+            mv.setViewName("MainHome-login");
+            mv.addObject("TArticle",at);
+            return mv;
+
         } catch (Exception e) {
             e.printStackTrace();
             request.getSession().setAttribute("tuser", tuser);
             request.setAttribute("error", "用户名或密码错误");
-            return "/login";
+            mv.setViewName("login");
+            return mv;
         }
     }
 
