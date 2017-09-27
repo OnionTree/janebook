@@ -28,4 +28,6 @@ public interface TUserMapper {
     int updateByPrimaryKeySelective(TUser record);
 
     int updateByPrimaryKey(TUser record);
+
+    List<TUser> getHomeUser();
 }

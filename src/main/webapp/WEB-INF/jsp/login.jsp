@@ -23,19 +23,19 @@
           	  </div>
           </h4>
           <div class="js-sign-in-container">
-          	  <form id="new_session" action="/sessions" accept-charset="UTF-8" method="post">
+          	  <form id="new_session" action="/janebook/loginer" accept-charset="UTF-8" method="post">
           	      <input name="utf8" type="hidden" value="✓">
           		  <input type="hidden" name="authenticity_token" value="pQ4UbyrNYwI1UMpBZp5w2AOPyJLFdJ6IGftT/1ho5TZo4QA8ikCSVUZNcrXRKsGyk9MB0e6QPHpT10Jqym5jDw==">
           		
           	   	  <!-- 正常登录登录名输入框 -->
           		  <div class="input-prepend restyle js-normal">
-          		      <input placeholder="手机号或邮箱" type="text" name="session[email_or_mobile_number]" id="session_email_or_mobile_number">
+          		      <input placeholder="手机号或邮箱" type="text" name="userId" id="session_email_or_mobile_number">
           			  <i class="iconfont icon-yonghu1"></i>
           		  </div>
           		
           		  <!-- 海外登录登录名输入框 -->
           		  <div class="input-prepend">
-  			          <input placeholder="密码" type="password" name="session[password]" id="session_password" />
+  			          <input placeholder="密码" type="password" name="password" id="session_password" />
   			          <i class="iconfont icon-suo"></i>
           		  </div>
           	  	  <input value="false" type="hidden" name="session[oversea]" id="session_oversea" />

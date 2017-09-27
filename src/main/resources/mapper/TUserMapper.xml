@@ -20,6 +20,11 @@
     <result column="language_type" property="languageType" jdbcType="INTEGER" />
     <result column="role_id" property="roleId" jdbcType="INTEGER" />
   </resultMap>
+
+  <select id="getHomeUser" resultMap="BaseResultMap" >
+    SELECT * FROM t_user LIMIT 5
+  </select>
+
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

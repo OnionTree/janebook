@@ -17,6 +17,12 @@ public class UserService {
     @Autowired
     TUserMapper tUserMapper;
 
+    //获取首页文章
+    public List<TUser> getHomeUser(){
+
+        return tUserMapper.getHomeUser();
+    }
+
     public List<TUser> getUserlist(){
 
         List<TUser> users = tUserMapper.selectByExample(new TUserExample());

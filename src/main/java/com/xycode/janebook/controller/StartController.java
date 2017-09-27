@@ -29,7 +29,7 @@ public class StartController {
     UserService userService;
 
 
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public ModelAndView indexPage() {
         log_.info("indexPage invoke ....");
         List<TArticle> at = articleService.getHomeArticle();
@@ -40,17 +40,24 @@ public class StartController {
         return mv;
     }
 
-    //用户登录
     @RequestMapping("/login")
-    public String login(TUser tuser, HttpServletRequest request) {
+    public String LoginPage() {
+        log_.info("login Page.");
+        return "login";
+    }
 
+    //用户登录
+    @RequestMapping("/loginer")
+    public String login(TUser tuser, HttpServletRequest request) {
+        log_.info("loginer Page.");
+        System.out.println("Controller"+tuser.getUserId());
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(tuser.getUserId(), tuser.getPassword());
         System.out.println("Controller"+tuser.getUserId());
         System.out.println("Controller"+tuser.getPassword());
         try {
             //调用subject.login(token)进行登录，会自动委托给securityManager,调用之前
-            subject.login(token);//会跳到我们自定义的realm中
+           subject.login(token);//会跳到我们自定义的realm中
             request.getSession().setAttribute("tuser", tuser);
             if(tuser.getUserId().equals("admin")){
                 return "/hello";
