@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xycode.janebook.mapper.TArticleMapper" >
+  <resultMap id="BaseResultMap" type="com.xycode.janebook.model.TArticle" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="hot" property="hot" jdbcType="INTEGER" />
+    <result column="author_name" property="authorName" jdbcType="VARCHAR" />
+    <result column="browse" property="browse" jdbcType="INTEGER" />
+    <result column="collection" property="collection" jdbcType="INTEGER" />
+    <result column="tag" property="tag" jdbcType="VARCHAR" />
+    <result column="classify_id" property="classifyId" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="word_num" property="wordNum" jdbcType="INTEGER" />
+    <result column="reward" property="reward" jdbcType="INTEGER" />
+    <result column="img" property="img" jdbcType="VARCHAR" />
+    <result column="is_release" property="isRelease" jdbcType="INTEGER" />
+    <result column="is_drop" property="isDrop" jdbcType="INTEGER" />
+  </resultMap>
+
+  <!--获取首页前五条数据-->
+  <select id="getHomeArticle" resultMap="BaseResultMap"  >
+     SELECT * FROM t_article LIMIT 5
+  </select>
+
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, title, content, hot, author_name, browse, collection, tag, classify_id, create_time, 
+    word_num, reward, img, is_release, is_drop
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xycode.janebook.model.TArticleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_article
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_article
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xycode.janebook.model.TArticleExample" >
+    delete from t_article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xycode.janebook.model.TArticle" >
+    insert into t_article (id, title, content, 
+      hot, author_name, browse, 
+      collection, tag, classify_id, 
+      create_time, word_num, reward, 
+      img, is_release, is_drop
+      )
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{hot,jdbcType=INTEGER}, #{authorName,jdbcType=VARCHAR}, #{browse,jdbcType=INTEGER}, 
+      #{collection,jdbcType=INTEGER}, #{tag,jdbcType=VARCHAR}, #{classifyId,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{wordNum,jdbcType=INTEGER}, #{reward,jdbcType=INTEGER}, 
+      #{img,jdbcType=VARCHAR}, #{isRelease,jdbcType=INTEGER}, #{isDrop,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xycode.janebook.model.TArticle" >
+    insert into t_article
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="hot != null" >
+        hot,
+      </if>
+      <if test="authorName != null" >
+        author_name,
+      </if>
+      <if test="browse != null" >
+        browse,
+      </if>
+      <if test="collection != null" >
+        collection,
+      </if>
+      <if test="tag != null" >
+        tag,
+      </if>
+      <if test="classifyId != null" >
+        classify_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="wordNum != null" >
+        word_num,
+      </if>
+      <if test="reward != null" >
+        reward,
+      </if>
+      <if test="img != null" >
+        img,
+      </if>
+      <if test="isRelease != null" >
+        is_release,
+      </if>
+      <if test="isDrop != null" >
+        is_drop,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="hot != null" >
+        #{hot,jdbcType=INTEGER},
+      </if>
+      <if test="authorName != null" >
+        #{authorName,jdbcType=VARCHAR},
+      </if>
+      <if test="browse != null" >
+        #{browse,jdbcType=INTEGER},
+      </if>
+      <if test="collection != null" >
+        #{collection,jdbcType=INTEGER},
+      </if>
+      <if test="tag != null" >
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="classifyId != null" >
+        #{classifyId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wordNum != null" >
+        #{wordNum,jdbcType=INTEGER},
+      </if>
+      <if test="reward != null" >
+        #{reward,jdbcType=INTEGER},
+      </if>
+      <if test="img != null" >
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelease != null" >
+        #{isRelease,jdbcType=INTEGER},
+      </if>
+      <if test="isDrop != null" >
+        #{isDrop,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xycode.janebook.model.TArticleExample" resultType="java.lang.Integer" >
+    select count(*) from t_article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_article
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hot != null" >
+        hot = #{record.hot,jdbcType=INTEGER},
+      </if>
+      <if test="record.authorName != null" >
+        author_name = #{record.authorName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.browse != null" >
+        browse = #{record.browse,jdbcType=INTEGER},
+      </if>
+      <if test="record.collection != null" >
+        collection = #{record.collection,jdbcType=INTEGER},
+      </if>
+      <if test="record.tag != null" >
+        tag = #{record.tag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.classifyId != null" >
+        classify_id = #{record.classifyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.wordNum != null" >
+        word_num = #{record.wordNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.reward != null" >
+        reward = #{record.reward,jdbcType=INTEGER},
+      </if>
+      <if test="record.img != null" >
+        img = #{record.img,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isRelease != null" >
+        is_release = #{record.isRelease,jdbcType=INTEGER},
+      </if>
+      <if test="record.isDrop != null" >
+        is_drop = #{record.isDrop,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_article
+    set id = #{record.id,jdbcType=INTEGER},
+      title = #{record.title,jdbcType=VARCHAR},
+      content = #{record.content,jdbcType=VARCHAR},
+      hot = #{record.hot,jdbcType=INTEGER},
+      author_name = #{record.authorName,jdbcType=VARCHAR},
+      browse = #{record.browse,jdbcType=INTEGER},
+      collection = #{record.collection,jdbcType=INTEGER},
+      tag = #{record.tag,jdbcType=VARCHAR},
+      classify_id = #{record.classifyId,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      word_num = #{record.wordNum,jdbcType=INTEGER},
+      reward = #{record.reward,jdbcType=INTEGER},
+      img = #{record.img,jdbcType=VARCHAR},
+      is_release = #{record.isRelease,jdbcType=INTEGER},
+      is_drop = #{record.isDrop,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xycode.janebook.model.TArticle" >
+    update t_article
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="hot != null" >
+        hot = #{hot,jdbcType=INTEGER},
+      </if>
+      <if test="authorName != null" >
+        author_name = #{authorName,jdbcType=VARCHAR},
+      </if>
+      <if test="browse != null" >
+        browse = #{browse,jdbcType=INTEGER},
+      </if>
+      <if test="collection != null" >
+        collection = #{collection,jdbcType=INTEGER},
+      </if>
+      <if test="tag != null" >
+        tag = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="classifyId != null" >
+        classify_id = #{classifyId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wordNum != null" >
+        word_num = #{wordNum,jdbcType=INTEGER},
+      </if>
+      <if test="reward != null" >
+        reward = #{reward,jdbcType=INTEGER},
+      </if>
+      <if test="img != null" >
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelease != null" >
+        is_release = #{isRelease,jdbcType=INTEGER},
+      </if>
+      <if test="isDrop != null" >
+        is_drop = #{isDrop,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xycode.janebook.model.TArticle" >
+    update t_article
+    set title = #{title,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      hot = #{hot,jdbcType=INTEGER},
+      author_name = #{authorName,jdbcType=VARCHAR},
+      browse = #{browse,jdbcType=INTEGER},
+      collection = #{collection,jdbcType=INTEGER},
+      tag = #{tag,jdbcType=VARCHAR},
+      classify_id = #{classifyId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      word_num = #{wordNum,jdbcType=INTEGER},
+      reward = #{reward,jdbcType=INTEGER},
+      img = #{img,jdbcType=VARCHAR},
+      is_release = #{isRelease,jdbcType=INTEGER},
+      is_drop = #{isDrop,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

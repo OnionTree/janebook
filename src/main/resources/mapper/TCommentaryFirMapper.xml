@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xycode.janebook.mapper.TCommentaryFirMapper" >
+  <resultMap id="BaseResultMap" type="com.xycode.janebook.model.TCommentaryFir" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="reviewer_id" property="reviewerId" jdbcType="VARCHAR" />
+    <result column="comment_cont" property="commentCont" jdbcType="VARCHAR" />
+    <result column="review_time" property="reviewTime" jdbcType="TIMESTAMP" />
+    <result column="favor" property="favor" jdbcType="VARCHAR" />
+    <result column="be_reviewer_id" property="beReviewerId" jdbcType="VARCHAR" />
+    <result column="reviewer_name" property="reviewerName" jdbcType="VARCHAR" />
+    <result column="be_reviewer_name" property="beReviewerName" jdbcType="VARCHAR" />
+    <result column="article_id" property="articleId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, reviewer_id, comment_cont, review_time, favor, be_reviewer_id, reviewer_name, 
+    be_reviewer_name, article_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xycode.janebook.model.TCommentaryFirExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_commentary_fir
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_commentary_fir
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_commentary_fir
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xycode.janebook.model.TCommentaryFirExample" >
+    delete from t_commentary_fir
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xycode.janebook.model.TCommentaryFir" >
+    insert into t_commentary_fir (id, reviewer_id, comment_cont, 
+      review_time, favor, be_reviewer_id, 
+      reviewer_name, be_reviewer_name, article_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{reviewerId,jdbcType=VARCHAR}, #{commentCont,jdbcType=VARCHAR}, 
+      #{reviewTime,jdbcType=TIMESTAMP}, #{favor,jdbcType=VARCHAR}, #{beReviewerId,jdbcType=VARCHAR}, 
+      #{reviewerName,jdbcType=VARCHAR}, #{beReviewerName,jdbcType=VARCHAR}, #{articleId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xycode.janebook.model.TCommentaryFir" >
+    insert into t_commentary_fir
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="reviewerId != null" >
+        reviewer_id,
+      </if>
+      <if test="commentCont != null" >
+        comment_cont,
+      </if>
+      <if test="reviewTime != null" >
+        review_time,
+      </if>
+      <if test="favor != null" >
+        favor,
+      </if>
+      <if test="beReviewerId != null" >
+        be_reviewer_id,
+      </if>
+      <if test="reviewerName != null" >
+        reviewer_name,
+      </if>
+      <if test="beReviewerName != null" >
+        be_reviewer_name,
+      </if>
+      <if test="articleId != null" >
+        article_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="reviewerId != null" >
+        #{reviewerId,jdbcType=VARCHAR},
+      </if>
+      <if test="commentCont != null" >
+        #{commentCont,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewTime != null" >
+        #{reviewTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="favor != null" >
+        #{favor,jdbcType=VARCHAR},
+      </if>
+      <if test="beReviewerId != null" >
+        #{beReviewerId,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewerName != null" >
+        #{reviewerName,jdbcType=VARCHAR},
+      </if>
+      <if test="beReviewerName != null" >
+        #{beReviewerName,jdbcType=VARCHAR},
+      </if>
+      <if test="articleId != null" >
+        #{articleId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xycode.janebook.model.TCommentaryFirExample" resultType="java.lang.Integer" >
+    select count(*) from t_commentary_fir
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_commentary_fir
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.reviewerId != null" >
+        reviewer_id = #{record.reviewerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commentCont != null" >
+        comment_cont = #{record.commentCont,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewTime != null" >
+        review_time = #{record.reviewTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.favor != null" >
+        favor = #{record.favor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.beReviewerId != null" >
+        be_reviewer_id = #{record.beReviewerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewerName != null" >
+        reviewer_name = #{record.reviewerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.beReviewerName != null" >
+        be_reviewer_name = #{record.beReviewerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.articleId != null" >
+        article_id = #{record.articleId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_commentary_fir
+    set id = #{record.id,jdbcType=INTEGER},
+      reviewer_id = #{record.reviewerId,jdbcType=VARCHAR},
+      comment_cont = #{record.commentCont,jdbcType=VARCHAR},
+      review_time = #{record.reviewTime,jdbcType=TIMESTAMP},
+      favor = #{record.favor,jdbcType=VARCHAR},
+      be_reviewer_id = #{record.beReviewerId,jdbcType=VARCHAR},
+      reviewer_name = #{record.reviewerName,jdbcType=VARCHAR},
+      be_reviewer_name = #{record.beReviewerName,jdbcType=VARCHAR},
+      article_id = #{record.articleId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xycode.janebook.model.TCommentaryFir" >
+    update t_commentary_fir
+    <set >
+      <if test="reviewerId != null" >
+        reviewer_id = #{reviewerId,jdbcType=VARCHAR},
+      </if>
+      <if test="commentCont != null" >
+        comment_cont = #{commentCont,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewTime != null" >
+        review_time = #{reviewTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="favor != null" >
+        favor = #{favor,jdbcType=VARCHAR},
+      </if>
+      <if test="beReviewerId != null" >
+        be_reviewer_id = #{beReviewerId,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewerName != null" >
+        reviewer_name = #{reviewerName,jdbcType=VARCHAR},
+      </if>
+      <if test="beReviewerName != null" >
+        be_reviewer_name = #{beReviewerName,jdbcType=VARCHAR},
+      </if>
+      <if test="articleId != null" >
+        article_id = #{articleId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xycode.janebook.model.TCommentaryFir" >
+    update t_commentary_fir
+    set reviewer_id = #{reviewerId,jdbcType=VARCHAR},
+      comment_cont = #{commentCont,jdbcType=VARCHAR},
+      review_time = #{reviewTime,jdbcType=TIMESTAMP},
+      favor = #{favor,jdbcType=VARCHAR},
+      be_reviewer_id = #{beReviewerId,jdbcType=VARCHAR},
+      reviewer_name = #{reviewerName,jdbcType=VARCHAR},
+      be_reviewer_name = #{beReviewerName,jdbcType=VARCHAR},
+      article_id = #{articleId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

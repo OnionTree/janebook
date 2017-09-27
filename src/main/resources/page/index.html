@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文件上传示例</title>
+    <script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css"/>
+</head>
+<body>
+<h2>文件上传示例</h2>
+<hr/>
+<script>
+    //js获取项目根路径，如： http://localhost:8083/uimcardprj
+    function getRootPath(){
+        //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
+        var curWwwPath=window.document.location.href;
+        //获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
+        var pathName=window.document.location.pathname;
+        var pos=curWwwPath.indexOf(pathName);
+        //获取主机地址，如： http://localhost:8083
+        var localhostPaht=curWwwPath.substring(0,pos);
+        //获取带"/"的项目名，如：/uimcardprj
+        var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+        return(localhostPaht+projectName);
+    }
+    var path = getRootPath();
+
+
+
+    $(function(){
+        var action = $("#form").attr("action", path+"/upload");
+        var action = $("#form2").attr("action", path+"/multiUpload");
+
+    })
+
+</script>
+<form id="form" action="" method="POST" enctype="multipart/form-data">
+    <p>单文件上传：</p><br/>
+    <input type="file" name="file"/>
+    <input type="submit" value = "#{name}"/>
+</form>
+<form id="form2" method="POST" enctype="multipart/form-data"
+      action="">
+    <p>多文件上传：</p>
+    <p>文件1：<input type="file" name="files" /></p>
+    <p>文件2：<input type="file" name="files" /></p>
+    <p><input type="submit" value="上传" /></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xycode.janebook.mapper.TClassifyMapper" >
+  <resultMap id="BaseResultMap" type="com.xycode.janebook.model.TClassify" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="classify_name" property="classifyName" jdbcType="VARCHAR" />
+    <result column="classify_info" property="classifyInfo" jdbcType="VARCHAR" />
+    <result column="classify_admin" property="classifyAdmin" jdbcType="VARCHAR" />
+    <result column="is_send" property="isSend" jdbcType="VARCHAR" />
+    <result column="classify_img" property="classifyImg" jdbcType="VARCHAR" />
+    <result column="send_check" property="sendCheck" jdbcType="VARCHAR" />
+    <result column="article_num" property="articleNum" jdbcType="INTEGER" />
+    <result column="follow" property="follow" jdbcType="INTEGER" />
+    <result column="is_city" property="isCity" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, classify_name, classify_info, classify_admin, is_send, classify_img, send_check, 
+    article_num, follow, is_city
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xycode.janebook.model.TClassifyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_classify
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_classify
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_classify
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xycode.janebook.model.TClassifyExample" >
+    delete from t_classify
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xycode.janebook.model.TClassify" >
+    insert into t_classify (id, classify_name, classify_info, 
+      classify_admin, is_send, classify_img, 
+      send_check, article_num, follow, 
+      is_city)
+    values (#{id,jdbcType=INTEGER}, #{classifyName,jdbcType=VARCHAR}, #{classifyInfo,jdbcType=VARCHAR}, 
+      #{classifyAdmin,jdbcType=VARCHAR}, #{isSend,jdbcType=VARCHAR}, #{classifyImg,jdbcType=VARCHAR}, 
+      #{sendCheck,jdbcType=VARCHAR}, #{articleNum,jdbcType=INTEGER}, #{follow,jdbcType=INTEGER}, 
+      #{isCity,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xycode.janebook.model.TClassify" >
+    insert into t_classify
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="classifyName != null" >
+        classify_name,
+      </if>
+      <if test="classifyInfo != null" >
+        classify_info,
+      </if>
+      <if test="classifyAdmin != null" >
+        classify_admin,
+      </if>
+      <if test="isSend != null" >
+        is_send,
+      </if>
+      <if test="classifyImg != null" >
+        classify_img,
+      </if>
+      <if test="sendCheck != null" >
+        send_check,
+      </if>
+      <if test="articleNum != null" >
+        article_num,
+      </if>
+      <if test="follow != null" >
+        follow,
+      </if>
+      <if test="isCity != null" >
+        is_city,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="classifyName != null" >
+        #{classifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="classifyInfo != null" >
+        #{classifyInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="classifyAdmin != null" >
+        #{classifyAdmin,jdbcType=VARCHAR},
+      </if>
+      <if test="isSend != null" >
+        #{isSend,jdbcType=VARCHAR},
+      </if>
+      <if test="classifyImg != null" >
+        #{classifyImg,jdbcType=VARCHAR},
+      </if>
+      <if test="sendCheck != null" >
+        #{sendCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="articleNum != null" >
+        #{articleNum,jdbcType=INTEGER},
+      </if>
+      <if test="follow != null" >
+        #{follow,jdbcType=INTEGER},
+      </if>
+      <if test="isCity != null" >
+        #{isCity,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xycode.janebook.model.TClassifyExample" resultType="java.lang.Integer" >
+    select count(*) from t_classify
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_classify
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.classifyName != null" >
+        classify_name = #{record.classifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.classifyInfo != null" >
+        classify_info = #{record.classifyInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.classifyAdmin != null" >
+        classify_admin = #{record.classifyAdmin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isSend != null" >
+        is_send = #{record.isSend,jdbcType=VARCHAR},
+      </if>
+      <if test="record.classifyImg != null" >
+        classify_img = #{record.classifyImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendCheck != null" >
+        send_check = #{record.sendCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="record.articleNum != null" >
+        article_num = #{record.articleNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.follow != null" >
+        follow = #{record.follow,jdbcType=INTEGER},
+      </if>
+      <if test="record.isCity != null" >
+        is_city = #{record.isCity,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_classify
+    set id = #{record.id,jdbcType=INTEGER},
+      classify_name = #{record.classifyName,jdbcType=VARCHAR},
+      classify_info = #{record.classifyInfo,jdbcType=VARCHAR},
+      classify_admin = #{record.classifyAdmin,jdbcType=VARCHAR},
+      is_send = #{record.isSend,jdbcType=VARCHAR},
+      classify_img = #{record.classifyImg,jdbcType=VARCHAR},
+      send_check = #{record.sendCheck,jdbcType=VARCHAR},
+      article_num = #{record.articleNum,jdbcType=INTEGER},
+      follow = #{record.follow,jdbcType=INTEGER},
+      is_city = #{record.isCity,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xycode.janebook.model.TClassify" >
+    update t_classify
+    <set >
+      <if test="classifyName != null" >
+        classify_name = #{classifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="classifyInfo != null" >
+        classify_info = #{classifyInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="classifyAdmin != null" >
+        classify_admin = #{classifyAdmin,jdbcType=VARCHAR},
+      </if>
+      <if test="isSend != null" >
+        is_send = #{isSend,jdbcType=VARCHAR},
+      </if>
+      <if test="classifyImg != null" >
+        classify_img = #{classifyImg,jdbcType=VARCHAR},
+      </if>
+      <if test="sendCheck != null" >
+        send_check = #{sendCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="articleNum != null" >
+        article_num = #{articleNum,jdbcType=INTEGER},
+      </if>
+      <if test="follow != null" >
+        follow = #{follow,jdbcType=INTEGER},
+      </if>
+      <if test="isCity != null" >
+        is_city = #{isCity,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xycode.janebook.model.TClassify" >
+    update t_classify
+    set classify_name = #{classifyName,jdbcType=VARCHAR},
+      classify_info = #{classifyInfo,jdbcType=VARCHAR},
+      classify_admin = #{classifyAdmin,jdbcType=VARCHAR},
+      is_send = #{isSend,jdbcType=VARCHAR},
+      classify_img = #{classifyImg,jdbcType=VARCHAR},
+      send_check = #{sendCheck,jdbcType=VARCHAR},
+      article_num = #{articleNum,jdbcType=INTEGER},
+      follow = #{follow,jdbcType=INTEGER},
+      is_city = #{isCity,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
