@@ -9,6 +9,7 @@ import com.xycode.janebook.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,8 @@ public class UserController {
     @Autowired
     UserService userService;
 
+
+
     //我的主页
     //传的值为用户ID
     @GetMapping("/user/gethomePage")
@@ -25,7 +28,7 @@ public class UserController {
     public String gethomePage(@RequestParam("id")int id) {
 
 
-        return "homePage";
+        return null;
     }
 
     @GetMapping("/user/getUser")

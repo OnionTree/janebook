@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<jsp:include page="nav.jsp"></jsp:include>
+<%@include file="nav-login.jsp"%>
 <div class="container collect">
 	<div class="row">
 		<div class="mycollection col-md-8 col-md-offset-2">

@@ -26,16 +26,16 @@
 			</div>
 		</h4>
 		<div class="js-sign-up-container">
-			<form class="new_user" id="new_user" action="" accept-charset="UTF-8" method="post">
+			<form class="new_user" id="new_user" action="/janebook/Userregister" accept-charset="UTF-8" method="post">
 				<div class="input-prepend restyle">
 					<input placeholder="你的昵称" type="text"
-						   value name="user[nickname]" id="user_nickname">
+						   value name="userId" id="user_nickname" >
 					<i class="iconfont icon-yonghu1"></i>
 				</div>
 				<div class="input-prepend restyle no-radius js-normal">
 					<input type="hidden" value="CN" name="user[mobile_number_country_code]"
 						   id="user_mobile_number_country_code">
-					<input placeholder="手机号" type="tel" name="user[mobile_number]"
+					<input placeholder="手机号" type="tel" name="phone"
 						   id="user_mobile_number">
 					<i class="iconfont icon-shouji2"></i>
 				</div>
@@ -43,7 +43,7 @@
 				<input type="hidden" name="force_user_nonexist" id="force_user_nonexist" value="true">
 				<div class="input-prepend">
 					<input placeholder="设置密码" type="password"
-						   name="user[password]" id="user_password">
+						   name="password" id="user_password">
 					<i class="iconfont icon-suo"></i>
 				</div>
 				<input type="submit" name="commit" value="注册"

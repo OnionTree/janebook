@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<jsp:include page="nav.jsp"></jsp:include>
+<%@include file="nav-login.jsp"%>
 <div class="container settingpart">
     <div class="row">
         <div class="col-md-3 leftside">
