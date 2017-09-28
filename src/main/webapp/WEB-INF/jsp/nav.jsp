@@ -15,6 +15,7 @@
 				<li><a href="#"><button class="btn btn-custom btn-write"><span class="glyphicon glyphicon-pencil"></span>我TM写</button></a></li>
 			</ul>
 		</div>
+        1
 		<div class="container-fluid">
 			<div class="row">
 				<div class="navbar-header">
