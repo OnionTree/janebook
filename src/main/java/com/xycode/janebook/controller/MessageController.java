@@ -1,6 +1,5 @@
 package com.xycode.janebook.controller;
 
-import com.xycode.janebook.model.TMessage;
 import com.xycode.janebook.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 	<head>
 		<meta charset="UTF-8">
-		<title>Notifications-comment</title>
+		<title>Notifications-like</title>
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/iconfont.css">
 		<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
@@ -289,7 +289,7 @@
 			top: 50%;
 			right: 10%;
 		}
-		.avatar>img{
+		.user-avatar .avatar>img{
 			width: 45px;
 			/* height: 45px; */
 			height: auto;
@@ -468,7 +468,7 @@
 			    line-height: 30px;
 			    display: block;
 			    font-size: 15px;
-   				 vertical-align: middle;
+			 	vertical-align: middle;
 			}
 			.list-ul>li.active a{
 				background-color: #2f2f2f;
@@ -476,8 +476,7 @@
 			.list-ul>li{
 				-webkit-transition: all .1s ease;
 			 	transition: all .1s ease;
-			 }
-			.list-ul>li:hover{
+			}.list-ul>li:hover{
 				background-color: #2f2f2f;
 			}
 			.list-ul .iconfont{
@@ -500,126 +499,66 @@
 			    color: #a3cf62;
 			    vertical-align: middle;
 			}
-			.right-part .comment-container .menu {
+			.right-part .menu {
 			    margin-bottom: 20px;
 			    font-size: 14px;
 			    font-weight: 700;
 			}
-			.comment-container .comment-list{
-			    list-style: none;
-			    padding-left: 0;
-		        margin-top: 0;	
-				margin-bottom: 10px;
-			    font-size: 15px;
+			.like-container .like-list{
+				list-style: none;
+				padding-left: 0;
 			}
-			.notification-list-placeholder{
-			    margin-top: -10px;
-    			padding: 10px 20px;
+			.like-container .like-list>li{
+				/* width: 600px; */
+				border-top: 1px solid;
+				border-color: #2f2f2f;
+				padding: 20px;
 			}
-			.comment-container .comment-list .avatar{
-    			display: inline-block;
-			    margin-right: 5px;
-			    width: 40px;
-			    height: 40px;
-			    border-radius: 50%;
+			.like-container .like-list .avatar{
+				width: 48px;
+				height: 48px;
+				margin-right: 15px;
+				display: inline-block;	
 			}
-			.comment-container .comment-list .avatar>img{
-			    width: 40px;
-			    height: auto;
-			    border-radius: 50%;
+			.like-container .like-list .avatar img{
+				width: 48px;
+				height: auto;border-radius: 50%;
 			}
-			.comment-container .comment-list .unread{
-				padding: 20px 20px 15px 20px;
-				background-color: #3f3f3f;
-	        	border-top: 1px solid;
-	        	border-color: #2f2f2f;
-			}
-			.comment-container .comment-list .info{
+			.like-container .like-list .info{
 				display: inline-block;
-			    vertical-align: top;
+				vertical-align: top;
 			    line-height: 1.7;
 			}
-			.comment-container .comment-list .info .user{
-				color: #c8c8c8;
+			.like-container .like-list .info .user{
+			    color: #c8c8c8;
+			    margin: 0 5px 0 0;
+			    font-size: 15px;
 			}
-			 .comment-container .comment-list .info .user:hover{
-				color: #fff;
+			.like-container .like-list .info .user:hover{
+			    color: #FFF;
 			}
-			.comment-container .comment-list .info
-			{	
-		        margin: 0 5px 0 0;
+			.like-container .like-list .info span{
+				display: inline-block;
+			    font-size: 15px;
 			}
-			.comment-container .comment-list .info .note-name:hover{
-			    color: #3194d0;
+			.like-container .like-list .info a{
+			    font-size: 15px;
+			    display: inline-block;
+			    max-width: 420px;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			    vertical-align: top;
 			}
-			.comment-container .comment-list .time{
-			    margin-top: 2px;
+			.like-container .like-list .info a .note-name{
+				display: inline-block;
+			    color: #3194d0;	
+			}
+			.like-container .like-list .info .time{
+		        margin-top: 5px;
 			    font-size: 12px;
 			    color: #969696;
 			    line-height: normal;
-			}
-			.comment-container .comment-list .comment-content{
-				margin: 10px 0 0;
-			    font-size: 15px;
-			    line-height: 1.7;
-			    overflow: hidden;
-			    text-overflow: ellipsis;
-			    display: -webkit-box;
-			    /* -webkit-line-clamp: 3; */
-			    -webkit-box-orient: vertical;
-			}
-			.comment-container .comment-list .meta{
-				color: #545454;
-			    font-size: 15px;
-		        margin-top: 10px;
-			 	height: 20px;
-			 }
-			.notification-list-placeholder .wrap{
-				border-color: #2f2f2f;
-			    padding: 23px 20px 20px 72px!important;
-			    margin: 0 -20px;
-			    border-top: 1px solid #f0f0f0;
-		        padding-bottom: 4px!important;
-			}
-			
-			 .comment-container .comment-list .meta .function-btn{
-			    float: left;
-			    margin-right: 30px;
-			    font-size: 13px;
-		        color: #969696;
-		        cursor: pointer;
-			 } 
-			 .comment-container .comment-list .meta .function-btn i{
-			    margin-right: 5px;
-			    font-size: 15px;
-			    vertical-align: middle;
-			 }
-			 .comment-container .comment-list .meta .report{
-		      	float: right;
-			    font-size: 13px;
-			    color: #969696;
-			    display: none;
-			    cursor: pointer;
-			 }
-			 .notification-list-placeholder .meta .text{
-			    display: inline-block;
-			    vertical-align: middle;
-			    margin-right: 20px;
-			    height: 14px;
-			    width: 26px;
-			}
-			.comment-container .find-nothing{
-			    margin-top: 150px;
-    			text-align: center;
-			}
-			.comment-container .find-nothing img{
-			    width: 100px;
-		        vertical-align: middle;
-			}
-			.notification .find-nothing .tip {
-			    margin-top: 20px;
-			    font-size: 14px;
-			    font-weight: 700;
 			}
 	</style>		
 	<style type="text/css" role="footer">
@@ -832,13 +771,13 @@
 											</div>	
 										    <ul class="dropdown-menu" role="menu" aria-labelledby="message-dropdownMenu">
 										        <li role="presentation">
-									            <a role="menuitem" href="./Notification.jsp"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+									            	<a role="menuitem" href="Notification.jsp"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li>
 										        <li role="presentation">
 										            <a role="menuitem" href="notifi-chats.jsp"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li>
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-like.jsp"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+										            <a role="menuitem" href="./notifi-like.jsp"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li> 
 										        <li role="presentation">
 										            <a role="menuitem" href="notifi-follow.jsp"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
@@ -892,16 +831,22 @@
 					</div>
 				</div>
 				<div class="right-part col-md-8 col-xs-8">
-					<div class="comment-container">
-						<div class="menu">收到的评论</div> 
-						<ul class="comment-list" id="msg-box">
-
-
-						</ul> 
-							<div class="find-nothing">
-								<img src="./images/common/nothing.png"> 
-								<div class="tip">这里还木有内容哦~</div>
-							</div> 
+					<div class="like-container">
+						<div class="menu">收到的喜欢和赞</div> 
+						<ul class="like-list" id="msg-box">
+							<div class="notification-list-placeholder">
+								<div class="avatar"></div> <div class="wrap"><div class="name"></div> 
+								<div class="text"></div></div> 
+								<p></p> 
+								<p class="animation-delay"></p> 
+								<div class="meta"><i class="iconfont ic-list-comments"></i>
+									<div class="text"></div> <i class="iconfont ic-go"></i>
+									<div class="text longer">
+										
+									</div>
+								</div>
+							</div>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -972,14 +917,14 @@
                     var sign = $(".mmssgg");
                     sign.removeClass('icon-xinxiaoxi1');
                     var msgbox = $("#msg-box");
+
                     if(data.length>0){
                         $.each(data, function(n,obj){
                             var type = obj.type;
                             if(obj.readed!=0){
                                 if(!(sign.eq(type).hasClass('icon-xinxiaoxi1'))){
                                     if(!(sign.eq(0).hasClass('icon-xinxiaoxi1')))
-                                    	sign.eq(0).addClass('icon-xinxiaoxi1');
-
+                                        sign.eq(0).addClass('icon-xinxiaoxi1');
                                     sign.eq(type).addClass('icon-xinxiaoxi1');
                                     sign.eq(parseInt(type)+5).addClass('icon-xinxiaoxi1');
                                     //alert(sign.eq(parseInt(type)+5).parent().html());
@@ -987,7 +932,7 @@
                             }
 
 
-                            if(type == '1'){
+                            if(type == '3'){
                                 if(flag == 0){
                                     msgbox.html("");
                                     $(".find-nothing").hide();
@@ -997,31 +942,13 @@
                                     type:"GET",
                                     url:"/janebook/user/"+obj.sendId,
                                     success:function(sender){
-                                        var html ='<li class="unread comment-item">' +
-                                            '<a href="#" class="avatar">' +
-                                            '<img src="'+sender.avatar+'">' +
-                                            '</a>' +
+                                        var html = '<li class="like-item">' +
+                                            '<a href="#" class="avatar"><img src="'+sender.avatar+'"></a>' +
                                             '<div class="info">' +
-                                            '<div>' +
-                                            '<a class="user" href="#">'+sender.nickname+'</a>' +
-                                            '<span class="comment-slogan">评论了你的文章</span>' +
-                                            '<a class="note-name" href="'+obj.acid+'">'+obj.article+'</a>' +
-                                            '</div>' +
-                                            '<div class="time">'+(new Date(obj.time).Format("yyyy-MM-dd"))+'</div>' +
-                                            '</div>' +
-                                            '<p class="comment-content">'+obj.mesContent+'</p>' +
-                                            '<div class="meta">' +
-                                            '<a class="function-btn">' +
-                                            '<i class="iconfont icon-comments"></i>' +
-                                            '<span>回复</span>' +
-                                            '</a>' +
-                                            '<a href="#" class="function-btn">' +
-                                            '<i class="iconfont icon-link"></i>' +
-                                            '<span>查看对话</span>' +
-                                            '</a>' +
-                                            '<a class="report">' +
-                                            '<span>举报</span>' +
-                                            '</a>' +
+                                            '<a href="#" class="user">'+sender.nickname+'</a>' +
+                                            '<span>喜欢了你的文章</span>' +
+                                            '<a href="'+obj.acid+'"><p class="note-name">'+obj.article+'</p></a>' +
+                                            '<div class="time">'+(new Date(obj.time)).Format("yyyy-MM-dd")+'</div>' +
                                             '</div>' +
                                             '</li>';
                                         msgbox.append(html);
@@ -1171,11 +1098,12 @@
     			$(".comment-container .comment-list .meta .report").hide();
     		});
     	});
-    	$(function(message_link){
+		$(function(message_link){
 			$("#message-dropdownMenu").on('click',function(){
-				window.location.href="./Notification.jsp";
+				window.location.href="Notification.jsp";
 			});
     	});
+
 	</script>
 
 </html>

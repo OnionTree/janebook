@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 	<head>
 		<meta charset="UTF-8">
-		<title>Notifications-comment</title>
+		<title>Notifications-follow</title>
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/iconfont.css">
 		<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
@@ -289,7 +289,7 @@
 			top: 50%;
 			right: 10%;
 		}
-		.avatar>img{
+		.user-avatar .avatar>img{
 			width: 45px;
 			/* height: 45px; */
 			height: auto;
@@ -445,7 +445,6 @@
 			}
 			.list-ul{
 				list-style: none;
-				/* box-shadow: 0 5px 5px #4a4a4a; */
 				margin-top: 0px;
 				background-color: #3f3f3f;
 				width: auto;
@@ -468,7 +467,7 @@
 			    line-height: 30px;
 			    display: block;
 			    font-size: 15px;
-   				 vertical-align: middle;
+			 	vertical-align: middle;
 			}
 			.list-ul>li.active a{
 				background-color: #2f2f2f;
@@ -476,8 +475,7 @@
 			.list-ul>li{
 				-webkit-transition: all .1s ease;
 			 	transition: all .1s ease;
-			 }
-			.list-ul>li:hover{
+			}.list-ul>li:hover{
 				background-color: #2f2f2f;
 			}
 			.list-ul .iconfont{
@@ -500,126 +498,139 @@
 			    color: #a3cf62;
 			    vertical-align: middle;
 			}
-			.right-part .comment-container .menu {
+			.right-part .menu {
 			    margin-bottom: 20px;
 			    font-size: 14px;
 			    font-weight: 700;
 			}
-			.comment-container .comment-list{
+			.follow-container .follow-list{
 			    list-style: none;
 			    padding-left: 0;
 		        margin-top: 0;	
 				margin-bottom: 10px;
 			    font-size: 15px;
 			}
-			.notification-list-placeholder{
-			    margin-top: -10px;
-    			padding: 10px 20px;
+			.follow-container .follow-list>li{
+				position: relative;
+		        border-top: 1px solid;
+		        border-color: #2f2f2f;
+		        line-height: 20px;
+			} 
+			.follow-container .follow-list .pull-right {
+				position: relative;
+			    margin: 20px 20px 0 0;
+			    font-size: 13px;
+			    z-index: 5;
 			}
-			.comment-container .comment-list .avatar{
-    			display: inline-block;
-			    margin-right: 5px;
-			    width: 40px;
-			    height: 40px;
-			    border-radius: 50%;
+			.follow-container .follow-list .pull-right .time {
+			   margin-right: 5px;
 			}
-			.comment-container .comment-list .avatar>img{
-			    width: 40px;
+			.follow-container .follow-list .pull-right div {
+			    display: inline-block;
+			}
+			.follow-container .follow-list .user-btn .btn-custom{
+				width: auto;
+				margin: 0 10px;
+			}
+			.follow-container .follow-list .user-btn .btn-chats {
+				border: 1px solid rgba(59,194,29,.7);
+    			color: #42c02e;
+				font-size: 15px;
+				cursor: pointer;
+			}
+			.follow-container .follow-list .user-btn .btn-follow{
+				border: 1px solid rgba(59,194,29,.7);
+    			background-color: #42c02e;
+    			color: #fff;
+    			font-size: 15px;
+    			cursor: pointer;
+    			-webkit-transition: all .2s ease;
+			}
+			.follow-container .follow-list .user-btn .following{
+				border-color: #969696;
+    			background-color: transparent;
+    			color: #fff;
+    			font-size: 15px;
+    			cursor: pointer;
+			}
+			.follow-container .follow-list .user-btn .follow-off:hover{
+    			background-color: #3db922;
+			}
+			.follow-container .follow-list .avatar{
+			    float: left;
+			    margin: 20px 15px 20px 20px;
+			    width: 65px;
+			    height: 65px;
+			    display: inline-block;
+			}
+			.follow-container .follow-list .avatar>img{
+			    width: 65px;
 			    height: auto;
 			    border-radius: 50%;
 			}
-			.comment-container .comment-list .unread{
-				padding: 20px 20px 15px 20px;
-				background-color: #3f3f3f;
-	        	border-top: 1px solid;
-	        	border-color: #2f2f2f;
+			.follow-container .follow-list .user-title {
+				position: relative;
+			    top: 20px;
+			    font-size: 15px;
+		        color: #c8c8c8;
 			}
-			.comment-container .comment-list .info{
-				display: inline-block;
-			    vertical-align: top;
-			    line-height: 1.7;
+			.follow-container .follow-list .user-title .info{
+			    margin-top: 5px;
+			    font-size: 14px;
 			}
-			.comment-container .comment-list .info .user{
-				color: #c8c8c8;
+			.follow-container .follow-list .user-title .info ul{
+			    list-style: none;
+			    padding-left: 0;
+
 			}
-			 .comment-container .comment-list .info .user:hover{
-				color: #fff;
+			.follow-container .follow-list .user-title .info li{
+			    display: inline-block;
+			    line-height: 20px;
 			}
-			.comment-container .comment-list .info
-			{	
-		        margin: 0 5px 0 0;
+			.follow-container .follow-list .user-title .info .meta-block{
+		        font-size: 12px;
+			    margin: 0 7px 6px 0;
+			    padding: 0 7px 0 0;
+			    border-right: 1px solid #2f2f2f;;
 			}
-			.comment-container .comment-list .info .note-name:hover{
-			    color: #3194d0;
+			.follow-container .follow-list .user-title .info .meta-block a{
+            	color: #969696;
+            	font-size: 12px;
+			}.follow-container .follow-list .user-title .info .meta-block p{
+        	    margin-bottom: -3px;
+    			font-size: 14px;
 			}
-			.comment-container .comment-list .time{
-			    margin-top: 2px;
-			    font-size: 12px;
-			    color: #969696;
+			.follow-container .follow-list .user-title a{
+			    font-size: 18px;
+		        color: #c8c8c8;
+			}
+			.follow-container .follow-list .user-title span{
+			    font-size: 15px;
+		        color: #c8c8c8;
+		        padding: 0 2px;
+			    margin-left: 4px;
+			    font-size: 13px;
+			    color: #ea6f5a;
+			    border: 1px solid #ea6f5a;
+			    border-radius: 3px;
 			    line-height: normal;
 			}
-			.comment-container .comment-list .comment-content{
-				margin: 10px 0 0;
-			    font-size: 15px;
-			    line-height: 1.7;
-			    overflow: hidden;
+			.follow-container .follow-list .wrap {
+			    display: block;
+			    padding: 20px 20px 0 50px;
+			    min-height: 88px;
+			}
+			.follow-container .follow-list .wrap  p {
+			    font-size: 12px;
+			    color: #999;
+    		    overflow: hidden;
 			    text-overflow: ellipsis;
 			    display: -webkit-box;
-			    /* -webkit-line-clamp: 3; */
+			    -webkit-line-clamp: 3;
 			    -webkit-box-orient: vertical;
 			}
-			.comment-container .comment-list .meta{
-				color: #545454;
-			    font-size: 15px;
-		        margin-top: 10px;
-			 	height: 20px;
-			 }
-			.notification-list-placeholder .wrap{
-				border-color: #2f2f2f;
-			    padding: 23px 20px 20px 72px!important;
-			    margin: 0 -20px;
-			    border-top: 1px solid #f0f0f0;
-		        padding-bottom: 4px!important;
-			}
-			
-			 .comment-container .comment-list .meta .function-btn{
-			    float: left;
-			    margin-right: 30px;
-			    font-size: 13px;
-		        color: #969696;
-		        cursor: pointer;
-			 } 
-			 .comment-container .comment-list .meta .function-btn i{
-			    margin-right: 5px;
-			    font-size: 15px;
-			    vertical-align: middle;
-			 }
-			 .comment-container .comment-list .meta .report{
-		      	float: right;
-			    font-size: 13px;
-			    color: #969696;
-			    display: none;
-			    cursor: pointer;
-			 }
-			 .notification-list-placeholder .meta .text{
-			    display: inline-block;
-			    vertical-align: middle;
-			    margin-right: 20px;
-			    height: 14px;
-			    width: 26px;
-			}
-			.comment-container .find-nothing{
-			    margin-top: 150px;
-    			text-align: center;
-			}
-			.comment-container .find-nothing img{
-			    width: 100px;
-		        vertical-align: middle;
-			}
-			.notification .find-nothing .tip {
-			    margin-top: 20px;
-			    font-size: 14px;
-			    font-weight: 700;
+			.follow-container .follow-list .dropdown-menu i{
+			    margin-right: 10px;
 			}
 	</style>		
 	<style type="text/css" role="footer">
@@ -828,23 +839,23 @@
 											<div class="dropdown-toggle " id="message-dropdownMenu" data-toggle="dropdown">
 												<a class="before"><span class="iconfont icon-remind"></span>消息</a>
 												<a class="after"><span class="iconfont icon-remind"></span></a>
-												<i class="iconfont icon-xinxiaoxi1 mmssgg"></i>
+												<i class="iconfont icon-xinxiaoxi1"></i>	
 											</div>	
 										    <ul class="dropdown-menu" role="menu" aria-labelledby="message-dropdownMenu">
 										        <li role="presentation">
-									            <a role="menuitem" href="./Notification.jsp"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+									            	<a role="menuitem" href="Notification.jsp"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1"></i></a>
 										        </li>
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-chats.jsp"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+										            <a role="menuitem" href="notifi-chats.jsp"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1"></i></a>
 										        </li>
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-like.jsp"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+										            <a role="menuitem" href="notifi-like.jsp"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1"></i></a>
 										        </li> 
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-follow.jsp"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+										            <a role="menuitem" href="./notifi-follow.jsp"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1"></i></a>
 										        </li> 
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-else.jsp"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+										            <a role="menuitem" href="notifi-else.jsp"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1"></i></a>
 										        </li>
 										    </ul>
 									    </div>
@@ -892,16 +903,15 @@
 					</div>
 				</div>
 				<div class="right-part col-md-8 col-xs-8">
-					<div class="comment-container">
-						<div class="menu">收到的评论</div> 
-						<ul class="comment-list" id="msg-box">
+					<div class="follow-container">
+						<div class="menu">全部关注</div> 
+						<ul class="follow-list">
 
-
-						</ul> 
-							<div class="find-nothing">
-								<img src="./images/common/nothing.png"> 
-								<div class="tip">这里还木有内容哦~</div>
-							</div> 
+						</ul>
+						<div class="find-nothing">
+							<img src="./images/common/nothing.png"> 
+							<div class="tip">这里还木有内容哦~</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -972,14 +982,14 @@
                     var sign = $(".mmssgg");
                     sign.removeClass('icon-xinxiaoxi1');
                     var msgbox = $("#msg-box");
+
                     if(data.length>0){
                         $.each(data, function(n,obj){
                             var type = obj.type;
                             if(obj.readed!=0){
                                 if(!(sign.eq(type).hasClass('icon-xinxiaoxi1'))){
                                     if(!(sign.eq(0).hasClass('icon-xinxiaoxi1')))
-                                    	sign.eq(0).addClass('icon-xinxiaoxi1');
-
+                                        sign.eq(0).addClass('icon-xinxiaoxi1');
                                     sign.eq(type).addClass('icon-xinxiaoxi1');
                                     sign.eq(parseInt(type)+5).addClass('icon-xinxiaoxi1');
                                     //alert(sign.eq(parseInt(type)+5).parent().html());
@@ -987,7 +997,7 @@
                             }
 
 
-                            if(type == '1'){
+                            if(type == '3'){
                                 if(flag == 0){
                                     msgbox.html("");
                                     $(".find-nothing").hide();
@@ -995,34 +1005,64 @@
                                 }
                                 $.ajax({
                                     type:"GET",
-                                    url:"/janebook/user/"+obj.sendId,
+                                    url:"/janebook/user-msg/"+obj.sendId,
                                     success:function(sender){
-                                        var html ='<li class="unread comment-item">' +
-                                            '<a href="#" class="avatar">' +
-                                            '<img src="'+sender.avatar+'">' +
+                                        var html ='<li class="follow-item">' +
+                                            '<div class="pull-right">' +
+                                            '<div class="user-btn">' +
+                                            '<a class="btn btn-custom btn-chats" href="#">发私信</a>' +
+                                            '<button class="btn btn-custom btn-follow following" type="button">正在关注</button>' +
+                                            '</div>' +
+                                            '</div>' +
+                                            '<a href="#" target="_blank" class="avatar">' +
+                                            '<img src="./images/avatar/quin.jpg">' +
                                             '</a>' +
+                                            '<div class="user-title">' +
+                                            '<a href="#" target="_blank" class="name">'+sender.nickname+'</a> <span class="author-tag"> Gay</span>' +
                                             '<div class="info">' +
-                                            '<div>' +
-                                            '<a class="user" href="#">'+sender.nickname+'</a>' +
-                                            '<span class="comment-slogan">评论了你的文章</span>' +
-                                            '<a class="note-name" href="'+obj.acid+'">'+obj.article+'</a>' +
-                                            '</div>' +
-                                            '<div class="time">'+(new Date(obj.time).Format("yyyy-MM-dd"))+'</div>' +
-                                            '</div>' +
-                                            '<p class="comment-content">'+obj.mesContent+'</p>' +
-                                            '<div class="meta">' +
-                                            '<a class="function-btn">' +
-                                            '<i class="iconfont icon-comments"></i>' +
-                                            '<span>回复</span>' +
-                                            '</a>' +
-                                            '<a href="#" class="function-btn">' +
-                                            '<i class="iconfont icon-link"></i>' +
-                                            '<span>查看对话</span>' +
-                                            '</a>' +
-                                            '<a class="report">' +
-                                            '<span>举报</span>' +
+                                            '<ul>' +
+                                            '<li>' +
+                                            '<div class="meta-block">' +
+                                            '<a href="#">' +
+                                            '<p>'+sender.follow+'</p>' +
+                                            '关注 <i class="iconfont ic-arrow"></i>' +
                                             '</a>' +
                                             '</div>' +
+                                            '</li>' +
+                                            '<li>' +
+                                            '<div class="meta-block">' +
+                                            '<a href="#">' +
+                                            '<p>'+sender.fans+'</p>' +
+                                            '粉丝 <i class="iconfont ic-arrow"></i>' +
+                                            '</a>' +
+                                            '</div>' +
+                                            '</li>' +
+                                            '<li>' +
+                                            '<div class="meta-block">' +
+                                            '<a href="#">' +
+                                            '<p>'+sender.articleNum+'</p>' +
+                                            '文章 <i class="iconfont ic-arrow"></i>' +
+                                            '</a>' +
+                                            '</div>' +
+                                            '</li>' +
+                                            '<li>' +
+                                            '<div class="meta-block">' +
+                                            '<p>'+sender.wordNum+'</p>' +
+                                            '<div>字数</div>' +
+                                            '</div>' +
+                                            '</li>' +
+                                            '<li>' +
+                                            '<div class="meta-block">' +
+                                            '<p>79395</p>' +
+                                            '<div>收获喜欢</div>' +
+                                            '</div>' +
+                                            '</li>' +
+                                            '</ul>' +
+                                            '</div>' +
+                                            '</div>' +
+                                            '<a href="#" class="wrap">' +
+                                            '<p class="author-description">'+sender.info+'</p>' +
+                                            '</a>' +
                                             '</li>';
                                         msgbox.append(html);
                                     }
@@ -1149,31 +1189,32 @@
     		});
     	});
     	$(function(follow){
-    		$(".author-list .author-item .follow").on('click',function(){
+    		$("follow-item .pull-right .btn-follow").on("mouseenter mouseleave click",function(event){
     			if($(this).hasClass('following')){
-    				$(this).removeClass('following');
-    				$(this).empty();
-    				$(this).html("+ 关注");
+    				if(event.type == 'mouseenter'){
+    					$(this).text("取消关注");
+    				}
+    				else if(event.type == 'mouseleave'){
+    					$(this).text("正在关注");
+    				}
+    				else{
+    					$(this).removeClass('following');
+    					$(this).addClass('follow-off');
+    					$(this).text("+ 关注");
+    				}
     			}
     			else{
-    				$(this).addClass('following');
-    				$(this).empty();
-    				$(this).html('<i class="iconfont icon-selected"></i> 已关注');
-    			}
-				
-    		});
-    	});
-    	$(function(report){
-    		$(".comment-container .comment-list .meta").hover(function() {
-    			var cur=$(this).children(".report");
-    			$(cur).show();
-    		}, function() {
-    			$(".comment-container .comment-list .meta .report").hide();
+    				if(event.type == 'click'){
+    					$(this).addClass('following');
+    					$(this).removeClass('follow-off');
+    					$(this).text("正在关注");
+    				}
+    			}  			
     		});
     	});
     	$(function(message_link){
 			$("#message-dropdownMenu").on('click',function(){
-				window.location.href="./Notification.jsp";
+				window.location.href="Notification.jsp";
 			});
     	});
 	</script>

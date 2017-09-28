@@ -28,6 +28,28 @@ public class StartController {
     @Autowired
     UserService userService;
 
+    @RequestMapping("/notifi-chats")
+    public String nChats(){
+        return "notifi-chats";
+    }
+    @RequestMapping("/notifi-else")
+    public String nElse(){
+        return "notifi-else";
+    }
+    @RequestMapping("/Notification")
+    public String Notification(){
+        return "Notification";
+    }
+    @RequestMapping("/notifi-like")
+    public String nLike(){
+        return "notifi-like";
+    }
+
+    @RequestMapping("/notifi-follow")
+    public String nFollow(){
+        return "notifi-follow";
+    }
+
     @RequestMapping("/mycollection")
     public String mycollectionPage() {
         return "mycollection";

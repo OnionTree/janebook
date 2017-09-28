@@ -1,9 +1,6 @@
 package com.xycode.janebook.service;
 
 import com.github.pagehelper.PageHelper;
-import com.xycode.janebook.mapper.TMessageMapper;
-import com.xycode.janebook.model.TMessage;
-import com.xycode.janebook.model.TMessageExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
