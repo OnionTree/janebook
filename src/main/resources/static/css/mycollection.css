@@ -1,0 +1,243 @@
+body{
+    background-color:#3f3f3f;
+    color: #c8c8c8;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #969696;
+    background-color: transparent;
+}
+a:hover{
+    text-decoration: none;
+    color: #969696;
+}
+.collect .row{
+    padding-top: 30px;
+}
+
+ul{
+    padding: 0;
+}
+
+.ming-list>li{
+    padding-top: 20px;
+    line-height: 20px;
+    /*height: 140px;*/
+}
+.ming-list .ming{
+    padding-top: 20px;
+    padding-bottom: 17px;
+    padding-right: 8px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #2f2f2f;
+    /* border: 1px solid;*/
+}
+.ming-img{
+    float: right;
+    height: 165px;
+    width: 150px;
+
+    /* border: 1px solid;*/
+}
+.ming-content{
+    display: block;
+    padding-right: 160px;
+    /* height: 122px;*/
+    /* border: 1px solid;*/
+}
+.ming-author{
+    /*height: 32px;*/
+    margin-bottom: 14px;
+    /*border: 1px solid;*/
+}
+.ming-author .avatar{
+    float: left;
+    height: 32px;
+    width: 32px;
+    margin-right: 2px;
+    /*border: 1px solid;*/
+}
+.avatar-name{
+    display: inline-block;
+    font-size: 13px;
+    padding-top: 3px;
+    color: #969696;
+    /*border: 1px solid;*/
+}
+
+.avatar-time{
+    display: inline-block;
+    color: #969696;
+    /*border: 1px solid;*/
+}
+/*.ming-title{
+    display: block;
+    margin: -7px 0 4px 0;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 700;
+   /* border: 1px solid;
+}*/
+.ming-title{
+    color: #969696;
+    display: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 10px;
+    line-height: 1.5;
+}
+.ming-meta{
+    padding-right: 0!important;
+    font-size: 12px;
+    font-weight: 600;
+    color: #969696;
+    /* border: 1px solid;*/
+}
+.ming-editor{
+    float: right;
+    font-size: 15px;
+    /*border: 1px solid;*/
+}
+
+.ming-text{
+    text-align: left;
+    margin-bottom: 12px;
+    line-height: 20px;
+    font-size: 14px;
+    /*   border: 1px solid;*/
+}
+
+.ming-list{
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.42857;
+    padding: 3px 0 6px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.ming-list>li{
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.ming-list>a{
+    display: inline-block;
+}
+
+
+.topic-list{
+    margin-bottom: 14px;
+    padding: 0 0 14px;
+    clear: both;
+    list-style: none;
+    font-size: 17px;
+    /*border: 1px solid;*/
+}
+.topic-list>li{
+    line-height: 20px;
+    margin-bottom: 10px;
+    display: list-item;
+}
+
+.ming-collection>img{
+    height: 32px;
+    width: 32px;
+    float: left;
+    margin-right: 2px;
+    border-radius: 100%;
+    /*border: 1px solid;*/
+}
+.ming-name{
+    position: relative;
+    padding-top: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.avatar>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.title .name{
+    /*cursor: pointer;*/
+    font-size: 20px;
+    font-weight: 700;
+    color: #969696;
+    /*    text-decoration: none;*/
+}
+
+.iconfont {
+    font-family: iconfont!important;
+    margin-right: 1px;
+    font-size: inherit;
+    font-style: normal;
+    font-weight: 400!important;
+}
+.mes>a>p{
+    margin-bottom: -3px;
+    display: block;
+}
+.icon-more{
+    margin-left: -3px;
+}
+
+.option i{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 17px;
+}
+.ho-leftpart .center .option{
+    padding: 8px 0;
+    /*  border: 1px solid;*/
+    display: inline-block;
+}
+.option a{
+    padding: 13px 20px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.ming-info{
+    padding:  5px 10px;
+    margin-left: 35px;
+}
+.ming-img>img{
+    padding-top: 60px;
+    width: 100%;
+    height: 100%;
+}
+.ming-abstract{
+    overflow:hidden;
+    margin: 0 0 8px;
+    font-size: 13px;
+    padding-top: 5px;
+    height: 77px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+}
+
+.icon-wenji{
+    color: #969696;
+}
+
+.ming-list .name{
+    font-size: 15px;
+}
+.ho-leftpart .center .active{
+    border-bottom: 2px solid #969696!important;
+
+}
+.ming-meta a{
+    margin-right: 8px;
+}
+.add-border{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.mycollection img{
+    width: 100%;
+    height: 100%;
+}
