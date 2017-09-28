@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="utf-8"%>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -12,6 +13,9 @@
 </head>
 
 <body class="night-mode"><!-- 夜间模式 -->
+<shiro:authenticated>
+    用户[<shiro:principal/>]已身份验证通过
+</shiro:authenticated>
 <nav class="nav navbar-customs">
     <div class="width-limit">
         <div class="navbar-rightpart" style="float: right;">

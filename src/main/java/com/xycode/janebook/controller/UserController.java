@@ -17,6 +17,17 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
+    //我的主页
+    //传的值为用户ID
+    @GetMapping("/user/gethomePage")
+    @ResponseBody
+    public String gethomePage(@RequestParam("id")int id) {
+
+
+        return "homePage";
+    }
+
     @GetMapping("/user/getUser")
     @ResponseBody
     public Msg getUser(@RequestParam("page")int page, @RequestParam("limit")int limit) {

@@ -51,8 +51,8 @@ public class StartController {
         log_.info("loginer Page.");
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(tuser.getUserId(), tuser.getPassword());
-        System.out.println("Controller"+tuser.getUserId());
-        System.out.println("Controller"+tuser.getPassword());
+        System.out.println("User:"+tuser.getUserId());
+        System.out.println("Password:"+tuser.getPassword());
         ModelAndView mv = new ModelAndView();
         try {
             //调用subject.login(token)进行登录，会自动委托给securityManager,调用之前
@@ -65,7 +65,6 @@ public class StartController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            request.getSession().setAttribute("tuser", tuser);
             request.setAttribute("error", "用户名或密码错误");
             mv.setViewName("login");
             return mv;
