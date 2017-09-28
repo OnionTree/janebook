@@ -1,9 +1,8 @@
 package com.xycode.janebook.mapper;
 
-import java.util.List;
-
 import com.xycode.janebook.model.TMessage;
 import com.xycode.janebook.model.TMessageExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface TMessageMapper {

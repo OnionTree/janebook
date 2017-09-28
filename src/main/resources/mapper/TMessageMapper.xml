@@ -7,6 +7,11 @@
     <result column="mes_content" property="mesContent" jdbcType="VARCHAR" />
     <result column="send_id" property="sendId" jdbcType="VARCHAR" />
     <result column="recive_id" property="reciveId" jdbcType="VARCHAR" />
+    <result column="readed" property="readed" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
+    <result column="article" property="article" jdbcType="VARCHAR" />
+    <result column="calssify" property="calssify" jdbcType="VARCHAR" />
+    <result column="acid" property="acid" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, type, mes_content, send_id, recive_id
+    id, type, mes_content, send_id, recive_id, readed, time, article, calssify, acid
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xycode.janebook.model.TMessageExample" >
     select
@@ -101,9 +106,13 @@
   </delete>
   <insert id="insert" parameterType="com.xycode.janebook.model.TMessage" >
     insert into t_message (id, type, mes_content, 
-      send_id, recive_id)
+      send_id, recive_id, readed, 
+      time, article, calssify, 
+      acid)
     values (#{id,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{mesContent,jdbcType=VARCHAR}, 
-      #{sendId,jdbcType=VARCHAR}, #{reciveId,jdbcType=VARCHAR})
+      #{sendId,jdbcType=VARCHAR}, #{reciveId,jdbcType=VARCHAR}, #{readed,jdbcType=VARCHAR}, 
+      #{time,jdbcType=TIMESTAMP}, #{article,jdbcType=VARCHAR}, #{calssify,jdbcType=VARCHAR}, 
+      #{acid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.xycode.janebook.model.TMessage" >
     insert into t_message
@@ -123,6 +132,21 @@
       <if test="reciveId != null" >
         recive_id,
       </if>
+      <if test="readed != null" >
+        readed,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="article != null" >
+        article,
+      </if>
+      <if test="calssify != null" >
+        calssify,
+      </if>
+      <if test="acid != null" >
+        acid,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -139,6 +163,21 @@
       </if>
       <if test="reciveId != null" >
         #{reciveId,jdbcType=VARCHAR},
+      </if>
+      <if test="readed != null" >
+        #{readed,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="article != null" >
+        #{article,jdbcType=VARCHAR},
+      </if>
+      <if test="calssify != null" >
+        #{calssify,jdbcType=VARCHAR},
+      </if>
+      <if test="acid != null" >
+        #{acid,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -166,6 +205,21 @@
       <if test="record.reciveId != null" >
         recive_id = #{record.reciveId,jdbcType=VARCHAR},
       </if>
+      <if test="record.readed != null" >
+        readed = #{record.readed,jdbcType=VARCHAR},
+      </if>
+      <if test="record.time != null" >
+        time = #{record.time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.article != null" >
+        article = #{record.article,jdbcType=VARCHAR},
+      </if>
+      <if test="record.calssify != null" >
+        calssify = #{record.calssify,jdbcType=VARCHAR},
+      </if>
+      <if test="record.acid != null" >
+        acid = #{record.acid,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,7 +231,12 @@
       type = #{record.type,jdbcType=VARCHAR},
       mes_content = #{record.mesContent,jdbcType=VARCHAR},
       send_id = #{record.sendId,jdbcType=VARCHAR},
-      recive_id = #{record.reciveId,jdbcType=VARCHAR}
+      recive_id = #{record.reciveId,jdbcType=VARCHAR},
+      readed = #{record.readed,jdbcType=VARCHAR},
+      time = #{record.time,jdbcType=TIMESTAMP},
+      article = #{record.article,jdbcType=VARCHAR},
+      calssify = #{record.calssify,jdbcType=VARCHAR},
+      acid = #{record.acid,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -197,6 +256,21 @@
       <if test="reciveId != null" >
         recive_id = #{reciveId,jdbcType=VARCHAR},
       </if>
+      <if test="readed != null" >
+        readed = #{readed,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="article != null" >
+        article = #{article,jdbcType=VARCHAR},
+      </if>
+      <if test="calssify != null" >
+        calssify = #{calssify,jdbcType=VARCHAR},
+      </if>
+      <if test="acid != null" >
+        acid = #{acid,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -205,7 +279,12 @@
     set type = #{type,jdbcType=VARCHAR},
       mes_content = #{mesContent,jdbcType=VARCHAR},
       send_id = #{sendId,jdbcType=VARCHAR},
-      recive_id = #{reciveId,jdbcType=VARCHAR}
+      recive_id = #{reciveId,jdbcType=VARCHAR},
+      readed = #{readed,jdbcType=VARCHAR},
+      time = #{time,jdbcType=TIMESTAMP},
+      article = #{article,jdbcType=VARCHAR},
+      calssify = #{calssify,jdbcType=VARCHAR},
+      acid = #{acid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

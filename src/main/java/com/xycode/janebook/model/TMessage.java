@@ -1,5 +1,7 @@
 package com.xycode.janebook.model;
 
+import java.util.Date;
+
 public class TMessage {
     private Integer id;
 
@@ -10,6 +12,16 @@ public class TMessage {
     private String sendId;
 
     private String reciveId;
+
+    private String readed;
+
+    private Date time;
+
+    private String article;
+
+    private String calssify;
+
+    private Integer acid;
 
     public Integer getId() {
         return id;
@@ -49,5 +61,45 @@ public class TMessage {
 
     public void setReciveId(String reciveId) {
         this.reciveId = reciveId == null ? null : reciveId.trim();
+    }
+
+    public String getReaded() {
+        return readed;
+    }
+
+    public void setReaded(String readed) {
+        this.readed = readed == null ? null : readed.trim();
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
+    public String getArticle() {
+        return article;
+    }
+
+    public void setArticle(String article) {
+        this.article = article == null ? null : article.trim();
+    }
+
+    public String getCalssify() {
+        return calssify;
+    }
+
+    public void setCalssify(String calssify) {
+        this.calssify = calssify == null ? null : calssify.trim();
+    }
+
+    public Integer getAcid() {
+        return acid;
+    }
+
+    public void setAcid(Integer acid) {
+        this.acid = acid;
     }
 }
