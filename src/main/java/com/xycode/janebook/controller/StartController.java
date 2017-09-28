@@ -96,6 +96,11 @@ public class StartController {
         return "mySetting";
     }
 
+    @RequestMapping("/register")
+    public String registerPage() {
+        return "register";
+    }
+
     @RequestMapping("/index")
     public ModelAndView indexPage() {
         log_.info("indexPage invoke ....");
