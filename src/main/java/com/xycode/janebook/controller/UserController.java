@@ -77,4 +77,8 @@ public class UserController {
             return userService.updateUser(tUser);
     }
 
+    @GetMapping("/user-msg/{userId}")
+    public Map getUserMsg(@PathVariable String userId){
+        return userService.selectUserMsg(userId);
+    }
 }

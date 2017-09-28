@@ -1,6 +1,7 @@
 package com.xycode.janebook.service;
 
 import com.github.pagehelper.PageHelper;
+import com.xycode.janebook.mapper.SuperMapper;
 import com.xycode.janebook.mapper.TUserMapper;
 import com.xycode.janebook.model.TUser;
 import com.xycode.janebook.model.TUserExample;
@@ -16,7 +17,8 @@ public class UserService {
 
     @Autowired
     TUserMapper tUserMapper;
-
+    @Autowired
+    SuperMapper superMapper;
     //获取个人信息页面的信息
     
 
@@ -87,5 +89,9 @@ public class UserService {
         map.put("count", String.valueOf(data.size()));
         map.put("data", data);
         return map;
+    }
+
+    public Map selectUserMsg(String userId){
+        return superMapper.selectUsersArticleMsg(userId);
     }
 }

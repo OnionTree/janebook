@@ -174,52 +174,62 @@ public class TRelationshipExample {
             return (Criteria) this;
         }
 
-        public Criteria andUserIdEqualTo(Integer value) {
+        public Criteria andUserIdEqualTo(String value) {
             addCriterion("user_id =", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotEqualTo(Integer value) {
+        public Criteria andUserIdNotEqualTo(String value) {
             addCriterion("user_id <>", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThan(Integer value) {
+        public Criteria andUserIdGreaterThan(String value) {
             addCriterion("user_id >", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andUserIdGreaterThanOrEqualTo(String value) {
             addCriterion("user_id >=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThan(Integer value) {
+        public Criteria andUserIdLessThan(String value) {
             addCriterion("user_id <", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThanOrEqualTo(Integer value) {
+        public Criteria andUserIdLessThanOrEqualTo(String value) {
             addCriterion("user_id <=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIn(List<Integer> values) {
+        public Criteria andUserIdLike(String value) {
+            addCriterion("user_id like", value, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdNotLike(String value) {
+            addCriterion("user_id not like", value, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdIn(List<String> values) {
             addCriterion("user_id in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotIn(List<Integer> values) {
+        public Criteria andUserIdNotIn(List<String> values) {
             addCriterion("user_id not in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdBetween(Integer value1, Integer value2) {
+        public Criteria andUserIdBetween(String value1, String value2) {
             addCriterion("user_id between", value1, value2, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andUserIdNotBetween(String value1, String value2) {
             addCriterion("user_id not between", value1, value2, "userId");
             return (Criteria) this;
         }
@@ -234,52 +244,62 @@ public class TRelationshipExample {
             return (Criteria) this;
         }
 
-        public Criteria andFriendIdEqualTo(Integer value) {
+        public Criteria andFriendIdEqualTo(String value) {
             addCriterion("friend_id =", value, "friendId");
             return (Criteria) this;
         }
 
-        public Criteria andFriendIdNotEqualTo(Integer value) {
+        public Criteria andFriendIdNotEqualTo(String value) {
             addCriterion("friend_id <>", value, "friendId");
             return (Criteria) this;
         }
 
-        public Criteria andFriendIdGreaterThan(Integer value) {
+        public Criteria andFriendIdGreaterThan(String value) {
             addCriterion("friend_id >", value, "friendId");
             return (Criteria) this;
         }
 
-        public Criteria andFriendIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andFriendIdGreaterThanOrEqualTo(String value) {
             addCriterion("friend_id >=", value, "friendId");
             return (Criteria) this;
         }
 
-        public Criteria andFriendIdLessThan(Integer value) {
+        public Criteria andFriendIdLessThan(String value) {
             addCriterion("friend_id <", value, "friendId");
             return (Criteria) this;
         }
 
-        public Criteria andFriendIdLessThanOrEqualTo(Integer value) {
+        public Criteria andFriendIdLessThanOrEqualTo(String value) {
             addCriterion("friend_id <=", value, "friendId");
             return (Criteria) this;
         }
 
-        public Criteria andFriendIdIn(List<Integer> values) {
+        public Criteria andFriendIdLike(String value) {
+            addCriterion("friend_id like", value, "friendId");
+            return (Criteria) this;
+        }
+
+        public Criteria andFriendIdNotLike(String value) {
+            addCriterion("friend_id not like", value, "friendId");
+            return (Criteria) this;
+        }
+
+        public Criteria andFriendIdIn(List<String> values) {
             addCriterion("friend_id in", values, "friendId");
             return (Criteria) this;
         }
 
-        public Criteria andFriendIdNotIn(List<Integer> values) {
+        public Criteria andFriendIdNotIn(List<String> values) {
             addCriterion("friend_id not in", values, "friendId");
             return (Criteria) this;
         }
 
-        public Criteria andFriendIdBetween(Integer value1, Integer value2) {
+        public Criteria andFriendIdBetween(String value1, String value2) {
             addCriterion("friend_id between", value1, value2, "friendId");
             return (Criteria) this;
         }
 
-        public Criteria andFriendIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andFriendIdNotBetween(String value1, String value2) {
             addCriterion("friend_id not between", value1, value2, "friendId");
             return (Criteria) this;
         }

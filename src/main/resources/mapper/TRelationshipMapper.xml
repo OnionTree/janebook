@@ -3,8 +3,8 @@
 <mapper namespace="com.xycode.janebook.mapper.TRelationshipMapper" >
   <resultMap id="BaseResultMap" type="com.xycode.janebook.model.TRelationship" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="user_id" property="userId" jdbcType="INTEGER" />
-    <result column="friend_id" property="friendId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="friend_id" property="friendId" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,6 +67,16 @@
   <sql id="Base_Column_List" >
     id, user_id, friend_id
   </sql>
+
+  <select id="countFansNum" resultType="java.lang.Integer" parameterType="java.lang.String">
+    SELECT count(user_id) FROM t_relationship WHERE friend_id = #{friend_id};
+  </select>
+
+  <!--<select id="countFansNum" resultType="java.lang.Integer" parameterType="java.lang.String">-->
+    <!--SELECT count(user_id) FROM t_relationship WHERE user_id = #{user_id};-->
+  <!--</select>-->
+
+
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xycode.janebook.model.TRelationshipExample" >
     select
     <if test="distinct" >
@@ -100,7 +110,7 @@
   <insert id="insert" parameterType="com.xycode.janebook.model.TRelationship" >
     insert into t_relationship (id, user_id, friend_id
       )
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{friendId,jdbcType=INTEGER}
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{friendId,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.xycode.janebook.model.TRelationship" >
@@ -121,10 +131,10 @@
         #{id,jdbcType=INTEGER},
       </if>
       <if test="userId != null" >
-        #{userId,jdbcType=INTEGER},
+        #{userId,jdbcType=VARCHAR},
       </if>
       <if test="friendId != null" >
-        #{friendId,jdbcType=INTEGER},
+        #{friendId,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -141,10 +151,10 @@
         id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.userId != null" >
-        user_id = #{record.userId,jdbcType=INTEGER},
+        user_id = #{record.userId,jdbcType=VARCHAR},
       </if>
       <if test="record.friendId != null" >
-        friend_id = #{record.friendId,jdbcType=INTEGER},
+        friend_id = #{record.friendId,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -154,8 +164,8 @@
   <update id="updateByExample" parameterType="map" >
     update t_relationship
     set id = #{record.id,jdbcType=INTEGER},
-      user_id = #{record.userId,jdbcType=INTEGER},
-      friend_id = #{record.friendId,jdbcType=INTEGER}
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      friend_id = #{record.friendId,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -164,18 +174,18 @@
     update t_relationship
     <set >
       <if test="userId != null" >
-        user_id = #{userId,jdbcType=INTEGER},
+        user_id = #{userId,jdbcType=VARCHAR},
       </if>
       <if test="friendId != null" >
-        friend_id = #{friendId,jdbcType=INTEGER},
+        friend_id = #{friendId,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.xycode.janebook.model.TRelationship" >
     update t_relationship
-    set user_id = #{userId,jdbcType=INTEGER},
-      friend_id = #{friendId,jdbcType=INTEGER}
+    set user_id = #{userId,jdbcType=VARCHAR},
+      friend_id = #{friendId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

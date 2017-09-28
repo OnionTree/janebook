@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xycode.janebook.mapper.SuperMapper" >
+
+    <resultMap id="myMap1" type="java.util.HashMap">
+        <result column="wn" property="wordNum" jdbcType="INTEGER"/>
+        <result column="an" property="articleNum" jdbcType="INTEGER"/>
+        <result column="fans" property="fans" jdbcType="INTEGER"/>
+        <result column="follow" property="follow" jdbcType="INTEGER"/>
+        <result column="info" property="info" jdbcType="VARCHAR"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+    <select id="selectUsersArticleMsg" resultMap="myMap1" parameterType="string">
+        SELECT COUNT(*) an, sum(word_num) wn,
+        (SELECT count(user_id) FROM t_relationship WHERE friend_id = #{user_id}) fans,
+        (SELECT count(user_id) FROM t_relationship WHERE user_id = #{user_id}) follow,
+        (SELECT info FROM  t_user WHERE user_id = #{user_id}) info,
+        (SELECT nickname FROM  t_user WHERE user_id = #{user_id}) nickname
+        FROM t_article WHERE author_name = #{user_id};
+    </select>
+
+</mapper>

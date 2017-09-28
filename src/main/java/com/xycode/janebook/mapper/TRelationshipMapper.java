@@ -1,10 +1,10 @@
 package com.xycode.janebook.mapper;
 
-import java.util.List;
-
 import com.xycode.janebook.model.TRelationship;
 import com.xycode.janebook.model.TRelationshipExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface TRelationshipMapper {
     int countByExample(TRelationshipExample example);
@@ -28,4 +28,6 @@ public interface TRelationshipMapper {
     int updateByPrimaryKeySelective(TRelationship record);
 
     int updateByPrimaryKey(TRelationship record);
+
+    int countFansNum(String friendid);
 }
