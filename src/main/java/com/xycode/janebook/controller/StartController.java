@@ -28,6 +28,51 @@ public class StartController {
     @Autowired
     UserService userService;
 
+    @RequestMapping("/mycollection")
+    public String mycollectionPage() {
+        return "mycollection";
+    }
+
+    @RequestMapping("/myfavourart")
+    public String myfavourartPage() {
+        return "myfavourart";
+    }
+
+    @RequestMapping("/mytopic")
+    public String mytopicPage() {
+        return "mytopic";
+    }
+
+    @RequestMapping("/mynewtopic")
+    public String mynewtopicPage() {
+        return "mynewtopic";
+    }
+
+    @RequestMapping("/myfollow")
+    public String myfollowPage() {
+        return "myfollow";
+    }
+
+    @RequestMapping("/mySettingaccount")
+    public String mySettingaccountPage() {
+        return "mySettingaccount";
+    }
+
+    @RequestMapping("/mySettingblanklist")
+    public String mySettingblanklistPage() {
+        return "mySettingblanklist";
+    }
+
+    @RequestMapping("/mySettingpre")
+    public String mySettingprePage() {
+        return "mySettingpre";
+    }
+
+
+    @RequestMapping("/mySetting")
+    public String mySettingPage() {
+        return "mySetting";
+    }
 
     @RequestMapping("/index")
     public ModelAndView indexPage() {

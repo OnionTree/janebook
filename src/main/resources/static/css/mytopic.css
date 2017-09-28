@@ -1,0 +1,482 @@
+body {
+    background-color: #3f3f3f;
+    color: #c8c8c8;
+}
+
+.topic-left {}
+
+.topic-right {}
+
+.topic-left-top {
+    margin-bottom: 35px;
+}
+
+.topic-left-center {
+    display: block;
+    margin-bottom: 15px;
+    padding: 0;
+    border-bottom: 1px solid;
+}
+
+.topic-left .topic-img {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.topic-left .topic-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+}
+
+.topic-title {
+    display: block;
+    padding-top: 12px;
+    padding-left: 120px;
+}
+
+.topic-title .title {
+    background-color: transparent;
+    font-size: 21px;
+    font-weight: 700;
+    color: #c8c8c8;
+}
+
+.topic-info {
+    display: block;
+    padding-left: 120px;
+    margin-top: 7px;
+    color: #969696;
+}
+
+.topic-follow {
+    float: right;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 23px 0 23px 16px;
+    padding: 8px 0;
+    border: 1px solid #969696;
+    color: #969696;
+    border-radius: 40px;
+}
+
+.topic-collection {
+    float: right;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 23px 0 23px 16px;
+    padding: 8px 0;
+    border: 1px solid rgba(59, 194, 29, .7);
+    color: #42c02e!important;
+    border-radius: 40px;
+}
+
+.topic-left-center .option {
+    padding: 8px 0;
+    display: inline-block;
+}
+
+.option i {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 17px;
+}
+
+.option a {
+    padding: 13px 20px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.topic-left-center .active {
+    border-bottom: 2px solid #969696!important;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #969696;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #969696;
+    background-color: transparent;
+}
+
+.container {
+    /*border: 1px solid;*/
+    /*height: 900px;*/
+}
+.mytopic{
+    padding-top: 30px;
+}
+
+.ho-leftpart {
+    margin-left: 20px;
+    padding-right: 0;
+    /* border: 1px solid;*/
+    /*height: 700px;*/
+}
+
+.ho-rightpart {
+    padding: 0;
+    margin-left: 45px;
+    /* border: 1px solid;*/
+    /* height: 500px;*/
+}
+
+.personal .row {
+    padding-top: 30px;
+}
+
+.ho-leftpart .top {
+    /*height: 90px;*/
+    margin-bottom: 20px;
+    /*border: 1px solid;*/
+}
+
+.ho-leftpart .center {
+    display: block;
+    /*height: 50px;*/
+    margin-bottom: 15px;
+    padding: 0;
+    /*border: 1px solid;*/
+}
+
+.ho-leftpart .bottom {
+    /*height: 400px;*/
+    /*border: 1px solid;*/
+}
+
+.ho-leftpart .top .avatar {
+    float: left;
+    height: 80px;
+    width: 80px;
+    /*border: 1px solid;*/
+}
+
+.ho-leftpart .top .title {
+    /*height: 34px;*/
+    padding-left: 100px;
+    padding-top: 5px;
+    vertical-align: middle;
+    /*border: 1px solid;*/
+}
+
+.ho-leftpart .top .info {
+    /*height: 43px;*/
+    font-size: 14px;
+    padding-left: 100px;
+    margin-top: 5px;
+    /*border: 1px solid;*/
+}
+
+.ho-leftpart .top .info>ul {
+    color: #969696;
+    font-size: 0;
+    margin-bottom: 10px;
+    padding-left: 0;
+}
+
+.ho-leftpart .top .info>ul>li {
+    display: inline-block;
+    line-height: 20px;
+    /*width: 52px;*/
+    /*height: 43px;*/
+}
+
+
+.ho-leftpart .top .info .mes {
+    text-decoration: none;
+    font-size: 12px;
+    /*height: 34px;*/
+    padding: -3px 5px -3px 0px;
+    margin-right: 7px;
+    margin-bottom: 6px;
+    border-right: 1px solid #2f2f2f;
+}
+
+
+ul {
+    padding: 0;
+}
+
+.bottom .ming-list .ming {
+    padding-top: 20px;
+    padding-bottom: 17px;
+    padding-right: 8px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #2f2f2f;
+    /* border: 1px solid;*/
+}
+
+.ming-img {
+    float: right;
+    height: 165px;
+    width: 150px;
+
+    /* border: 1px solid;*/
+}
+
+.ming-content {
+    display: block;
+    padding-right: 160px;
+    /* height: 122px;*/
+    /* border: 1px solid;*/
+}
+
+.ming-author {
+    /*height: 32px;*/
+    margin-bottom: 14px;
+    /*border: 1px solid;*/
+}
+
+.ming-author .avatar {
+    float: left;
+    height: 32px;
+    width: 32px;
+    margin-right: 2px;
+    /*border: 1px solid;*/
+}
+
+.avatar-name {
+    display: inline-block;
+    font-size: 13px;
+    padding-top: 3px;
+    color: #969696;
+    /*border: 1px solid;*/
+}
+
+.avatar-time {
+    display: inline-block;
+    color: #969696;
+    /*border: 1px solid;*/
+}
+
+.ming-title {
+    display: block;
+    margin: -7px 0 4px 0;
+    font-size: 18px;
+    line-height: 1.5;
+    /* border: 1px solid;*/
+}
+
+.ming-meta {
+    padding-right: 0!important;
+    font-size: 12px;
+    font-weight: 500;
+    color: #969696;
+    /* border: 1px solid;*/
+}
+
+.ming-editor {
+    float: right;
+    font-size: 15px;
+    /*border: 1px solid;*/
+}
+
+.ho-rightpart .title {
+    float: left;
+    margin-bottom: 10px;
+    font-size: 14px;
+    /* border: 1px solid;*/
+}
+
+.ho-rightpart .discrition {
+    position: relative;
+    clear: both;
+    text-align: left;
+    font-size: 0;
+    margin: 0 2px 16px 2px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.ming-text {
+    text-align: left;
+    margin-bottom: 12px;
+    line-height: 20px;
+    font-size: 14px;
+    /*   border: 1px solid;*/
+}
+
+.ming-list {
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.42857;
+    padding: 3px 0 6px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.ming-list>li {
+    line-height: 20px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+.ming-list>a {
+    display: inline-block;
+}
+
+.ho-rightpart .title {
+    float: left;
+    margin-bottom: 10px;
+    color: #969696;
+    /*   border: 1px solid;*/
+}
+
+.ho-rightpart .new-topic {
+    float: right;
+    /*  border: 1px solid;*/
+}
+
+.topic-list {
+    margin-bottom: 14px;
+    padding: 0 0 14px;
+    clear: both;
+    list-style: none;
+    font-size: 15px;
+    /*border: 1px solid;*/
+}
+
+.topic-list>li {
+    line-height: 20px;
+    margin-bottom: 10px;
+    display: list-item;
+}
+
+.ming-collection>img {
+    height: 32px;
+    width: 32px;
+    float: left;
+    margin-right: 2px;
+    border-radius: 100%;
+    /*border: 1px solid;*/
+}
+.ming-collection-pre>img{
+    height: 25px;
+    width: 25px;
+    float: left;
+    margin-right: 2px;
+    margin-bottom: 10px;
+    border-radius: 100%;
+}
+
+
+.ming-name {
+    position: relative;
+    padding-top: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ming-title {
+    color: #969696;
+    display: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 10px;
+    line-height: 1.5;
+}
+
+.avatar>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.title .name {
+    /*cursor: pointer;*/
+    font-size: 20px;
+    font-weight: 700;
+    color: #969696;
+    /*    text-decoration: none;*/
+}
+
+.iconfont {
+    font-family: iconfont!important;
+    margin-right: 1px;
+    font-size: inherit;
+    font-style: normal;
+    font-weight: 400!important;
+}
+
+.mes>a>p {
+    margin-bottom: -3px;
+    display: block;
+}
+
+.icon-more {
+    margin-left: -3px;
+}
+
+.option i {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 17px;
+}
+
+.ho-leftpart .center .option {
+    padding: 8px 0;
+    /*  border: 1px solid;*/
+    display: inline-block;
+}
+
+.option a {
+    padding: 13px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #969696;
+}
+
+.ming-info {
+    padding: 5px 10px;
+    margin-left: 35px;
+}
+
+.ming-img>img {
+    padding-top: 60px;
+    width: 100%;
+    height: 100%;
+}
+
+.ming-abstract {
+    overflow: hidden;
+    margin: 0 0 8px;
+    font-size: 13px;
+    padding-top: 5px;
+    height: 77px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+}
+
+.icon-wenji {
+    color: #969696;
+}
+
+.ming-list .name {
+    font-size: 15px;
+}
+
+.ho-leftpart .center .active {
+    border-bottom: 2px solid #969696!important;
+}
+
+.ming-meta a {
+    margin-right: 8px;
+}
+
+.add-border {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.ming-list-sp {
+    color: #c8c8c8;
+}
