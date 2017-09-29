@@ -2,6 +2,33 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
+<head>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+        $(function () {
+            document.getElementById("change").onclick=function(){
+                var url = this.href;
+                var args = {"time":new Date()};
+                $.getJSON(url,args,function(data){
+                    $("#recul").html("");
+                    ($.each(data,function (n,v) {
+                        $("#recul").append('<li class="author-item">'+
+                            '<a class="avatar"  href="#">'+
+                            '<img class="img-rounded" src="./images/avatar/ha.jpg">'+
+                            '</a>'+
+                            '<a class="follow following" state="0"><i class="iconfont icon-selected"></i> 已关注</a>'+
+                            '<a href="#" class="name">'+v.userId+'</a>'+
+                            '<p>写了29.9k字 · 1.2k喜欢</p>'+
+                            '</li>')
+                    }))
+
+                });
+                return false
+            }
+
+        })
+	</script>
+</head>
 
 <div class="main-right col-md-4 col-xs-4">
 	<div class="board">
@@ -42,49 +69,19 @@
 	<div class="author-recommend">
 		<div class="title">
 			<span>作者推荐</span>
-			<a class="page-change"><span class="glyphicon glyphicon-refresh"></span>换一批</a>
+			<a href="/janebook/change" id="change" class="page-change"><span class="glyphicon glyphicon-refresh"></span>换一批</a>
 		</div>
-		<ul class="author-list">
-			<li class="author-item">
-				<a class="avatar"  href="#">
-					<img class="img-rounded" src="./images/avatar/ha.jpg">
-				</a>
-				<a class="follow following" state="0"><i class="iconfont icon-selected"></i> 已关注</a>
-				<a href="#" class="name">jojo</a>
-				<p>写了29.9k字 · 1.2k喜欢</p>
-			</li>
-			<li class="author-item">
-				<a class="avatar" href="#">
-					<img class="img-rounded" src="./images/avatar/ha.jpg">
-				</a>
-				<a class="follow" state="0">+ 关注</a>
-				<a href="#" class="name">jojo</a>
-				<p>写了29.9k字 · 1.2k喜欢</p>
-			</li>
-			<li class="author-item">
-				<a class="avatar" href="#">
-					<img class="img-rounded" src="./images/avatar/ha.jpg">
-				</a>
-				<a href="#" class="follow">+ 关注</a>
-				<a href="#" class="name">jojo</a>
-				<p>写了29.9k字 · 1.2k喜欢</p>
-			</li>
-			<li class="author-item">
-				<a class="avatar"href="#">
-					<img class="img-rounded" src="./images/avatar/ha.jpg">
-				</a>
-				<a href="#" class="follow">+ 关注</a>
-				<a href="#" class="name">jojo</a>
-				<p>写了29.9k字 · 1.2k喜欢</p>
-			</li>
-			<li class="author-item">
-				<a class="avatar" href="#">
-					<img class="img-rounded" src="./images/avatar/ha.jpg">
-				</a>
-				<a href="#" class="follow">+ 关注</a>
-				<a href="#" class="name">jojo</a>
-				<p>写了29.9k字 · 1.2k喜欢</p>
-			</li>
+		<ul class="author-list" id="recul">
+			<c:forEach items="${TUser}" var="user">
+				<li class="author-item">
+					<a class="avatar"  href="#">
+						<img class="img-rounded" src="./images/avatar/ha.jpg">
+					</a>
+					<a class="follow following" state="0"><i class="iconfont icon-selected"></i> 已关注</a>
+					<a href="#" class="name">${user.userId}</a>
+					<p>写了29.9k字 · 1.2k喜欢</p>
+				</li>
+			</c:forEach>
 		</ul>
 		<a href="#" class="find-more">
 			查看全部 >

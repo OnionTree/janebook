@@ -9,7 +9,7 @@
 	<div class="width-limit">
 		<div class="navbar-rightpart" style="float: right;">
 			<ul class="nav navbar-nav">
-				<li><a href="#"><span class="glyphicon glyphicon-font"></span><span class="glyphicon glyphicon-adjust"></span></a></li>
+				<li><a href="/janebook/index"><span class="glyphicon glyphicon-font"></span><span class="glyphicon glyphicon-adjust"></span></a></li>
 				<li><a href="/janebook/login">登陆</a></li>
 				<li><a href="/janebook/register"><button class="btn btn-custom btn-sign-up" type="button">注册</button></a></li>
 				<li><a href="#"><button class="btn btn-custom btn-write"><span class="glyphicon glyphicon-pencil"></span>我TM写</button></a></li>
@@ -18,7 +18,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="./MainHome.html" style="float:left;">
+					<a class="navbar-brand" href="/janebook/index" style="float:left;">
 						<img class="logo-top img-rounded" src="./images/tupian1.jpg" alt=""><span class="logo-text">捡书</span>
 					</a>
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -33,8 +33,8 @@
 					<div class="navbar-leftpart collapse navbar-collapse" id="nav-navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li class="active">
-								<a class="before" href="#"><span class="glyphicon glyphicon-home"></span>首页</a>
-								<a class="after" href="#"><span class="glyphicon glyphicon-home" ></span></a>
+								<a class="before" href="/janebook/index"><span class="glyphicon glyphicon-home"></span>首页</a>
+								<a class="after" href="/janebook/index"><span class="glyphicon glyphicon-home" ></span></a>
 							</li>
 							<li>
 								<form class="navbar-form navbar-left" role="search">

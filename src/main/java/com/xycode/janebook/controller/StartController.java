@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -47,10 +48,20 @@ public class StartController {
     public ModelAndView indexPage() {
         log_.info("indexPage invoke ....");
         List<TArticle> at = articleService.getHomeArticle();
+        List<TUser> user = userService.getrecTuer();
         ModelAndView mv = new ModelAndView();
         mv.setViewName("MainHome");
         mv.addObject("TArticle", at);
+        mv.addObject("TUser",user);
         return mv;
+    }
+
+    @RequestMapping("/change")
+    @ResponseBody
+    public List<TUser> changPage() {
+        log_.info("indexPage invoke ....");
+        List<TUser> user = userService.getrecTuer();
+        return user;
     }
 
     //用户登录
@@ -67,8 +78,10 @@ public class StartController {
             subject.login(token);//会跳到我们自定义的realm中
             request.getSession().setAttribute("tuser", tuser);
             List<TArticle> at = articleService.getHomeArticle();
+            List<TUser> user = userService.getrecTuer();
             mv.setViewName("MainHome-login");
             mv.addObject("TArticle", at);
+            mv.addObject("TUser",user);
             return mv;
 
         } catch (Exception e) {

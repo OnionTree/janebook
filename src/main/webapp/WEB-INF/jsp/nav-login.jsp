@@ -54,7 +54,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="./MainHome-login.html" style="float:left;">
+					<a class="navbar-brand" href="/janebook/index" style="float:left;">
 						<img class="logo-top img-rounded" src="./images/tupian.png" alt=""><span class="logo-text">捡书</span>
 					</a>
 					<button type="button" class="navbar-toggle" data-toggle="collapse"

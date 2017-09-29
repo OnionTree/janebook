@@ -21,6 +21,9 @@ public class UserService {
     SuperMapper superMapper;
     //获取个人信息页面的信息
 
+    public List<TUser> getrecTuer(){
+        return tUserMapper.getrecTuer();
+    }
 
     //获取首页文章
     public List<TUser> getHomeUser(){
