@@ -560,6 +560,14 @@
 			    color: #969696;
 			    line-height: normal;
 			}
+			.like-container .find-nothing{
+				margin-top: 150px;
+				text-align: center;
+			}
+			.like-container .find-nothing img{
+				width: 100px;
+				vertical-align: middle;
+			}
 	</style>		
 	<style type="text/css" role="footer">
 		.footer{
@@ -740,7 +748,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="navbar-header">
-							<a class="navbar-brand" href="./MainHome-login.html" style="float:left;">
+							<a class="navbar-brand" href="/janebook/MainHome-login" style="float:left;">
 								<img class="logo-top img-rounded" src="./images/tupian.png" alt=""><span class="logo-text">捡书</span>
 							</a>
 							<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -815,10 +823,10 @@
 							<li class="">
 								<a role="menuitem" href="/janebook/Notification"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
-							<li class="active">
+							<li class="">
 								<a role="menuitem" href="/janebook/notifi-chats"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
-							<li class="">
+							<li class="active">
 								<a role="menuitem" href="/janebook/notifi-like"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
 							<li class="">
@@ -834,18 +842,23 @@
 					<div class="like-container">
 						<div class="menu">收到的喜欢和赞</div> 
 						<ul class="like-list" id="msg-box">
-							<div class="notification-list-placeholder">
-								<div class="avatar"></div> <div class="wrap"><div class="name"></div> 
-								<div class="text"></div></div> 
-								<p></p> 
-								<p class="animation-delay"></p> 
-								<div class="meta"><i class="iconfont ic-list-comments"></i>
-									<div class="text"></div> <i class="iconfont ic-go"></i>
-									<div class="text longer">
-										
-									</div>
-								</div>
+
+							<div class="find-nothing">
+								<img src="./images/common/nothing.png">
+								<div class="tip">这里还木有内容哦~</div>
 							</div>
+						<%--<div class="notification-list-placeholder">--%>
+								<%--<div class="avatar"></div> <div class="wrap"><div class="name"></div> --%>
+								<%--<div class="text"></div></div> --%>
+								<%--<p></p> --%>
+								<%--<p class="animation-delay"></p> --%>
+								<%--<div class="meta"><i class="iconfont ic-list-comments"></i>--%>
+									<%--<div class="text"></div> <i class="iconfont ic-go"></i>--%>
+									<%--<div class="text longer">--%>
+										<%----%>
+									<%--</div>--%>
+								<%--</div>--%>
+							<%--</div>--%>
 						</ul>
 					</div>
 				</div>
@@ -911,7 +924,7 @@
 
             $.ajax({
                 type:"GET",
-                url:"/janebook/messages/"+"b",
+                url:"/janebook/messages/"+'${tuser.userId}',
                 success:function(data){
                     var flag = 0;
                     var sign = $(".mmssgg");

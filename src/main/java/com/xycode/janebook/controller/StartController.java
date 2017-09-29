@@ -27,7 +27,11 @@ public class StartController {
     ArticleService articleService;
     @Autowired
     UserService userService;
-
+    //登陆后的主页
+    @RequestMapping("/MainHome-login")
+    public String homeLogined(){
+        return "MainHome-login";
+    }
     //用户注册
     @RequestMapping("/Userregister")
     public String Userregister(TUser tuser, HttpServletRequest request) {

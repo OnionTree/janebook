@@ -38,8 +38,11 @@ public class MessageService {
         }
     }
 
-    public TMessage getMessage(Integer id){
-        return messageMapper.selectByPrimaryKey(id);
+    public List<TMessage> getMessages(String id){
+        TMessageExample messageExample = new TMessageExample();
+        TMessageExample.Criteria criteria = messageExample.createCriteria();
+        criteria.andReciveIdEqualTo(id);
+        return messageMapper.selectByExample(messageExample);
     }
 
     public List<TMessage> getMessagesPage(Integer pagenum, Integer pagesize){

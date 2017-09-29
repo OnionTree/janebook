@@ -79,25 +79,25 @@
 							<li class="active message ">
 								<div class="dropdown hasmessage" >
 									<div class="dropdown-toggle " id="message-dropdownMenu" data-toggle="dropdown">
-										<a class="before"><span class="iconfont icon-remind"></span>消息</a>
+										<a href="/janebook/notification" class="before"><span class="iconfont icon-remind"></span>消息</a>
 										<a class="after"><span class="iconfont icon-remind"></span></a>
-										<i class="iconfont icon-xinxiaoxi1"></i>
+										<i class="iconfont icon-xinxiaoxi1 mmssgg"></i>
 									</div>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="message-dropdownMenu">
 										<li role="presentation">
-											<a role="menuitem" href="./Notification.html"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1"></i></a>
+											<a role="menuitem" href="/janebook/notification"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										</li>
 										<li role="presentation">
-											<a role="menuitem" href="./notifi-chats.html"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1"></i></a>
+											<a role="menuitem" href="/janebook/notifi-chats"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										</li>
 										<li role="presentation">
-											<a role="menuitem" href="./notifi-like.html"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1"></i></a>
+											<a role="menuitem" href="/janebook/notifi-like"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										</li>
 										<li role="presentation">
-											<a role="menuitem" href="./notifi-follow.html"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1"></i></a>
+											<a role="menuitem" href="/janebook/notifi-follow"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										</li>
 										<li role="presentation">
-											<a role="menuitem" href="./notifi-else.html"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1"></i></a>
+											<a role="menuitem" href="/janebook/notifi-else"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										</li>
 									</ul>
 								</div>

@@ -19,7 +19,7 @@ public class TMessage {
 
     private String article;
 
-    private String calssify;
+    private String classify;
 
     private Integer acid;
 
@@ -88,11 +88,11 @@ public class TMessage {
     }
 
     public String getCalssify() {
-        return calssify;
+        return classify;
     }
 
-    public void setCalssify(String calssify) {
-        this.calssify = calssify == null ? null : calssify.trim();
+    public void setCalssify(String classify) {
+        this.classify = classify == null ? null : classify.trim();
     }
 
     public Integer getAcid() {

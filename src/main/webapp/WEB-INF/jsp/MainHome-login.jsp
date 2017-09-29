@@ -492,7 +492,7 @@
     });
     $(function(message_link){
         $("#message-dropdownMenu").on('click',function(){
-            window.location.href="./Notification.html";
+            window.location.href="Notification.jsp";
         });
     });
 </script>

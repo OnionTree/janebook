@@ -24,8 +24,8 @@
 		}
 		@font-face
 		{
-		font-family: lsFont;
-		src: url('./fonts/lsfont.ttf');
+			font-family: lsFont;
+			src: url('./fonts/lsfont.ttf');
 		}
 		a{
 			text-decoration: none;
@@ -42,7 +42,7 @@
 		.night-mode{
 			color: #c8c8c8;
 		}
-		.night-mode a,{
+		.night-mode a{
 			color: #969696;
 		}
 		.night-mode p{
@@ -109,8 +109,8 @@
 			height: 64px;
 			font-size: 17px;
 			font-weight: bold;
-		    padding-top: 15px;
-    		padding-bottom: 15px;
+			padding-top: 15px;
+			padding-bottom: 15px;
 		}
 		.navbar-nav>li>a:hover{
 			background-color: #2f2f2f;
@@ -148,7 +148,7 @@
 		.btn.focus,
 		.btn:active.focus,
 		.btn.active.focus {
-		    outline: none;
+			outline: none;
 		}
 		.btn-custom{
 			border-radius: 20px;
@@ -172,12 +172,12 @@
 			background-color: transparent;
 			font-weight: bold;
 			transition: background-color 0.2s,border-color 0.2s,color 0.0s;
-		 	-webkit-transition: background-color 0.2s,border-color 0.2s,color 0.2s;
+			-webkit-transition: background-color 0.2s,border-color 0.2s,color 0.2s;
 		}
 		.navbar-rightpart .btn-sign-up:hover{
 			color: #bed742;
-		    border-color: #bed742;
-		    background-color: rgba(190,215,66,.05);
+			border-color: #bed742;
+			background-color: rgba(190,215,66,.05);
 		}
 		.navbar-rightpart .btn-write{
 			width: 100px;
@@ -189,10 +189,10 @@
 			color: #fff;
 			background-color: #a3cf62;
 			transition: background-color 0.2s;
-		 	-webkit-transition: background-color 0.2s;
+			-webkit-transition: background-color 0.2s;
 		}
 		.navbar-rightpart .btn-write:hover{
-    		background-color: #bed742;
+			background-color: #bed742;
 		}
 		.navbar-rightpart .nav li {
 			display: inline;
@@ -221,8 +221,8 @@
 			border-bottom: 1px solid #2f2f2f;
 		}
 		.navbar-collapse.in {
-		 	width: 100vw;
-		 	height: auto;
+			width: 100vw;
+			height: auto;
 		}
 		.navbar-collapse ul .first a{
 			color: #a3cf62;
@@ -235,19 +235,19 @@
 		}
 		.navbar-form .search-form{
 			border-color: #4f4f4f;
-		    background: #4f4f4f;
-		    color: #c8c8c8;
+			background: #4f4f4f;
+			color: #c8c8c8;
 		}
 		.navbar-nav>li>a>span{
 			line-height: 35px;
 		}
 		@media screen and (max-width: 1000px) and (min-width: 768px)
-			{ 
+		{
 			a.after {
 				display: block!important;
 			}
 			a.before{
-				display: none!important;			
+				display: none!important;
 			}
 			.nav>li>a{
 				padding: 10px 10px;
@@ -289,17 +289,17 @@
 			top: 50%;
 			right: 10%;
 		}
-		.user-avatar .avatar>img{
+		.avatar>img{
 			width: 45px;
 			/* height: 45px; */
 			height: auto;
 		}
 		.navbar-nav .dropdown-menu{
-		    position: absolute;
+			position: absolute;
 
-		    top: 100%;
-		    left: 0;
-		    background-color: #3f3f3f;
+			top: 100%;
+			left: 0;
+			background-color: #3f3f3f;
 		}
 		.user-avatar .dropdown-menu{
 			box-shadow: 0 5px 5px #4a4a4a;
@@ -308,9 +308,9 @@
 		}
 		.user-avatar .dropdown-menu a{
 			padding: 10px 20px!important;
-    		line-height: 30px!important;
-		    color: #c8c8c8;
-		    transition: all .1s ease;
+			line-height: 30px!important;
+			color: #c8c8c8;
+			transition: all .1s ease;
 		}
 		.user-avatar .dropdown-menu a:hover{
 			color: #c8c8c8;
@@ -319,9 +319,9 @@
 		.dropdown-menu .glyphicon{
 			margin-top: -5px;
 			margin-right: 15px;
-		    font-size: 18px;
-		    color: #a3cf62;
-		    vertical-align: middle;
+			font-size: 18px;
+			color: #a3cf62;
+			vertical-align: middle;
 		}
 		.navbar-collapse .navbar-nav .message .dropdown-toggle{
 			padding: 15px 15px;
@@ -332,18 +332,18 @@
 			background-color: #2f2f2f;
 		}
 		.navbar-collapse .navbar-nav .message .dropdown-toggle a{
-		    color: #c8c8c8;
-		    /* height: 60px; */
-		    font-size: 17px;
-		    font-weight: bold;
+			color: #c8c8c8;
+			/* height: 60px; */
+			font-size: 17px;
+			font-weight: bold;
 		}
 		.navbar-collapse .navbar-nav .message .dropdown-menu a{
 			padding: 10px 20px;
-		    line-height: 30px;
-		    color: #c8c8c8;
-		    transition: all .1s ease;
-		    text-align: left;
-		    /* background-color:  */
+			line-height: 30px;
+			color: #c8c8c8;
+			transition: all .1s ease;
+			text-align: left;
+			/* background-color:  */
 		}
 		.navbar-collapse .navbar-nav .message .dropdown-menu a:hover{
 			background-color: #2f2f2f;
@@ -356,17 +356,17 @@
 			width: 100%;
 		}
 		.navbar-nav .message .dropdown-menu .iconfont{
-	        margin-top: -5px;
-		    margin-right: 15px;
-		    font-size: 18px;
-		    color: #a3cf62;
-		    vertical-align: middle;
+			margin-top: -5px;
+			margin-right: 15px;
+			font-size: 18px;
+			color: #a3cf62;
+			vertical-align: middle;
 		}
 		.message .dropdown-menu>li{
 			position: relative;
 		}
 		.message .icon-xinxiaoxi1{
-		    color: #a3cf62;
+			color: #a3cf62;
 			position: absolute;
 			right: 5px;top: 3px;
 			font-size: 10px;
@@ -386,13 +386,13 @@
 		.theme .dropdown-toggle span{
 			vertical-align: middle;
 			color: #c8c8c8;
-		    font-size: 17px;
+			font-size: 17px;
 		}.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
-			background-color: transparent;
-		}
+			 background-color: transparent;
+		 }
 		@media screen and (max-width: 768px)
 		{
-			 .navbar-nav .message .dropdown-menu{
+			.navbar-nav .message .dropdown-menu{
 				position: relative!important;
 				/* display: block;
 			    float: none;
@@ -422,249 +422,234 @@
 			padding-top: 10px;
 		}
 		.side-tool .function-btn{
-		    width: 50px;
-		    height: 50px;
-		    text-align: center;
-		    display: block;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			display: block;
 			-webkit-transition: .1s ease-in;
 			transition: .1s ease-in;
 		}
 		.side-tool {
 			display: none;
-		    position: fixed;
-		    bottom: 50px;
-		    right: 50px;
-		    z-index: 6;
+			position: fixed;
+			bottom: 50px;
+			right: 50px;
+			z-index: 6;
 		}
 	</style>
 	<style type="text/css" role="main-content">
-			.page-container{
-				width: 100%;
-			    padding: 30px 0;
-			    min-height: 800px;
-			}
-			.list-ul{
-				list-style: none;
-				margin-top: 0px;
-				background-color: #3f3f3f;
-				width: auto;
-				padding-left: 10px;
-			}
-			.list-ul>li{
-				line-height: 20px;
-				position: relative;
-			}
-			.list-ul>li>a{
-				padding: 10px 20px;
-			    line-height: 30px;
-			    color: #c8c8c8;
-			    transition: all .1s ease;
-			    text-align: left;
-			    width: auto;
-		        border-radius: 4px;
-	            height: auto;
-			    padding: 10px 25px;
-			    line-height: 30px;
-			    display: block;
-			    font-size: 15px;
-			 	vertical-align: middle;
-			}
-			.list-ul>li.active a{
-				background-color: #2f2f2f;
-			}
-			.list-ul>li{
-				-webkit-transition: all .1s ease;
-			 	transition: all .1s ease;
-			}.list-ul>li:hover{
-				background-color: #2f2f2f;
-			}
-			.list-ul .iconfont{
-		        margin-top: -5px;
-			    margin-right: 15px;
-			    font-size: 24px;
-			    color: #a3cf62;
-			    vertical-align: middle;
-			}
-			.list-ul .icon-xinxiaoxi1{
-				color: #a3cf62;
-				position: absolute;
-				right: 5px;top: 3px;
-				font-size: 10px!important;
-			}
-			.list-ul .glyphicon{
-				margin-top: -5px;
-				margin-right: 15px;
-			    font-size: 24px;
-			    color: #a3cf62;
-			    vertical-align: middle;
-			}
-			.right-part .menu {
-			    margin-bottom: 20px;
-			    font-size: 14px;
-			    font-weight: 700;
-			}
-			.follow-container .follow-list{
-			    list-style: none;
-			    padding-left: 0;
-		        margin-top: 0;	
-				margin-bottom: 10px;
-			    font-size: 15px;
-			}
-			.follow-container .follow-list>li{
-				position: relative;
-		        border-top: 1px solid;
-		        border-color: #2f2f2f;
-		        line-height: 20px;
-			} 
-			.follow-container .follow-list .pull-right {
-				position: relative;
-			    margin: 20px 20px 0 0;
-			    font-size: 13px;
-			    z-index: 5;
-			}
-			.follow-container .follow-list .pull-right .time {
-			   margin-right: 5px;
-			}
-			.follow-container .follow-list .pull-right div {
-			    display: inline-block;
-			}
-			.follow-container .follow-list .user-btn .btn-custom{
-				width: auto;
-				margin: 0 10px;
-			}
-			.follow-container .follow-list .user-btn .btn-chats {
-				border: 1px solid rgba(59,194,29,.7);
-    			color: #42c02e;
-				font-size: 15px;
-				cursor: pointer;
-			}
-			.follow-container .follow-list .user-btn .btn-follow{
-				border: 1px solid rgba(59,194,29,.7);
-    			background-color: #42c02e;
-    			color: #fff;
-    			font-size: 15px;
-    			cursor: pointer;
-    			-webkit-transition: all .2s ease;
-			}
-			.follow-container .follow-list .user-btn .following{
-				border-color: #969696;
-    			background-color: transparent;
-    			color: #fff;
-    			font-size: 15px;
-    			cursor: pointer;
-			}
-			.follow-container .follow-list .user-btn .follow-off:hover{
-    			background-color: #3db922;
-			}
-			.follow-container .follow-list .avatar{
-			    float: left;
-			    margin: 20px 15px 20px 20px;
-			    width: 65px;
-			    height: 65px;
-			    display: inline-block;
-			}
-			.follow-container .follow-list .avatar>img{
-			    width: 65px;
-			    height: auto;
-			    border-radius: 50%;
-			}
-			.follow-container .follow-list .user-title {
-				position: relative;
-			    top: 20px;
-			    font-size: 15px;
-		        color: #c8c8c8;
-			}
-			.follow-container .follow-list .user-title .info{
-			    margin-top: 5px;
-			    font-size: 14px;
-			}
-			.follow-container .follow-list .user-title .info ul{
-			    list-style: none;
-			    padding-left: 0;
+		.page-container{
+			width: 100%;
+			padding: 30px 0;
+			min-height: 800px;
+		}
+		.list-ul{
+			list-style: none;
+			/* box-shadow: 0 5px 5px #4a4a4a; */
+			margin-top: 0px;
+			background-color: #3f3f3f;
+			width: auto;
+			padding-left: 10px;
+		}
+		.list-ul>li{
+			line-height: 20px;
+			position: relative;
+		}
+		.list-ul>li>a{
+			padding: 10px 20px;
+			line-height: 30px;
+			color: #c8c8c8;
+			transition: all .1s ease;
+			text-align: left;
+			width: auto;
+			border-radius: 4px;
+			height: auto;
+			padding: 10px 25px;
+			line-height: 30px;
+			display: block;
+			font-size: 15px;
+			vertical-align: middle;
+		}
+		.list-ul>li.active a{
+			background-color: #2f2f2f;
+		}
+		.list-ul>li{
+			-webkit-transition: all .1s ease;
+			transition: all .1s ease;
+		}
+		.list-ul>li:hover{
+			background-color: #2f2f2f;
+		}
+		.list-ul .iconfont{
+			margin-top: -5px;
+			margin-right: 15px;
+			font-size: 24px;
+			color: #a3cf62;
+			vertical-align: middle;
+		}
+		.list-ul .icon-xinxiaoxi1{
+			color: #a3cf62;
+			position: absolute;
+			right: 5px;top: 3px;
+			font-size: 10px!important;
+		}
+		.list-ul .glyphicon{
+			margin-top: -5px;
+			margin-right: 15px;
+			font-size: 24px;
+			color: #a3cf62;
+			vertical-align: middle;
+		}
+		.right-part .comment-container .menu {
+			margin-bottom: 20px;
+			font-size: 14px;
+			font-weight: 700;
+		}
+		.comment-container .comment-list{
+			list-style: none;
+			padding-left: 0;
+			margin-top: 0;
+			margin-bottom: 10px;
+			font-size: 15px;
+		}
+		.notification-list-placeholder{
+			margin-top: -10px;
+			padding: 10px 20px;
+		}
+		.comment-container .comment-list .avatar{
+			display: inline-block;
+			margin-right: 5px;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+		}
+		.comment-container .comment-list .avatar>img{
+			width: 40px;
+			height: auto;
+			border-radius: 50%;
+		}
+		.comment-container .comment-list .unread{
+			padding: 20px 20px 15px 20px;
+			background-color: #3f3f3f;
+			border-top: 1px solid;
+			border-color: #2f2f2f;
+		}
+		.comment-container .comment-list .info{
+			display: inline-block;
+			vertical-align: top;
+			line-height: 1.7;
+		}
+		.comment-container .comment-list .info .user{
+			color: #c8c8c8;
+		}
+		.comment-container .comment-list .info .user:hover{
+			color: #fff;
+		}
+		.comment-container .comment-list .info
+		{
+			margin: 0 5px 0 0;
+		}
+		.comment-container .comment-list .info .note-name:hover{
+			color: #3194d0;
+		}
+		.comment-container .comment-list .time{
+			margin-top: 2px;
+			font-size: 12px;
+			color: #969696;
+			line-height: normal;
+		}
+		.comment-container .comment-list .comment-content{
+			margin: 10px 0 0;
+			font-size: 15px;
+			line-height: 1.7;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			/* -webkit-line-clamp: 3; */
+			-webkit-box-orient: vertical;
+		}
+		.comment-container .comment-list .meta{
+			color: #545454;
+			font-size: 15px;
+			margin-top: 10px;
+			height: 20px;
+		}
+		.notification-list-placeholder .wrap{
+			border-color: #2f2f2f;
+			padding: 23px 20px 20px 72px!important;
+			margin: 0 -20px;
+			border-top: 1px solid #f0f0f0;
+			padding-bottom: 4px!important;
+		}
 
-			}
-			.follow-container .follow-list .user-title .info li{
-			    display: inline-block;
-			    line-height: 20px;
-			}
-			.follow-container .follow-list .user-title .info .meta-block{
-		        font-size: 12px;
-			    margin: 0 7px 6px 0;
-			    padding: 0 7px 0 0;
-			    border-right: 1px solid #2f2f2f;;
-			}
-			.follow-container .follow-list .user-title .info .meta-block a{
-            	color: #969696;
-            	font-size: 12px;
-			}.follow-container .follow-list .user-title .info .meta-block p{
-        	    margin-bottom: -3px;
-    			font-size: 14px;
-			}
-			.follow-container .follow-list .user-title a{
-			    font-size: 18px;
-		        color: #c8c8c8;
-			}
-			.follow-container .follow-list .user-title span{
-			    font-size: 15px;
-		        color: #c8c8c8;
-		        padding: 0 2px;
-			    margin-left: 4px;
-			    font-size: 13px;
-			    color: #ea6f5a;
-			    border: 1px solid #ea6f5a;
-			    border-radius: 3px;
-			    line-height: normal;
-			}
-			.follow-container .follow-list .wrap {
-			    display: block;
-			    padding: 20px 20px 0 50px;
-			    min-height: 88px;
-			}
-			.follow-container .follow-list .wrap  p {
-			    font-size: 12px;
-			    color: #999;
-    		    overflow: hidden;
-			    text-overflow: ellipsis;
-			    display: -webkit-box;
-			    -webkit-line-clamp: 3;
-			    -webkit-box-orient: vertical;
-			}
-			.follow-container .follow-list .dropdown-menu i{
-			    margin-right: 10px;
-			}
-	</style>		
+		.comment-container .comment-list .meta .function-btn{
+			float: left;
+			margin-right: 30px;
+			font-size: 13px;
+			color: #969696;
+			cursor: pointer;
+		}
+		.comment-container .comment-list .meta .function-btn i{
+			margin-right: 5px;
+			font-size: 15px;
+			vertical-align: middle;
+		}
+		.comment-container .comment-list .meta .report{
+			float: right;
+			font-size: 13px;
+			color: #969696;
+			display: none;
+			cursor: pointer;
+		}
+		.notification-list-placeholder .meta .text{
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 20px;
+			height: 14px;
+			width: 26px;
+		}
+		.follow-container .find-nothing{
+			margin-top: 150px;
+			text-align: center;
+		}
+		.follow-container .find-nothing img{
+			width: 100px;
+			vertical-align: middle;
+		}
+
+	</style>
 	<style type="text/css" role="footer">
 		.footer{
-            height: 180px;
-            bottom: 0px;
-            padding-right: 0;
-        }
-        .footer .link{
-            text-align: center;
-            padding-top: 5px;
-            padding-bottom: 5px;
-        }
-        .footer a{
-            padding: 5px;
-            color: #969696;
-            text-decoration-line: none;
-            -webkit-transition: .3s ease;
-            transition: .3s ease;
-        }
-        .footer a:hover{
-        	color: #c8c8c8;
-        }
-        .footer-sns ul{
-        	padding-left: 0;
-     		list-style: none;
-        }
-        .footer-sns ul li{
-        	display: inline-block;
-        }
-        .footer-sns ul li i{
-        	padding: 0 10px;
-        	font-size: 25px;
-        }
+			height: 180px;
+			bottom: 0px;
+			padding-right: 0;
+		}
+		.footer .link{
+			text-align: center;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		.footer a{
+			padding: 5px;
+			color: #969696;
+			text-decoration-line: none;
+			-webkit-transition: .3s ease;
+			transition: .3s ease;
+		}
+		.footer a:hover{
+			color: #c8c8c8;
+		}
+		.footer-sns ul{
+			padding-left: 0;
+			list-style: none;
+		}
+		.footer-sns ul li{
+			display: inline-block;
+		}
+		.footer-sns ul li i{
+			padding: 0 10px;
+			font-size: 25px;
+		}
 	</style>
 	<style type="text/css" role="modal-popup">
 		.theme-btn{
@@ -673,82 +658,82 @@
 		}
 		.modal-popup{
 			box-shadow: 0 5px 5px #4a4a4a;
-		    position: absolute;
-		    display: none;
-		    right: -10px;
-		    top: 66px;
-		    z-index: 1;
-		    padding: 20px 20px 20px 24px;
-		    /* margin-left: -80px; */
-		    min-width: 235px;
-		    background-color: #3f3f3f;
-		    border-radius: 4px;
+			position: absolute;
+			display: none;
+			right: -10px;
+			top: 66px;
+			z-index: 1;
+			padding: 20px 20px 20px 24px;
+			/* margin-left: -80px; */
+			min-width: 235px;
+			background-color: #3f3f3f;
+			border-radius: 4px;
 		}
 		.style-mode .popover-modal:after, .style-mode .popover-modal:before{
-	    	position: absolute;
-		    top: -10px;
-		    left: 78%;
-		    content: "";
-		    display: inline-block;
-		    border: 9px solid transparent;
-		    border-top: none;
+			position: absolute;
+			top: -10px;
+			left: 78%;
+			content: "";
+			display: inline-block;
+			border: 9px solid transparent;
+			border-top: none;
 		}
 		.style-mode .popover-modal:after, nav .style-mode .popover-modal:before{
-		    position: absolute;
-		    top: -10px;
-		    left: 78%;
-		    content: "";
-		    display: inline-block;
-		    border: 9px solid transparent;
-		    border-top: none;
-		    border-bottom-color: #3f3f3f;
-	        top: -9px;
-    		border-bottom: 9px solid #3f3f3f;
+			position: absolute;
+			top: -10px;
+			left: 78%;
+			content: "";
+			display: inline-block;
+			border: 9px solid transparent;
+			border-top: none;
+			border-bottom-color: #3f3f3f;
+			top: -9px;
+			border-bottom: 9px solid #3f3f3f;
 		}
 		.style-mode .day-night-group{
 			width: auto;
-		    vertical-align: middle;
-		    display: inline-block;
-		    height: auto;
+			vertical-align: middle;
+			display: inline-block;
+			height: auto;
 		}
 		.style-mode .switch{
-		    font-size: 0;
-    		letter-spacing: -4px;
+			font-size: 0;
+			letter-spacing: -4px;
 		}
 		.style-mode .switch-btn{
-		    width: 49%;
-		    text-align: center;
-		    font-size: 14px;
-		    letter-spacing: 0!important;
-		    color: #969696;
-		    border: 1px solid #e5e5e5;
-		    vertical-align: middle;
-		    display: inline-block;
+			width: 49%;
+			text-align: center;
+			font-size: 14px;
+			letter-spacing: 0!important;
+			color: #969696;
+			border: 1px solid #e5e5e5;
+			vertical-align: middle;
+			display: inline-block;
 		}
 		.style-mode .meta{
-		    padding-left: 4px;
-		    margin-right: 16px;
-		    font-size: 14px;
-		    color: #969696;
-		    line-height: 40px;
-		    vertical-align: middle;
-		    display: inline-block;
+			padding-left: 4px;
+			margin-right: 16px;
+			font-size: 14px;
+			color: #969696;
+			line-height: 40px;
+			vertical-align: middle;
+			display: inline-block;
 		}
 		.style-mode .switch-btn:first-child{
-		    padding: 10px 13px 10px 17px;
-		    border-radius: 20px 0 0 20px;
-		    border-right: none;
+			padding: 10px 13px 10px 17px;
+			border-radius: 20px 0 0 20px;
+			border-right: none;
 		}
 		.style-mode .switch-btn:last-child {
-		    padding: 10px 17px 10px 13px;
-		    border-radius: 0 20px 20px 0;
-		    border-left: none;
+			padding: 10px 17px 10px 13px;
+			border-radius: 0 20px 20px 0;
+			border-left: none;
 		}
 		.navbar-rightpart .nav li{
 			line-height: 25px;
 		}
 		.style-mode .font-family-group {
-		    margin-bottom: 10px;
+			margin-bottom: 10px;
 		}
 		.style-mode .glyphicon-adjust{
 			font-size: 17px;
@@ -757,11 +742,11 @@
 			padding-right: 3px;
 		}
 		body.night-mode nav .style-mode .switch-btn.active {
-		    color: #dcdcdc;
-		    background-color: #3f7cc1;
-		    box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+			color: #dcdcdc;
+			background-color: #3f7cc1;
+			box-shadow: inset 0 0 6px rgba(0,0,0,.2);
 		}
-	</style>	
+	</style>
 	<body class="night-mode">
 		<nav class="nav navbar-customs">
 			<div class="width-limit">
@@ -812,7 +797,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="navbar-header">
-							<a class="navbar-brand" href="./MainHome-login.html" style="float:left;">
+							<a class="navbar-brand" href="/janebook/MainHome-login" style="float:left;">
 								<img class="logo-top img-rounded" src="./images/tupian.png" alt=""><span class="logo-text">捡书</span>
 							</a>
 							<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -839,23 +824,23 @@
 											<div class="dropdown-toggle " id="message-dropdownMenu" data-toggle="dropdown">
 												<a class="before"><span class="iconfont icon-remind"></span>消息</a>
 												<a class="after"><span class="iconfont icon-remind"></span></a>
-												<i class="iconfont icon-xinxiaoxi1"></i>	
+												<i class="iconfont icon-xinxiaoxi1  mmssgg"></i>
 											</div>	
 										    <ul class="dropdown-menu" role="menu" aria-labelledby="message-dropdownMenu">
 										        <li role="presentation">
-									            	<a role="menuitem" href="Notification.jsp"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1"></i></a>
+									            	<a role="menuitem" href="Notification.jsp"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li>
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-chats.jsp"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1"></i></a>
+										            <a role="menuitem" href="notifi-chats.jsp"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li>
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-like.jsp"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1"></i></a>
-										        </li> 
+										            <a role="menuitem" href="notifi-like.jsp"><span class="glyphicon glyphicon-heart-empty"></span>喜欢和收藏<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+										        </li>
 										        <li role="presentation">
-										            <a role="menuitem" href="./notifi-follow.jsp"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1"></i></a>
-										        </li> 
+										            <a role="menuitem" href="./notifi-follow.jsp"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+										        </li>
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-else.jsp"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1"></i></a>
+										            <a role="menuitem" href="notifi-else.jsp"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li>
 										    </ul>
 									    </div>
@@ -887,13 +872,13 @@
 							<li class="">
 								<a role="menuitem" href="/janebook/Notification"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
-							<li class="active">
+							<li class="">
 								<a role="menuitem" href="/janebook/notifi-chats"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
 							<li class="">
 								<a role="menuitem" href="/janebook/notifi-like"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
-							<li class="">
+							<li class="active">
 								<a role="menuitem" href="/janebook/notifi-follow"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
 							<li class="">
@@ -909,7 +894,7 @@
 
 						</ul>
 						<div class="find-nothing">
-							<img src="./images/common/nothing.png"> 
+							<img src="./images/common/nothing.png">
 							<div class="tip">这里还木有内容哦~</div>
 						</div>
 					</div>
@@ -976,7 +961,7 @@
 
             $.ajax({
                 type:"GET",
-                url:"/janebook/messages/"+"b",
+                url:"/janebook/messages/"+'${tuser.userId}',
                 success:function(data){
                     var flag = 0;
                     var sign = $(".mmssgg");

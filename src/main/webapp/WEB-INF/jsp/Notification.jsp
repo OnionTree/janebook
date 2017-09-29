@@ -42,7 +42,7 @@
 		.night-mode{
 			color: #c8c8c8;
 		}
-		.night-mode a,{
+		.night-mode a{
 			color: #969696;
 		}
 		.night-mode p{
@@ -801,7 +801,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="navbar-header">
-							<a class="navbar-brand" href="./MainHome-login.html" style="float:left;">
+							<a class="navbar-brand" href="/janebook/MainHome-login" style="float:left;">
 								<img class="logo-top img-rounded" src="./images/tupian.png" alt=""><span class="logo-text">捡书</span>
 							</a>
 							<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -873,20 +873,20 @@
 				<div class="right-part col-md-3 col-xs-4">
 					<div class="tabs-list">
 						<ul class="list-ul">
-							<li class="">
-								<a role="menuitem" href="/janebook/Notification"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
-							</li>
 							<li class="active">
-								<a role="menuitem" href="/janebook/notifi-chats"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+								<a role="menuitem" href="./Notification.html"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
 							<li class="">
-								<a role="menuitem" href="/janebook/notifi-like"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+								<a role="menuitem" href="./notifi-chats.html"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
 							<li class="">
-								<a role="menuitem" href="/janebook/notifi-follow"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+								<a role="menuitem" href="./notifi-like.html"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
 							<li class="">
-								<a role="menuitem" href="/janebook/notifi-else"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+								<a role="menuitem" href="./notifi-follow.html"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
+							</li>
+							<li class="">
+								<a role="menuitem" href="./notifi-else.html"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
 						</ul>
 					</div>
@@ -963,10 +963,11 @@
                 return fmt;
             }
 
-
+			var userId = '${tuser.userId}';
+			//alert(userId);
             $.ajax({
                 type:"GET",
-                url:"/janebook/messages/"+"b",
+                url:"/janebook/messages/"+'${tuser.userId}',
                 success:function(data){
                     var flag = 0;
                     var sign = $(".mmssgg");
@@ -977,6 +978,7 @@
                             var type = obj.type;
                             if(obj.readed!=0){
                                 if(!(sign.eq(type).hasClass('icon-xinxiaoxi1'))){
+                                    alert(1)
                                     if(!(sign.eq(0).hasClass('icon-xinxiaoxi1')))
                                     	sign.eq(0).addClass('icon-xinxiaoxi1');
 

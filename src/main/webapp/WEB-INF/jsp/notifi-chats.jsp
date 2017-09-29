@@ -582,6 +582,14 @@
 			.chats-container .jianxin-list .dropdown-menu i{
 			    margin-right: 10px;
 			}
+			.chats-container .find-nothing{
+				margin-top: 150px;
+				text-align: center;
+			}
+			.chats-container .find-nothing img{
+				width: 100px;
+				vertical-align: middle;
+			}
 	</style>		
 	<style type="text/css" role="footer">
 		.footer{
@@ -762,7 +770,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="navbar-header">
-							<a class="navbar-brand" href="./MainHome-login.html" style="float:left;">
+							<a class="navbar-brand" href="/janebook/MainHome-login" style="float:left;">
 								<img class="logo-top img-rounded" src="./images/tupian.png" alt=""><span class="logo-text">捡书</span>
 							</a>
 							<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -926,7 +934,7 @@
 
                 $.ajax({
 				type:"GET",
-				url:"/janebook/messages/"+"b",
+				url:"/janebook/messages/"+'${tuser.userId}',
 				success:function(data){
 				    var flag = 0;
 					var sign = $(".mmssgg");

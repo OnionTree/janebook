@@ -28,9 +28,9 @@ public class MessageController {
         return messageService.delMessage(id);
     }
 
-    @GetMapping("/message/{id}")
-    public TMessage getMessage(@PathVariable("id") Integer id){
-        return messageService.getMessage(id);
+    @GetMapping("/messages/{id}")
+    public List<TMessage> getMessage(@PathVariable("id") String id){
+        return messageService.getMessages(id);
     }
 
     @GetMapping("messages/{pagenum}/{pagesize}")

@@ -512,11 +512,11 @@
 			    width: 100px;
 		        vertical-align: middle;
 			}
-			.else-container .find-nothing .tip {
-			    margin-top: 20px;
-			    font-size: 14px;
-			    font-weight: 700;
-			}
+			/*.else-container .find-nothing .tip {*/
+			    /*margin-top: 20px;*/
+			    /*font-size: 14px;*/
+			    /*font-weight: 700;*/
+			/*}*/
 	</style>		
 	<style type="text/css" role="footer">
 		.footer{
@@ -697,7 +697,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="navbar-header">
-							<a class="navbar-brand" href="./MainHome-login.html" style="float:left;">
+							<a class="navbar-brand" href="/janebook/MainHome-login" style="float:left;">
 								<img class="logo-top img-rounded" src="./images/tupian.png" alt=""><span class="logo-text">捡书</span>
 							</a>
 							<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -724,23 +724,23 @@
 											<div class="dropdown-toggle " id="message-dropdownMenu" data-toggle="dropdown">
 												<a class="before"><span class="iconfont icon-remind"></span>消息</a>
 												<a class="after"><span class="iconfont icon-remind"></span></a>
-												<i class="iconfont icon-xinxiaoxi1"></i>	
+												<i class="iconfont icon-xinxiaoxi1  mmssgg"></i>
 											</div>	
 										    <ul class="dropdown-menu" role="menu" aria-labelledby="message-dropdownMenu">
 										        <li role="presentation">
-									            	<a role="menuitem" href="Notification.jsp"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1"></i></a>
+									            	<a role="menuitem" href="Notification.jsp"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li>
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-chats.jsp"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1"></i></a>
+										            <a role="menuitem" href="notifi-chats.jsp"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li>
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-like.jsp"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1"></i></a>
+										            <a role="menuitem" href="notifi-like.jsp"><span class="glyphicon glyphicon-heart-empty"></span>喜欢汗收藏<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li> 
 										        <li role="presentation">
-										            <a role="menuitem" href="notifi-follow.jsp"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1"></i></a>
+										            <a role="menuitem" href="notifi-follow.jsp"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li> 
 										        <li role="presentation">
-										            <a role="menuitem" href="./notifi-else.jsp"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1"></i></a>
+										            <a role="menuitem" href="./notifi-else.jsp"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 										        </li>
 										    </ul>
 									    </div>
@@ -772,7 +772,7 @@
 							<li class="">
 								<a role="menuitem" href="/janebook/Notification"><span class="glyphicon glyphicon-comment"></span>我的评论<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
-							<li class="active">
+							<li class="">
 								<a role="menuitem" href="/janebook/notifi-chats"><span class="glyphicon glyphicon-envelope"></span>我的私信<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
 							<li class="">
@@ -781,7 +781,7 @@
 							<li class="">
 								<a role="menuitem" href="/janebook/notifi-follow"><span class="iconfont icon-follow01"></span>我的关注<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
-							<li class="">
+							<li class="active">
 								<a role="menuitem" href="/janebook/notifi-else"><span class="glyphicon glyphicon-list"></span>其他信息<i class="iconfont icon-xinxiaoxi1 mmssgg"></i></a>
 							</li>
 						</ul>

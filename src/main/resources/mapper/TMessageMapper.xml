@@ -10,7 +10,7 @@
     <result column="readed" property="readed" jdbcType="VARCHAR" />
     <result column="time" property="time" jdbcType="TIMESTAMP" />
     <result column="article" property="article" jdbcType="VARCHAR" />
-    <result column="calssify" property="calssify" jdbcType="VARCHAR" />
+    <result column="classify" property="classify" jdbcType="VARCHAR" />
     <result column="acid" property="acid" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -72,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, type, mes_content, send_id, recive_id, readed, time, article, calssify, acid
+    id, type, mes_content, send_id, recive_id, readed, time, article, classify, acid
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xycode.janebook.model.TMessageExample" >
     select
@@ -107,11 +107,11 @@
   <insert id="insert" parameterType="com.xycode.janebook.model.TMessage" >
     insert into t_message (id, type, mes_content, 
       send_id, recive_id, readed, 
-      time, article, calssify, 
+      time, article, classify,
       acid)
     values (#{id,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{mesContent,jdbcType=VARCHAR}, 
       #{sendId,jdbcType=VARCHAR}, #{reciveId,jdbcType=VARCHAR}, #{readed,jdbcType=VARCHAR}, 
-      #{time,jdbcType=TIMESTAMP}, #{article,jdbcType=VARCHAR}, #{calssify,jdbcType=VARCHAR}, 
+      #{time,jdbcType=TIMESTAMP}, #{article,jdbcType=VARCHAR}, #{classify,jdbcType=VARCHAR},
       #{acid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.xycode.janebook.model.TMessage" >
@@ -141,8 +141,8 @@
       <if test="article != null" >
         article,
       </if>
-      <if test="calssify != null" >
-        calssify,
+      <if test="classify != null" >
+        classify,
       </if>
       <if test="acid != null" >
         acid,
@@ -173,8 +173,8 @@
       <if test="article != null" >
         #{article,jdbcType=VARCHAR},
       </if>
-      <if test="calssify != null" >
-        #{calssify,jdbcType=VARCHAR},
+      <if test="classify != null" >
+        #{classify,jdbcType=VARCHAR},
       </if>
       <if test="acid != null" >
         #{acid,jdbcType=INTEGER},
@@ -214,8 +214,8 @@
       <if test="record.article != null" >
         article = #{record.article,jdbcType=VARCHAR},
       </if>
-      <if test="record.calssify != null" >
-        calssify = #{record.calssify,jdbcType=VARCHAR},
+      <if test="record.classify != null" >
+        classify = #{record.classify,jdbcType=VARCHAR},
       </if>
       <if test="record.acid != null" >
         acid = #{record.acid,jdbcType=INTEGER},
@@ -235,7 +235,7 @@
       readed = #{record.readed,jdbcType=VARCHAR},
       time = #{record.time,jdbcType=TIMESTAMP},
       article = #{record.article,jdbcType=VARCHAR},
-      calssify = #{record.calssify,jdbcType=VARCHAR},
+      classify = #{record.classify,jdbcType=VARCHAR},
       acid = #{record.acid,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -265,8 +265,8 @@
       <if test="article != null" >
         article = #{article,jdbcType=VARCHAR},
       </if>
-      <if test="calssify != null" >
-        calssify = #{calssify,jdbcType=VARCHAR},
+      <if test="classify != null" >
+        classify = #{classify,jdbcType=VARCHAR},
       </if>
       <if test="acid != null" >
         acid = #{acid,jdbcType=INTEGER},
@@ -283,7 +283,7 @@
       readed = #{readed,jdbcType=VARCHAR},
       time = #{time,jdbcType=TIMESTAMP},
       article = #{article,jdbcType=VARCHAR},
-      calssify = #{calssify,jdbcType=VARCHAR},
+      classify = #{classify,jdbcType=VARCHAR},
       acid = #{acid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

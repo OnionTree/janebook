@@ -29,7 +29,7 @@
           		
           	   	  <!-- 正常登录登录名输入框 -->
           		  <div class="input-prepend restyle js-normal">
-          		      <input placeholder="手机号或邮箱" type="text" name="userId" id="session_email_or_mobile_number">
+          		      <input placeholder="手机号或邮箱" type="text" name="userId" id="session_email_or_mobile_number" style="border-bottom: 0px; border-radius: 0px;">
           			  <i class="iconfont icon-yonghu1"></i>
           		  </div>
           		
