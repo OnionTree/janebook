@@ -92,7 +92,7 @@
                     <img src="./images/collection/Music.png" alt="">
                     <div class="collection-name">音乐</div>
                 </a>
-                <a href="#" class="more-collection">
+                <a href="/janebook/hottopic" class="more-collection">
                     更多热门专题  >
                 </a>
             </div>

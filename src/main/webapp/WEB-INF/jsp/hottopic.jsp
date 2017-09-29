@@ -45,7 +45,7 @@
 	<div class="row">
 		<div class="col-md-4 list-container">
 			<div class="collection-wrap">
-				<a href="">
+				<a href="/janebook/mytopic">
 					<img src="images/user.jpg" class="collrction-img">
 					<h4>性熬</h4>
 					<p> 今天，我突然，觉得，我是，真的，帅的不得了！
@@ -64,7 +64,7 @@
 		</div>
 		<div class="col-md-4 list-container">
 			<div class="collection-wrap">
-				<a href="">
+				<a href="/janebook/mytopic">
 					<img src="images/user.jpg" class="collrction-img">
 					<h4>性熬</h4>
 					<p> 今天，我突然，觉得，我是，真的，帅的不得了！

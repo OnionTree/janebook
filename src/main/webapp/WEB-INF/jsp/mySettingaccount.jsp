@@ -19,7 +19,7 @@
 		<div class="col-md-3 leftside">
 			<ul class="leftside-set">
 				<li class="basicset">
-					<a href="#" >
+					<a href="/janebook/mySetting" >
 						<div class="setting-icon">
 							<i class="iconfont icon-category"></i>
 						</div>
@@ -27,7 +27,7 @@
 					</a>
 				</li>
 				<li class="basicset">
-					<a href="#">
+					<a href="/janebook/mySettingpre">
 						<div class="setting-icon">
 							<i class="iconfont icon-gerenziliao"></i>
 						</div>
@@ -35,7 +35,7 @@
 					</a>
 				</li>
 				<li class="basicset">
-					<a href="#">
+					<a href="/janebook/mySettingblanklist">
 						<div class="setting-icon">
 							<i class="iconfont icon-heimingdan"></i>
 						</div>
@@ -43,7 +43,7 @@
 					</a>
 				</li>
 				<li class="basicset">
-					<a href="#"  class="active">
+					<a href="/janebook/mySettingaccount"  class="active">
 						<div class="setting-icon">
 							<i class="iconfont icon-shezhi"></i>
 						</div>

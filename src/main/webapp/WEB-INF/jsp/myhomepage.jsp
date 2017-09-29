@@ -166,7 +166,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#" class="ming-list-sp">
+					<a href="/janebook/myfavourart" class="ming-list-sp">
 						<i class="iconfont icon-Love"></i>
 						<span>我喜欢的文章</span>
 					</a>
@@ -175,14 +175,14 @@
 			<div>
 				<div class="add-border">
 					<div class="title">我创建的专题</div>
-					<a href="" class="new-topic">
+					<a href="/janebook/mynewtopic" class="new-topic">
 						<i class="iconfont icon-add"> </i>
 						<span style="color: #9aff9a">新建专题</span>
 					</a>
 					<ul class="topic-list">
 						<li>
-							<a href="" class="ming-collection"><img src="images/user.jpg"></a>
-							<a href="" class="ming-name ming-list-sp">aaaaaaa</a>
+							<a href="/janebook/mytopic" class="ming-collection"><img src="images/user.jpg"></a>
+							<a href="/janebook/mytopic" class="ming-name ming-list-sp">aaaaaaa</a>
 						</li>
 					</ul>
 				</div>
