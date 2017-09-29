@@ -4,19 +4,20 @@
 	top: 34px;
 	margin-left: 60px;
 	width: 100px;
+	background-color: transparent;
 }
 .sign{
 	height: 100%;
 	min-height: 750px;
 	text-align: center;
 	font-size: 14px;
-	background-color:#f1f1f1 ;
+	background-color: #3f3f3f;
 }
 
 .sign .reset-title .active, .sign .title .active{
 	font-weight:700;
-	color:#ea6f5a;
-	border-bottom: 2px solid #ea6f5a;
+	color:#a3cf62;
+	border-bottom: 2px solid #a3cf62;
 }
 
 .sign .reset-title a, .sign .title a{
@@ -73,6 +74,7 @@
 	padding: 50px 50px 30px;
 	background-color:#fff;
 	border-radius: 4px;
+	border-color: #0C0C0C;
 	box-shadow: 0 0 8px rgba(0,0,0,.1);
 	vertical-align:middle;
 	display:inline-block;
@@ -159,6 +161,7 @@ body,html{
 	height: 100%;
 }
 body{
+	background-color: #3f3f3f;
 	line-height: 1.42857;
 	color: #333;
 	margin: 0;

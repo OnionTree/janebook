@@ -93,6 +93,8 @@ public class StartController {
         return "login";
     }
 
+
+
     @RequestMapping("/notifi-chats")
     public String nChats() {
         return "notifi-chats";
@@ -147,6 +149,10 @@ public class StartController {
     public String mySettingaccountPage() {
         return "mySettingaccount";
     }
+    @RequestMapping("/myhomepage")
+    public String myhomepagePage() {
+        return "myhomepage";
+    }
 
     @RequestMapping("/mySettingblanklist")
     public String mySettingblanklistPage() {
@@ -162,6 +168,11 @@ public class StartController {
     @RequestMapping("/mySetting")
     public String mySettingPage() {
         return "mySetting";
+    }
+
+    @RequestMapping("/hottopic")
+    public String hottopicPage() {
+        return "hottopic";
     }
 
     @RequestMapping("/register")

@@ -4,17 +4,17 @@
 	<head>
         <meta charset="utf-8" />
 	    <title>登陆 - 捡书</title>
-	    <link rel="stylesheet" href="css/loginstyle.css" />
-	    <link rel="stylesheet" href="./css/iconfont.css">
+	    <link rel="stylesheet"  type="text/css"  href="./css/loginstyle.css" />
+	    <link rel="stylesheet"  type="text/css"  href="./css/iconfont.css">
 	</head>
 	
 	<body class="no-padding reader-black-font" lang="zh-CN">
-	    <div class="sign">
+	    <div class="sign" style="background-color: #3F3F3F">
 	    <div class="logo"> 
-	    	<a href="http://www.jianshu.com/"><img src="img/logo.png" width="122" height="62" alt="logo"></a>
+	    	<a href="http://www.jianshu.com/"><img src="images/loginlogo.png" width="122" height="62" alt="logo"></a>
 	    </div>
       
-       <div class="main">
+       <div class="main" style="background-color: #4c504a">
            <h4 class="title">
                <div class="normal-title">
           		    <a class="active" href="/janebook/login">登录</a>
@@ -57,7 +57,7 @@
           			社交账号登录		 
                 </h6>
           		<ul>
-          		    <li><a class="weibo"  target="_blank" href=""><i class="iconfont icon-sina"></i></a></li>
+          		    <li><a class="weibo"  target="_blank" href=""><i class="iconfont icon-weibo"></i></a></li>
           		  	<li><a class="weixin" target="_blank" href=""><i class="iconfont icon-icon-"></i></a></li>
           		  	<li><a class="qq" target="_blank" href=""><i class="iconfont icon-qq"></i></a></li>
           		</ul>

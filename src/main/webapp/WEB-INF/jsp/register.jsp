@@ -5,19 +5,18 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-	<link rel="stylesheet" href="css/restyle.css" />
 	<link rel="stylesheet" type="text/css" href="./css/restyle.css">
-	<link rel="stylesheet" href="./css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="./css/iconfont.css">
 	<title>注册 - 捡书</title>
 </head>
 <body class="no-padding reader-black-font nounderline" lang="zh-CN">
-<div class="sign">
+<div class="sign" style="background-color: #3F3F3F">
 	<div class="logo">
 		<a>
-			<img src="./img/logo.png" width="122" height="62" alt="logo">
+			<img src="./images/loginlogo.png" width="122" height="62" alt="logo">
 		</a>
 	</div>
-	<div class="main">
+	<div class="main" style=" background-color: #4c504a">
 		<h4 class="title">
 			<div class="normal-title">
 				<a class href="/janebook/login">登录 </a>
@@ -64,7 +63,7 @@
 					社交账号直接注册
 				</h6>
 				<ul>
-					<li><a class="weibo"  target="_blank" href=""><i class="iconfont icon-sina"></i></a></li>
+					<li><a class="weibo"  target="_blank" href=""><i class="iconfont icon-weibo"></i></a></li>
 					<li><a class="weixin" target="_blank" href=""><i class="iconfont icon-icon-"></i></a></li>
 					<li><a class="qq" target="_blank" href=""><i class="iconfont icon-qq"></i></a></li>
 				</ul>

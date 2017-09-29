@@ -1,75 +1,4 @@
-td, th {
-    text-align: left;
-    display: table-cell;
-    vertical-align: inherit;
-}
-
-.newtopicpart table{
-    width: 100%;
-}
-.setting-head{
-    width: 150px;
-    text-align: left;
-    padding: 0
-}
-.newtopicpart h3{
-    color: #c8c8c8;
-    margin: 20px 0;
-}
-.newtopicpart tbody tr{
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-.newtopicpart tbody td{
-    font-size: 15px;
-    padding: 16px 0;
-}
-.newtopicpart .topic-img{
-    width: 100px;
-    height: 100px;
-    display: block;
-    border-radius: 10%;
-}
-.newtopicpart .topic-img img{
-    width: 100%;
-    height: 100%;
-    border-radius: 10%;
-}
-.btn-hollow {
-    border: 1px solid rgba(59,194,29,.7);
-    color: #42c02e!important;
-    border-radius: 40px;
-}
-.setting-title{
-    font-size: 16px;
-    color: #969696;
-}
-.newtopicpart input {
-    padding: 10px 15px;
-    font-size: 15px;
-    border: 1px solid #333;
-    border-radius: 4px;
-    background-color: hsla(0,0%,71%,.1);
-}
-.newtopicpart textarea {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 10px;
-    padding: 10px 15px;
-    font-size: 15px;
-    border: 1px solid #333;
-    border-radius: 4px;
-    background-color: hsla(0,0%,71%,.1);
-    display: block;
-    resize: none;
-    outline-style: none;
-}
-.setting-la div{
-    padding-left: 0;
-    color: #c8c8c8;
-    font-size: 16px;
-}body{
+body{
     background-color:#3f3f3f;
     color: #c8c8c8;
 }
@@ -371,6 +300,7 @@ ul{
     padding: 13px 20px;
     font-size: 15px;
     font-weight: 700;
+    color: #969696;
 }
 .ming-info{
     padding:  5px 10px;
@@ -411,18 +341,4 @@ ul{
 }
 .ming-list-sp{
     color: #c8c8c8;
-}
-.setting-save{
-    border-radius: 40%;
-    background-color: #3db922;
-    color: #fff;
-    width: 100px;
-    margin: 30px 0 60px;
-    border-radius: 20px;
-    border: none;
-}
-.btn-hollow{
-    font-size: 14px;
-    border: 1px solid rgba(59,194,29,.7);
-    color: #42c02e!important;
 }

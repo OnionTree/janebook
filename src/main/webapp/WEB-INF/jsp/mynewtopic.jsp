@@ -82,6 +82,7 @@
 				</tr>
 				</tbody>
 			</table>
+			<input type="submit"  class="btn btn-hollow setting-save" value="保存">
 		</div>
 	</div>
 </div>

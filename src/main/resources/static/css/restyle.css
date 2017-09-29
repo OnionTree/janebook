@@ -45,7 +45,7 @@ body{
 
 .sign .main{
 	width: 400px;
-	margin: 60px auto 0;
+	margin: 85px auto 0;
 	padding:50px 50px 30px;
 	background-color:#fff;
 	border-radius:4px;
@@ -73,8 +73,8 @@ body{
 }
 .sign .reset-title .active, .sign .title .active{
 	font-weight:700;
-	color:#ea6f5a;
-	border-bottom:2px solid #ea6f5a;
+	color:#a3cf62;
+	border-bottom:2px solid #a3cf62;
 }
 .sign .reset-title a, .sign .title a{
 	padding:10px;

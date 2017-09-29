@@ -1,0 +1,113 @@
+body {
+    background-color: #3f3f3f;
+    min-width: 768px;
+    padding-top: 66px;
+}
+
+.list-container{
+    padding: 0 30px;
+}
+
+.hottopic{
+    position: relative;
+    text-align: center;
+    padding: 30px 0 50px;
+}
+.hottopicimg{
+    width: 100%;
+    min-height: 100px;
+    background-color: hsla(0,0%,71%,.2);
+    border-radius: 6px;
+    vertical-align: middle;
+}
+.hottopic .triggle-menu{
+    margin: 30px 0 0 ;
+    padding-left: 0;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    font-size: 0;
+    list-style: none;
+}
+.triggle-menu li{
+    position: relative;
+    display: inline-block;
+    padding: 8px 0;
+    margin-bottom: -1px;
+    line-height: 20px;
+}
+.triggle-menu .active{
+    border-bottom: 2px solid #646464;
+}
+.triggle-menu a{
+    padding: 13px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #969696;
+    line-height: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.collection-wrap{
+    height: 380px;
+    margin-top: 80px;
+    padding: 0 20px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    background-color: hsla(0,0%,71%,.1);
+    border: 1px solid;
+}
+.collrction-img{
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 20px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    border-color: #2f2f2f;
+    border-radius: 8px;
+}
+.collection-wrap h4{
+    font-size: 24px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #c8c8c8;
+}
+.collection-wrap a{
+    cursor: pointer;
+    text-decoration: none;
+}
+.collection-wrap p{
+    padding: 12px 0;
+    min-height: 55px;
+    font-size: 15px;
+    line-height: 27px;
+    color: #c8c8c8;
+}
+.follow{
+    width: 100px;
+    padding: 10px 0;
+    border-color: #42c02e;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 40px;
+    color: #fff;
+    background-color: #42c02e;
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #333;
+}
+.count{
+    color: #c8c8c8;
+    font-size: 14px;
+}
+.count a{
+    color: #c8c8c8;
+    cursor: pointer;
+    text-decoration: none;
+}
