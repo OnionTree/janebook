@@ -121,5 +121,32 @@
 		</div>
 	</div>
 </nav>
+<script>
+    $.ajax({
+        type:"GET",
+        url:"/janebook/messages/"+'${tuser.userId}',
+        success:function(data){
+            var flag = 0;
+            var sign = $(".mmssgg");
+            sign.removeClass('icon-xinxiaoxi1');
+            var msgbox = $("#msg-box");
+            if(data.length>0){
+                $.each(data, function(n,obj) {
+                    var type = obj.type;
+                    if (obj.readed != 0) {
+                        if (!(sign.eq(type).hasClass('icon-xinxiaoxi1'))) {
+                            if (!(sign.eq(0).hasClass('icon-xinxiaoxi1')))
+                                sign.eq(0).addClass('icon-xinxiaoxi1');
 
+                            sign.eq(type).addClass('icon-xinxiaoxi1');
+                            //sign.eq(parseInt(type) + 5).addClass('icon-xinxiaoxi1');
+                            //alert(sign.eq(parseInt(type)+5).parent().html());
+                        }
+                    }
+
+                })
+			}
+		}
+	});
+</script>
 </html>

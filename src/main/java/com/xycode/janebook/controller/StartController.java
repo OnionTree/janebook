@@ -11,6 +11,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,6 +29,12 @@ public class StartController {
     ArticleService articleService;
     @Autowired
     UserService userService;
+
+    @RequestMapping("article/{id}")
+    public String toArticle(@PathVariable Integer id, Model model){
+        model.addAttribute("article", id);
+        return "article";
+    }
     //登陆后的主页
     @RequestMapping("/MainHome-login")
     public String homeLogined(){
@@ -45,12 +52,16 @@ public class StartController {
     }
 
     @RequestMapping("/index")
-    public ModelAndView indexPage() {
+    public ModelAndView indexPage(HttpServletRequest request) {
         log_.info("indexPage invoke ....");
         List<TArticle> at = articleService.getHomeArticle();
         List<TUser> user = userService.getrecTuer();
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("MainHome");
+        if(request.getSession().getAttribute("tuser")!=null){
+            mv.setViewName("MainHome-login");
+        }else{
+            mv.setViewName("MainHome");
+        }
         mv.addObject("TArticle", at);
         mv.addObject("TUser",user);
         return mv;

@@ -832,7 +832,7 @@
 						    if(obj.readed!=0){
                                 if(!(sign.eq(type).hasClass('icon-xinxiaoxi1'))){
                                     if(!(sign.eq(0).hasClass('icon-xinxiaoxi1')))
-                                        sign.eq(0).addClass('icon-xinxiaoxi1');
+                                        //sign.eq(0).addClass('icon-xinxiaoxi1');
                                     sign.eq(type).addClass('icon-xinxiaoxi1');
                                     sign.eq(parseInt(type)+5).addClass('icon-xinxiaoxi1');
                                     //alert(sign.eq(parseInt(type)+5).parent().html());
