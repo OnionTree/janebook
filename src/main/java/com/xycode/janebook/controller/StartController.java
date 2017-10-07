@@ -2,8 +2,10 @@ package com.xycode.janebook.controller;
 
 
 import com.xycode.janebook.model.TArticle;
+import com.xycode.janebook.model.TClassify;
 import com.xycode.janebook.model.TUser;
 import com.xycode.janebook.service.ArticleService;
+import com.xycode.janebook.service.ClassifyService;
 import com.xycode.janebook.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -29,7 +31,8 @@ public class StartController {
     ArticleService articleService;
     @Autowired
     UserService userService;
-
+    @Autowired
+    ClassifyService classifyService;
     @RequestMapping("article/show/{id}")
     public String toArticle(@PathVariable Integer id, Model model){
         model.addAttribute("article", id);
@@ -157,10 +160,16 @@ public class StartController {
     }
 
     @RequestMapping("/mytopic")
-    public String mytopicPage() {
-        return "mytopic";
-    }
+    public ModelAndView mytopicPage(int id) {
+        List<TArticle> tArticles = articleService.getallArticle(id);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("mytopic");
+        mv.addObject("TArticle",tArticles);
 
+        mv.addObject("toptitle", tArticles.get(0).getTag());
+        System.out.println(tArticles);
+        return mv;
+    }
     @RequestMapping("/mynewtopic")
     public String mynewtopicPage() {
         return "mynewtopic";
@@ -175,9 +184,17 @@ public class StartController {
     public String mySettingaccountPage() {
         return "mySettingaccount";
     }
+
     @RequestMapping("/myhomepage")
-    public String myhomepagePage() {
-        return "myhomepage";
+    public ModelAndView myhomepagePage(String name) {
+        System.out.println(name);
+        List<TArticle> tArticles = articleService.getmenberArticle(name);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("myhomepage");
+        mv.addObject("TArticle",tArticles);
+        mv.addObject("topname", tArticles.get(0).getAuthorName());
+        System.out.println(tArticles);
+        return mv;
     }
 
     @RequestMapping("/mySettingblanklist")
@@ -197,10 +214,15 @@ public class StartController {
     }
 
     @RequestMapping("/hottopic")
-    public String hottopicPage() {
-        return "hottopic";
-    }
+    public ModelAndView hottopicPage() {
 
+        List<TClassify> tClassify = classifyService.gettClassifies();
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("hottopic");
+        mv.addObject("TClassify",tClassify);
+        System.out.println(tClassify);
+        return mv;
+    }
     @RequestMapping("/register")
     public String registerPage() {
         return "register";

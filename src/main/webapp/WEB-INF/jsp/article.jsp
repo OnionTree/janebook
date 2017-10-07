@@ -1600,10 +1600,10 @@
                 <%--</div>--%>
                 <div class="meta-bottom">
                     <div class="like">
-                        <div class="btn btn-like like-group-active">
+                        <div class="btn btn-like like-group">
                             <div class="love"><a><i class="iconfont icon-Love"></i>喜欢</a>
                             </div>
-                            <div class="modal-wrap"><a>131</a>
+                            <div  class="modal-wrap"><a id="like-num">131</a>
                             </div>
                         </div>
                     </div>
@@ -1859,6 +1859,7 @@
                 $("#article-browse").html("阅读 "+data.browse);
                 $("#article-favor").html("收藏 "+data.hot);
                 $("#article-reward").html("喜欢 "+data.reward);
+                $("#like-num").html(data.reward);
                 $(".note-text").html(data.content);
             }
         })
@@ -2127,7 +2128,7 @@
         });
     });
     $(function(love) {
-        var like_count = 131;
+        var like_count = $("#like-num").html();
         $(".note .post .meta-bottom .btn-like").on('click', function() {
             var _count = $(this).children('.modal-wrap');
             // layer.msg(_count)
