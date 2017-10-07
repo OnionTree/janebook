@@ -33,9 +33,9 @@ public class ComFirController {
         return commentaryFirService.getCommentaryFir(id);
     }
 
-    @GetMapping("commentaryfirs/{pagenum}/{pagesize}")
-    public List<TCommentaryFir> getCommentaryFirsByPage(@PathVariable Integer pagenum, @PathVariable Integer pagesize){
-        return commentaryFirService.getCommentaryFirsPage(pagenum,pagesize);
+    @GetMapping("commentaryfirs/{articleid}/{pagenum}/{pagesize}")
+    public List<TCommentaryFir> getCommentaryFirsByPage(@PathVariable Integer articleid, @PathVariable Integer pagenum, @PathVariable Integer pagesize){
+        return commentaryFirService.getCommentaryFirsPage(articleid,pagenum,pagesize);
     }
 
 }

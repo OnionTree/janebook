@@ -1,6 +1,6 @@
 (function(window){
 
-var path = "./emoji/",  //项目所在的根地址
+var path = "/janebook/emoji/",  //项目所在的根地址
 	emojis = {
 	"baidu" : {
 		"name" : "贴吧",

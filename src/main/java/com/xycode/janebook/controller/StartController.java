@@ -30,7 +30,7 @@ public class StartController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("article/{id}")
+    @RequestMapping("article/show/{id}")
     public String toArticle(@PathVariable Integer id, Model model){
         model.addAttribute("article", id);
         return "article";
@@ -90,6 +90,8 @@ public class StartController {
             request.getSession().setAttribute("tuser", tuser);
             List<TArticle> at = articleService.getHomeArticle();
             List<TUser> user = userService.getrecTuer();
+            TUser userInfo = userService.getUserByUserName(tuser.getUserId());
+            request.getSession().setAttribute("userInfo", userInfo);
             mv.setViewName("MainHome-login");
             mv.addObject("TArticle", at);
             mv.addObject("TUser",user);

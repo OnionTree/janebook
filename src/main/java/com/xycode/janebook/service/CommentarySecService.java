@@ -43,8 +43,11 @@ public class CommentarySecService {
         return commentarySecMapper.selectByPrimaryKey(id);
     }
 
-    public List<TCommentarySec> getCommentarySecsPage(Integer pagenum, Integer pagesize){
+    public List<TCommentarySec> getCommentarySecsPage(String articleid, Integer pagenum, Integer pagesize){
+        TCommentarySecExample commentarySecExample = new TCommentarySecExample();
+        TCommentarySecExample.Criteria criteria = commentarySecExample.createCriteria();
+        criteria.andReviewerIdEqualTo(articleid);
         PageHelper.startPage(pagenum, pagesize);
-        return commentarySecMapper.selectByExample(new TCommentarySecExample());
+        return commentarySecMapper.selectByExample(commentarySecExample);
     }
 }

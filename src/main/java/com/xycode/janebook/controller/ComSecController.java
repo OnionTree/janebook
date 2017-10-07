@@ -33,9 +33,9 @@ public class ComSecController {
         return commentarSecService.getCommentarySec(id);
     }
 
-    @GetMapping("commentarysecs/{pagenum}/{pagesize}")
-    public List<TCommentarySec> getCommentarySecsByPage(@PathVariable Integer pagenum, @PathVariable Integer pagesize){
-        return commentarSecService.getCommentarySecsPage(pagenum,pagesize);
+    @GetMapping("commentarysecs/{articleid}/{pagenum}/{pagesize}")
+    public List<TCommentarySec> getCommentarySecsByPage( @PathVariable Integer pagenum, @PathVariable Integer pagesize,@PathVariable String articleid){
+        return commentarSecService.getCommentarySecsPage(articleid, pagenum,pagesize);
     }
 
 }

@@ -7,18 +7,15 @@
         <result column="an" property="articleNum" jdbcType="INTEGER"/>
         <result column="fans" property="fans" jdbcType="INTEGER"/>
         <result column="follow" property="follow" jdbcType="INTEGER"/>
-        <result column="info" property="info" jdbcType="VARCHAR"/>
-        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
-
+        <association property="user" column="author_name" resultMap="com.xycode.janebook.mapper.TUserMapper.BaseResultMap"/>
     </resultMap>
 
     <select id="selectUsersArticleMsg" resultMap="myMap1" parameterType="string">
         SELECT COUNT(*) an, sum(word_num) wn,
         (SELECT count(user_id) FROM t_relationship WHERE friend_id = #{user_id}) fans,
         (SELECT count(user_id) FROM t_relationship WHERE user_id = #{user_id}) follow,
-        (SELECT info FROM  t_user WHERE user_id = #{user_id}) info,
-        (SELECT nickname FROM  t_user WHERE user_id = #{user_id}) nickname
-        FROM t_article WHERE author_name = #{user_id};
+        info,avatar,nickname
+        FROM t_article a, t_user u WHERE author_name = #{user_id} AND  user_id=#{user_id};
     </select>
 
 </mapper>

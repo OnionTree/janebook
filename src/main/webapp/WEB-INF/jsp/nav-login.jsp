@@ -26,7 +26,7 @@
 				<li class="user-avatar">
 					<div class="dropdown" style="padding: 10px 15px;">
 						<a class="avatar dropdown-toggle" id="user-dropdownMenu" data-toggle="dropdown">
-							<img src="./images/avatar/user.png" alt="">
+							<img src="/janebook/images/avatar/user.png" alt="">
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="user-dropdownMenu">
@@ -55,7 +55,7 @@
 			<div class="row">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="/janebook/index" style="float:left;">
-						<img class="logo-top img-rounded" src="./images/tupian.png" alt=""><span class="logo-text">捡书</span>
+						<img class="logo-top img-rounded" src="/janebook/images/tupian.png" alt=""><span class="logo-text">捡书</span>
 					</a>
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 							data-target="#nav-navbar-collapse">

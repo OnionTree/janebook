@@ -43,9 +43,12 @@ public class CommentaryFirService {
         return commentaryFirMapper.selectByPrimaryKey(id);
     }
 
-    public List<TCommentaryFir> getCommentaryFirsPage(Integer pagenum, Integer pagesize){
+    public List<TCommentaryFir> getCommentaryFirsPage(Integer articleid, Integer pagenum, Integer pagesize){
         PageHelper.startPage(pagenum, pagesize);
-        return commentaryFirMapper.selectByExample(new TCommentaryFirExample());
+        TCommentaryFirExample commentaryFirExample = new TCommentaryFirExample();
+        TCommentaryFirExample.Criteria criteria = commentaryFirExample.createCriteria();
+        criteria.andArticleIdEqualTo(articleid);
+        return commentaryFirMapper.selectByExample(commentaryFirExample);
     }
 
 }
