@@ -104,7 +104,7 @@
 
 					<c:forEach items="${TArticle}" var="at">
 						<li class="note-item">
-							<a class="note-img" href="#">
+							<a class="note-img" href="/janebook/article/show/${at.id}">
 								<img src="${at.img}">
 							</a>
 							<div class="note-content">
@@ -117,7 +117,7 @@
 										<span class="time" id="time" data-shared-at="2017-09-09T20:13:35+08:00">${at.createTime}</span>
 									</div>
 								</div>
-								<a class="title" target="_blank" href="#">${at.title}</a>
+								<a class="title" target="_blank" href="/janebook/article/show/${at.id}">${at.title}</a>
 								<p class="abstract">
 										${at.content}
 								</p>
