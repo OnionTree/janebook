@@ -62,4 +62,12 @@ public class ArticleService {
         return articleMapper.selectByExample(articleExample);
     }
 
+    public List<TArticle> getallArticle(Integer id){
+        return articleMapper.getallArticle(id);
+    }
+
+    public List<TArticle> getmenberArticle(String name){
+        return articleMapper.getmenberArticle(name);
+    }
+
 }

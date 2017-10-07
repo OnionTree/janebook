@@ -7,6 +7,11 @@ import com.xycode.janebook.model.TArticleExample;
 import org.apache.ibatis.annotations.Param;
 
 public interface TArticleMapper {
+
+    List<TArticle> getallArticle(Integer id);
+
+    List<TArticle> getmenberArticle(String name);
+
     int countByExample(TArticleExample example);
 
     int deleteByExample(TArticleExample example);

@@ -55,41 +55,41 @@
 	<div class="row main">
 		<div class="main-left col-md-8 col-xs-8">
 			<div class="recommend-collection">
-				<a href="#" class="collection">
+				<a href="/janebook/mytopic?id=1"  target="_blank" class="collection">
 					<img src="./images/collection/EntertainmentGossip.png" alt="">
-					<div class="collection-name">娱乐八卦</div>
+					<div class="collection-name">连载小说</div>
 				</a>
-				<a href="#" class="collection">
+				<a href="/janebook/mytopic?id=3" target="_blank" class="collection">
 					<img src="./images/collection/Animate.jpg" alt="">
-					<div class="collection-name">漫画&动画</div>
+					<div class="collection-name">谈写作</div>
 				</a>
-				<a href="#" class="collection">
+				<a href="/janebook/mytopic?id=17"  target="_blank" class="collection">
 					<img src="./images/collection/Books.jpg" alt="">
-					<div class="collection-name">读书</div>
+					<div class="collection-name">社会热点</div>
 				</a>
-				<a href="#" class="collection">
+				<a href="/janebook/mytopic?id=4"  target="_blank" class="collection">
 					<img src="./images/collection/Prose.jpg" alt="">
+					<div class="collection-name">微小说</div>
+				</a>
+				<a href="/janebook/mytopic?id=5"  target="_blank" class="collection">
+					<img src="./images/collection/Camera.png" alt="">
+					<div class="collection-name">世间事</div>
+				</a>
+				<a href="/janebook/mytopic?id=6" target="_blank" class="collection">
+					<img src="./images/collection/Moyu.jpg" alt="">
+					<div class="collection-name">乡土故事</div>
+				</a>
+				<a href="/janebook/mytopic?id=7" target="_blank" class="collection">
+					<img src="./images/collection/Rua.jpg" alt="">
 					<div class="collection-name">散文</div>
 				</a>
-				<a href="#" class="collection">
-					<img src="./images/collection/Camera.png" alt="">
-					<div class="collection-name">摄影</div>
-				</a>
-				<a href="#" class="collection">
-					<img src="./images/collection/Moyu.jpg" alt="">
-					<div class="collection-name">上班<span style="text-decoration:line-through;">摸鱼</span></div>
-				</a>
-				<a href="#" class="collection">
-					<img src="./images/collection/Rua.jpg" alt="">
-					<div class="collection-name">猛男</div>
-				</a>
-				<a href="#" class="collection">
+				<a href="/janebook/mytopic?id=8"  target="_blank" class="collection">
 					<img src="./images/collection/RPG.jpg" alt="">
-					<div class="collection-name">游戏<span style="text-decoration:line-through;">打Gay</span></div>
+					<div class="collection-name">行业故事汇</div>
 				</a>
-				<a href="#" class="collection">
+				<a href="/janebook/mytopic?id=9"  target="_blank" class="collection">
 					<img src="./images/collection/Music.png" alt="">
-					<div class="collection-name">音乐</div>
+					<div class="collection-name">旅行、在路上</div>
 				</a>
 				<a href="/janebook/hottopic" class="more-collection">
 					更多热门专题  >
@@ -113,8 +113,8 @@
 										<img class="img-rounded" src="./images/avatar/kaziya.jpg">
 									</a>
 									<div class="name">
-										<a target="_blank" href="#">${at.authorName}</a>
-										<span class="time" data-shared-at="2017-09-09T20:13:35+08:00">${at.createTime}</span>
+										<a target="_blank" href="/janebook/myhomepage?name=${at.authorName}">${at.authorName}</a>
+										<span class="time" id="time" data-shared-at="2017-09-09T20:13:35+08:00">${at.createTime}</span>
 									</div>
 								</div>
 								<a class="title" target="_blank" href="#">${at.title}</a>
@@ -122,7 +122,7 @@
 										${at.content}
 								</p>
 								<div class="meta">
-									<a class="collection-tag" target="_blank" href="#">${at.tag}</a>
+									<a class="collection-tag" target="_blank" href="/janebook/mytopic?id=${at.classifyId}">${at.tag}</a>
 									<a target="_blank" href="#">
 										<span class="glyphicon glyphicon-eye-open"></span> ${at.browse}
 									</a>

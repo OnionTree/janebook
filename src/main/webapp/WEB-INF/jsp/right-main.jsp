@@ -17,7 +17,7 @@
                             '<img class="img-rounded" src="./images/avatar/ha.jpg">'+
                             '</a>'+
                             '<a class="follow following" state="0"><i class="iconfont icon-selected"></i> 已关注</a>'+
-                            '<a href="#" class="name">'+v.userId+'</a>'+
+                            '<a href="/janebook/myhomepage?name='+v.userId+'" target="_blank" class="name">'+v.userId+'</a>'+
                             '<p>写了29.9k字 · 1.2k喜欢</p>'+
                             '</li>')
                     }))
@@ -78,7 +78,7 @@
 						<img class="img-rounded" src="./images/avatar/ha.jpg">
 					</a>
 					<a class="follow following" state="0"><i class="iconfont icon-selected"></i> 已关注</a>
-					<a href="#" class="name">${user.userId}</a>
+					<a href="/janebook/myhomepage?name=${user.userId}" target="_blank" class="name">${user.userId}</a>
 					<p>写了29.9k字 · 1.2k喜欢</p>
 				</li>
 			</c:forEach>

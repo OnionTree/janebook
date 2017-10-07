@@ -3,3 +3,5 @@ target/
 .classpath
 .settings/
 .project
+src/main/java/com/xycode/janebook/controller/StartController.java
+src/main/webapp/WEB-INF/jsp/myhomepage.jsp

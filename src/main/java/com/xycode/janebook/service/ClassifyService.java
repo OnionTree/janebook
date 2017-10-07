@@ -18,6 +18,10 @@ public class ClassifyService {
     @Autowired
     TClassifyMapper classifyMapper;
 
+    public  List<TClassify> gettClassifies(){
+        return classifyMapper.gettClassifies();
+    }
+
     public List<TClassify> getClassifys(Integer pagenum, Integer pagesize){
         PageHelper.offsetPage(pagenum,pagesize);
         return classifyMapper.selectByExample(new TClassifyExample());

@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -43,14 +44,13 @@
 		</li>
 	</ul>
 	<div class="row">
+		<c:forEach items="${TClassify}" var="tClassify">
 		<div class="col-md-4 list-container">
 			<div class="collection-wrap">
-				<a href="/janebook/mytopic">
+				<a href="/janebook/mytopic?id=${tClassify.id}">
 					<img src="images/user.jpg" class="collrction-img">
-					<h4>性熬</h4>
-					<p> 今天，我突然，觉得，我是，真的，帅的不得了！
-						今天，我突然，觉得，我是，真的，帅的不得了！
-					</p>
+					<h4>${tClassify.classifyName}</h4>
+					<p>${tClassify.classifyInfo}</p>
 				</a>
 				<a href="" class="btn btn-success follow">
 					<i class="iconfont icon-add"></i>
@@ -62,158 +62,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4 list-container">
-			<div class="collection-wrap">
-				<a href="/janebook/mytopic">
-					<img src="images/user.jpg" class="collrction-img">
-					<h4>性熬</h4>
-					<p> 今天，我突然，觉得，我是，真的，帅的不得了！
-						今天，我突然，觉得，我是，真的，帅的不得了！
-					</p>
-				</a>
-				<a href="" class="btn btn-success follow">
-					<i class="iconfont icon-add"></i>
-					<span>关注</span>
-				</a>
-				<hr>
-				<div class="count">
-					<a href="">17777篇文章</a> .112313人关注
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 list-container">
-			<div class="collection-wrap">
-				<a href="">
-					<img src="images/user.jpg" class="collrction-img">
-					<h4>性熬</h4>
-					<p> 今天，我突然，觉得，我是，真的，帅的不得了！
-						今天，我突然，觉得，我是，真的，帅的不得了！
-					</p>
-				</a>
-				<a href="" class="btn btn-success follow">
-					<i class="iconfont icon-add"></i>
-					<span>关注</span>
-				</a>
-				<hr>
-				<div class="count">
-					<a href="">17777篇文章</a> .112313人关注
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 list-container">
-			<div class="collection-wrap">
-				<a href="">
-					<img src="images/user.jpg" class="collrction-img">
-					<h4>性熬</h4>
-					<p> 今天，我突然，觉得，我是，真的，帅的不得了！
-						今天，我突然，觉得，我是，真的，帅的不得了！
-					</p>
-				</a>
-				<a href="" class="btn btn-success follow">
-					<i class="iconfont icon-add"></i>
-					<span>关注</span>
-				</a>
-				<hr>
-				<div class="count">
-					<a href="">17777篇文章</a> .112313人关注
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 list-container">
-			<div class="collection-wrap">
-				<a href="">
-					<img src="images/user.jpg" class="collrction-img">
-					<h4>性熬</h4>
-					<p> 今天，我突然，觉得，我是，真的，帅的不得了！
-						今天，我突然，觉得，我是，真的，帅的不得了！
-					</p>
-				</a>
-				<a href="" class="btn btn-success follow">
-					<i class="iconfont icon-add"></i>
-					<span>关注</span>
-				</a>
-				<hr>
-				<div class="count">
-					<a href="">17777篇文章</a> .112313人关注
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 list-container">
-			<div class="collection-wrap">
-				<a href="">
-					<img src="images/user.jpg" class="collrction-img">
-					<h4>性熬</h4>
-					<p> 今天，我突然，觉得，我是，真的，帅的不得了！
-						今天，我突然，觉得，我是，真的，帅的不得了！
-					</p>
-				</a>
-				<a href="" class="btn btn-success follow">
-					<i class="iconfont icon-add"></i>
-					<span>关注</span>
-				</a>
-				<hr>
-				<div class="count">
-					<a href="">17777篇文章</a> .112313人关注
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 list-container">
-			<div class="collection-wrap">
-				<a href="">
-					<img src="images/user.jpg" class="collrction-img">
-					<h4>性熬</h4>
-					<p> 今天，我突然，觉得，我是，真的，帅的不得了！
-						今天，我突然，觉得，我是，真的，帅的不得了！
-					</p>
-				</a>
-				<a href="" class="btn btn-success follow">
-					<i class="iconfont icon-add"></i>
-					<span>关注</span>
-				</a>
-				<hr>
-				<div class="count">
-					<a href="">17777篇文章</a> .112313人关注
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 list-container">
-			<div class="collection-wrap">
-				<a href="">
-					<img src="images/user.jpg" class="collrction-img">
-					<h4>性熬</h4>
-					<p> 今天，我突然，觉得，我是，真的，帅的不得了！
-						今天，我突然，觉得，我是，真的，帅的不得了！
-					</p>
-				</a>
-				<a href="" class="btn btn-success follow">
-					<i class="iconfont icon-add"></i>
-					<span>关注</span>
-				</a>
-				<hr>
-				<div class="count">
-					<a href="">17777篇文章</a> .112313人关注
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 list-container">
-			<div class="collection-wrap">
-				<a href="">
-					<img src="images/user.jpg" class="collrction-img">
-					<h4>性熬</h4>
-					<p> 今天，我突然，觉得，我是，真的，帅的不得了！
-						今天，我突然，觉得，我是，真的，帅的不得了！
-					</p>
-				</a>
-				<a href="" class="btn btn-success follow">
-					<i class="iconfont icon-add"></i>
-					<span>关注</span>
-				</a>
-				<hr>
-				<div class="count">
-					<a href="">17777篇文章</a> .112313人关注
-				</div>
-			</div>
-		</div>
+		</c:forEach>
 	</div>
 </div>
 </body>

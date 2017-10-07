@@ -21,7 +21,15 @@
 
   <!--获取首页前五条数据-->
   <select id="getHomeArticle" resultMap="BaseResultMap"  >
-     SELECT * FROM t_article LIMIT 5
+     SELECT * FROM t_article order by rand() LIMIT 5
+  </select>
+
+  <select id="getallArticle" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    SELECT * FROM t_article WHERE classify_id = #{id}
+  </select>
+
+  <select id="getmenberArticle" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    SELECT * FROM t_article WHERE author_name = #{name}
   </select>
 
   <sql id="Example_Where_Clause" >

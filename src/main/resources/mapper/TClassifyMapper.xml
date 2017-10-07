@@ -13,6 +13,11 @@
     <result column="follow" property="follow" jdbcType="INTEGER" />
     <result column="is_city" property="isCity" jdbcType="INTEGER" />
   </resultMap>
+
+  <select id="gettClassifies" resultMap="BaseResultMap"  >
+    select * from  t_classify order by rand() LIMIT 9
+  </select>
+
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

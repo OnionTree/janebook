@@ -7,6 +7,9 @@ import com.xycode.janebook.model.TClassifyExample;
 import org.apache.ibatis.annotations.Param;
 
 public interface TClassifyMapper {
+
+    List<TClassify> gettClassifies();
+
     int countByExample(TClassifyExample example);
 
     int deleteByExample(TClassifyExample example);

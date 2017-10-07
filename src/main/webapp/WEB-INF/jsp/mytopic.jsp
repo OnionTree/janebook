@@ -1,4 +1,6 @@
 <%@ page language="java" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -28,7 +30,7 @@
 				</a>
 				<div class="btn btn-hollow topic-collection">收录</div>
 				<div class="topic-title">
-					<a href="" class="title">玉蒲团</a>
+					<a href="" class="title">${toptitle}</a>
 				</div>
 				<div class="topic-info">
 					收录了一篇文章-0人关注
@@ -47,6 +49,7 @@
 			</ul>
 			<div class="bottom">
 				<ul class="ming-list" style="border:none;">
+					<c:forEach items="${TArticle}" var="tArticles">
 					<li class="ming">
 						<a href="#" class="ming-img">
 							<img src="images/green.jpg" alt="">
@@ -57,13 +60,13 @@
 									<img src="images/user.jpg" alt="">
 								</a>
 								<div class="ming-info">
-									<a href="" class="avatar-name">孔明Kun</a>
-									<span class="avatar-time">2017:10:24</span>
+									<a href="" class="avatar-name">${tArticles.authorName}</a>
+									<span class="avatar-time">${tArticles.createTime}</span>
 								</div>
 							</div>
-							<a href="#" class="ming-title">食盐实验誓言势焰石岩</a>
+							<a href="#" class="ming-title">${tArticles.title}</a>
 							<p class="ming-abstract">
-								我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比,我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比
+								${tArticles.content}
 							</p>
 							<div class="ming-meta">
 								<a href="#">
@@ -78,37 +81,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="ming">
-						<a href="#" class="ming-img">
-							<img src="images/green.jpg" alt="">
-						</a>
-						<div class="ming-content">
-							<div class="ming-author">
-								<a href="#" class="avatar">
-									<img src="images/user.jpg" alt="">
-								</a>
-								<div class="ming-info">
-									<a href="" class="avatar-name">孔明Kun</a>
-									<span class="avatar-time">2017:10:24</span>
-								</div>
-							</div>
-							<a href="#" class="ming-title">食盐实验誓言势焰石岩</a>
-							<p class="ming-abstract">
-								我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比,我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比
-							</p>
-							<div class="ming-meta">
-								<a href="#">
-									<i class="iconfont icon-liulan"></i>12
-								</a>
-								<a href="#">
-									<i class="iconfont icon-comments"></i>1
-								</a>
-								<span>
-                                        <i class="iconfont icon-Love"></i>2
-                                    </span>
-							</div>
-						</div>
-					</li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>
