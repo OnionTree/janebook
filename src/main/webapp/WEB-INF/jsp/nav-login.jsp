@@ -48,7 +48,7 @@
 						</ul>
 					</div>
 				</li>
-				<li><a href="#"><button class="btn btn-custom btn-write"><span class="glyphicon glyphicon-pencil"></span>我TM写</button></a></li>
+				<li><a href="/janebook/editor"><button class="btn btn-custom btn-write"><span class="glyphicon glyphicon-pencil"></span>我TM写</button></a></li>
 			</ul>
 		</div>
 		<div class="container-fluid">

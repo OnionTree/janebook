@@ -70,4 +70,11 @@ public class ArticleService {
         return articleMapper.getmenberArticle(name);
     }
 
+    public List<TArticle> getArticleByClassify(Integer classifyId){
+        TArticleExample articleExample = new TArticleExample();
+        TArticleExample.Criteria criteria = articleExample.createCriteria();
+        criteria.andClassifyIdEqualTo(classifyId);
+        return articleMapper.selectByExample(articleExample);
+    }
+
 }

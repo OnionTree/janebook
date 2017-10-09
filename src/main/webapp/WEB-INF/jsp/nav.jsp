@@ -12,7 +12,7 @@
 				<li><a href="/janebook/index"><span class="glyphicon glyphicon-font"></span><span class="glyphicon glyphicon-adjust"></span></a></li>
 				<li><a href="/janebook/login">登陆</a></li>
 				<li><a href="/janebook/register"><button class="btn btn-custom btn-sign-up" type="button">注册</button></a></li>
-				<li><a href="#"><button class="btn btn-custom btn-write"><span class="glyphicon glyphicon-pencil"></span>我TM写</button></a></li>
+				<li><a href="/janebook/login"><button class="btn btn-custom btn-write"><span class="glyphicon glyphicon-pencil"></span>我TM写</button></a></li>
 			</ul>
 		</div>
 		<div class="container-fluid">

@@ -33,6 +33,14 @@ public class StartController {
     UserService userService;
     @Autowired
     ClassifyService classifyService;
+
+
+    @RequestMapping("/editor")
+    public String toEditor(){
+        return "editor";
+    }
+
+    //文章跳转
     @RequestMapping("article/show/{id}")
     public String toArticle(@PathVariable Integer id, Model model){
         model.addAttribute("article", id);
@@ -261,12 +269,6 @@ public class StartController {
     }
 
 
-    @RequestMapping("/editor")
-    public String hello() {
-        System.out.println("helo2");
-
-        return "editor";
-    }
 
     @RequestMapping("/admin")
     public String toAdmin(Model model) {

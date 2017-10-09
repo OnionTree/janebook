@@ -59,7 +59,10 @@ public class ClassifyService {
         return classifyMapper.selectByExample(classifyExample);
     }
 
-    public TClassify getClassify(Integer id){
-        return classifyMapper.selectByPrimaryKey(id);
+    public List<TClassify> getClassify(String id){
+        TClassifyExample classifyExample = new TClassifyExample();
+        TClassifyExample.Criteria criteria = classifyExample.createCriteria();
+        criteria.andClassifyAdminEqualTo(id);
+        return classifyMapper.selectByExample(classifyExample);
     }
 }

@@ -53,7 +53,7 @@ public class ClassifyController {
     }
 
     @GetMapping("/classify/{id}")
-    public TClassify getClassify(@PathVariable Integer id){
+    public List<TClassify> getClassify(@PathVariable String id){
         return classifyService.getClassify(id);
     }
 

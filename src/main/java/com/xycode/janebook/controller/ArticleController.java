@@ -1,6 +1,7 @@
 package com.xycode.janebook.controller;
 
 import com.xycode.janebook.model.TArticle;
+import com.xycode.janebook.model.TClassify;
 import com.xycode.janebook.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -45,6 +46,10 @@ public class ArticleController {
         map.put("count", String.valueOf(data.size()));
         map.put("data", data);
         return map;
+    }
+    @GetMapping("/article/c/{classifyId}")
+    public List<TArticle> getArticleByClassify(@PathVariable Integer classifyId){
+        return articleService.getArticleByClassify(classifyId);
     }
 
     @GetMapping("articles/{like}")
