@@ -1,5 +1,6 @@
 <%@ page language="java" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -15,7 +16,13 @@
 
 
 <body class="night-mode">
-<%@include file="nav.jsp"%>
+
+<shiro:authenticated>
+	<%@include file="nav-login.jsp"%>
+</shiro:authenticated>
+<shiro:guest>
+	<%@include file="nav.jsp"%>
+</shiro:guest>
 <div class="container main-content">
 	<div class="row carousel-contanier">
 		<div class="carousel slide" id="recommend-carousel">

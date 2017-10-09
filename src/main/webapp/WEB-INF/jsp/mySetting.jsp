@@ -1,3 +1,4 @@
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ page language="java" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -13,7 +14,12 @@
 </head>
 
 <body>
-<%@include file="nav-login.jsp"%>
+<shiro:authenticated>
+    <%@include file="nav-login.jsp"%>
+</shiro:authenticated>
+<shiro:guest>
+    <%@include file="nav.jsp"%>
+</shiro:guest>
 <div class="container settingpart">
     <div class="row">
         <div class="col-md-3 leftside">

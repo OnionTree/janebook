@@ -1,5 +1,6 @@
 <%@ page language="java" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -14,7 +15,12 @@
 </head>
 
 <body>
-<jsp:include page="nav.jsp"></jsp:include>
+<shiro:authenticated>
+	<%@include file="nav-login.jsp"%>
+</shiro:authenticated>
+<shiro:guest>
+	<%@include file="nav.jsp"%>
+</shiro:guest>
 <div class="container personal">
 	<div class="row">
 		<div class="col-md-8 ho-leftpart">
@@ -26,11 +32,12 @@
 					<a href="#" class="name">${topname}</a>
 				</div>
 				<div class="info">
+
 					<ul>
 						<li>
 							<div class="mes">
 								<a href="#">
-									<p>22</p>
+									<p>${UserInfo.follow}</p>
 									关注<i class="iconfont icon-more"></i>
 								</a>
 							</div>
@@ -38,7 +45,7 @@
 						<li>
 							<div class="mes">
 								<a href="#">
-									<p>1</p>
+									<p>${UserInfo.fans}</p>
 									粉丝<i class="iconfont icon-more"></i>
 								</a>
 							</div>
@@ -46,7 +53,7 @@
 						<li>
 							<div class="mes">
 								<a href="#">
-									<p>2</p>
+									<p>${UserInfo.articleNum}</p>
 									文章<i class="iconfont icon-more"></i>
 								</a>
 							</div>
@@ -54,7 +61,7 @@
 						<li>
 							<div class="mes">
 								<a href="#">
-									<p>3</p>
+									<p>${UserInfo.wordNum}</p>
 									字数<i class="iconfont icon-more"></i>
 								</a>
 							</div>
@@ -62,12 +69,13 @@
 						<li>
 							<div class="mes" style="border:none;">
 								<a href="#">
-									<p>1000000</p>
-									收获粉丝<i class="iconfont icon-more"></i>
+									<p>19800</p>
+									收获喜欢<i class="iconfont icon-more"></i>
 								</a>
 							</div>
 						</li>
 					</ul>
+
 				</div>
 			</div>
 			<ul class="center">
@@ -128,7 +136,7 @@
 				<i class="iconfont icon-edit">编辑</i>
 			</a>
 			<div class="discrition">
-				<div class="ming-text">我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比</div>
+				<div class="ming-text">${info}</div>
 			</div>
 			<ul class="ming-list">
 				<li>

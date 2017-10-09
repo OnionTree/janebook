@@ -1,3 +1,4 @@
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ page language="java" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -748,7 +749,12 @@
 		}
 	</style>
 	<body class="night-mode">
-	<%@include file="nav-login.jsp"%>
+	<shiro:authenticated>
+		<%@include file="nav-login.jsp"%>
+	</shiro:authenticated>
+	<shiro:guest>
+		<%@include file="nav.jsp"%>
+	</shiro:guest>
 		<div class="container main-content">
 			<div class="row page-container">
 				<div class="right-part col-md-3 col-xs-4">
