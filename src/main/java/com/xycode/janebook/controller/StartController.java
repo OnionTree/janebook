@@ -1,6 +1,8 @@
 package com.xycode.janebook.controller;
 
 
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xycode.janebook.model.TArticle;
 import com.xycode.janebook.model.TClassify;
 import com.xycode.janebook.model.TUser;
@@ -19,7 +21,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 
 
@@ -195,12 +199,19 @@ public class StartController {
 
     @RequestMapping("/myhomepage")
     public ModelAndView myhomepagePage(String name) {
-        System.out.println(name);
+
+        TUser user = (TUser) SecurityUtils.getSubject().getPrincipal();
+        System.out.println( "getPrincipal............"+user.getUserId());
+        name = user.getUserId();
+
         List<TArticle> tArticles = articleService.getmenberArticle(name);
+
         ModelAndView mv = new ModelAndView();
         mv.setViewName("myhomepage");
         mv.addObject("TArticle",tArticles);
         mv.addObject("topname", tArticles.get(0).getAuthorName());
+        mv.addObject("UserInfo",userService.selectUserMsg(name));
+        mv.addObject("info",userService.getUserByUserName(name).getInfo());
         System.out.println(tArticles);
         return mv;
     }

@@ -1523,7 +1523,13 @@
 </css>
 
 <body class="night-mode">
-<%@include file="nav-login.jsp"%>
+<shiro:authenticated>
+    authenticated
+    <%--<%@include file="nav-login.jsp"%>--%>
+</shiro:authenticated>
+<shiro:guest>
+    guest
+</shiro:guest>
 <div class="container main-content">
     <div class="page-container">
         <div class="note">

@@ -14,9 +14,11 @@
 
 <body class="night-mode"><!-- 夜间模式 -->
 <shiro:authenticated>
-    用户[<shiro:principal/>]已身份验证通过
+    <%@include file="nav-login.jsp"%>
 </shiro:authenticated>
-<%@include file="nav-login.jsp"%>
+<shiro:guest>
+    <%@include file="nav.jsp"%>
+</shiro:guest>
 <div class="container main-content">
     <div class="row carousel-contanier">
         <div class="carousel slide" id="recommend-carousel">

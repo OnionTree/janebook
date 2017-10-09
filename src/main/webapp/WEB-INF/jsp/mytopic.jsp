@@ -1,5 +1,6 @@
 <%@ page language="java" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -15,7 +16,12 @@
 </head>
 
 <body>
-<jsp:include page="nav.jsp"></jsp:include>
+<shiro:authenticated>
+	<%@include file="nav-login.jsp"%>
+</shiro:authenticated>
+<shiro:guest>
+	<%@include file="nav.jsp"%>
+</shiro:guest>
 <div class="container mytopic">
 	<div class="row">
 		<div class="col-md-8 topic-left">
