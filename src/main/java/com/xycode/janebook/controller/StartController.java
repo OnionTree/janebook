@@ -44,12 +44,6 @@ public class StartController {
         return "editor";
     }
 
-    //文章跳转
-    @RequestMapping("article/show/{id}")
-    public String toArticle(@PathVariable Integer id, Model model){
-        model.addAttribute("article", id);
-        return "article";
-    }
     //登陆后的主页
     @RequestMapping("/MainHome-login")
     public String homeLogined(){
@@ -200,6 +194,29 @@ public class StartController {
     @RequestMapping("/myhomepage")
     public ModelAndView myhomepagePage(String name) {
 
+        List<TArticle> tArticles = articleService.getmenberArticle(name);
+
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("myhomepage");
+        mv.addObject("TArticle",tArticles);
+        mv.addObject("topname", tArticles.get(0).getAuthorName());
+        mv.addObject("UserInfo",userService.selectUserMsg(name));
+        mv.addObject("info",userService.getUserByUserName(name).getInfo());
+        System.out.println(tArticles);
+        return mv;
+    }
+
+    //文章跳转
+    @RequestMapping("article/show/{id}")
+    public ModelAndView toArticle(@PathVariable Integer id, Model model){
+        model.addAttribute("article", id);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("article");
+        return mv;
+    }
+
+    @RequestMapping("/personpage")
+    public ModelAndView personpage(String name) {
         TUser user = (TUser) SecurityUtils.getSubject().getPrincipal();
         System.out.println( "getPrincipal............"+user.getUserId());
         name = user.getUserId();

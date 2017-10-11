@@ -29,21 +29,17 @@
 			<div class="carousel-inner">
 				<div class="item fadein active">
 					<div class="banner">
-						<a href="#" style="">
+						<a target="_blank" href="/janebook/article/show/1" style="">
 							<img src="./images/1.jpg" alt="First slide">
 						</a>
 					</div>
-				</div>
-				<div class="item">
 					<div class="banner">
-						<a href="#" style="">
+						<a target="_blank" href="/janebook/article/show/2" style="">
 							<img src="./images/2.jpg" alt="First slide">
 						</a>
 					</div>
-				</div>
-				<div class="item">
 					<div class="banner">
-						<a href="#" style="">
+						<a target="_blank" href="/janebook/article/show/3" style="">
 							<img src="./images/3.jpg" alt="First slide">
 						</a>
 					</div>
@@ -111,7 +107,7 @@
 
 					<c:forEach items="${TArticle}" var="at">
 						<li class="note-item">
-							<a class="note-img" href="/janebook/article/show/${at.id}">
+							<a class="note-img"  target="_blank" href="/janebook/article/show/${at.id}">
 								<img src="${at.img}">
 							</a>
 							<div class="note-content">

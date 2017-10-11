@@ -66,11 +66,11 @@
 									<img src="images/user.jpg" alt="">
 								</a>
 								<div class="ming-info">
-									<a href="" class="avatar-name">${tArticles.authorName}</a>
+									<a target="_blank" href="/janebook/myhomepage?name=${tArticles.authorName}" class="avatar-name">${tArticles.authorName}</a>
 									<span class="avatar-time">${tArticles.createTime}</span>
 								</div>
 							</div>
-							<a href="#" class="ming-title">${tArticles.title}</a>
+							<a target="_blank" href="/janebook/article/show/${tArticles.id}" class="ming-title">${tArticles.title}</a>
 							<p class="ming-abstract">
 								${tArticles.content}
 							</p>

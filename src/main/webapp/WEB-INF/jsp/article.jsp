@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="utf-8"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -1524,11 +1525,10 @@
 
 <body class="night-mode">
 <shiro:authenticated>
-    authenticated
-    <%--<%@include file="nav-login.jsp"%>--%>
+    <%@include file="nav-login.jsp"%>
 </shiro:authenticated>
 <shiro:guest>
-    guest
+    <%@include file="nav.jsp"%>
 </shiro:guest>
 <div class="container main-content">
     <div class="page-container">

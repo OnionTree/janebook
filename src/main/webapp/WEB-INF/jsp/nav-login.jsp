@@ -31,7 +31,7 @@
 						</a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="user-dropdownMenu">
 							<li role="presentation">
-								<a role="menuitem" href="/janebook/myhomepage"><span class="glyphicon glyphicon-user"></span>我的主页</a>
+								<a role="menuitem" href="/janebook/personpage"><span class="glyphicon glyphicon-user"></span>我的主页</a>
 							</li>
 							<li role="presentation">
 								<a role="menuitem" href="/janebook/mycollection"><span class="glyphicon glyphicon-bookmark"></span>收藏的文章</a>

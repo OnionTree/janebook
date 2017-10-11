@@ -105,11 +105,11 @@
 										<img src="images/user.jpg" alt="">
 									</a>
 									<div class="ming-info">
-										<a href="" class="avatar-name">${tArticles.getAuthorName()}</a>
+										<a target="_blank" href="/janebook/myhomepage?name=${tArticles.getAuthorName()}" class="avatar-name">${tArticles.getAuthorName()}</a>
 										<span class="avatar-time">${tArticles.getCreateTime()}</span>
 									</div>
 								</div>
-								<a href="#" class="ming-title">${tArticles.getTitle()}</a>
+								<a target="_blank" href="/janebook/article/show/${tArticles.getId()}" class="ming-title">${tArticles.getTitle()}</a>
 								<p class="ming-abstract">
                                  ${tArticles.getContent()}
 								</p>
