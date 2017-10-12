@@ -173,7 +173,7 @@
 							<a href="">
 								<i class="iconfont icon-wenji"></i>
 							</a>
-							<a href="" class="name">我是真的很帅</a>
+							<a href="" class="name">三十六计</a>
 						</li>
 					</ul>
 				</div>

@@ -25,7 +25,7 @@
         <div class="col-md-8 ho-leftpart">
             <div class="top">
                 <a href="#" class="avatar">
-                    <img src="images/user.jpg">
+                    <img src="${user.avatar}">
                 </a>
                 <div class="title">
                     <a href="" class="name">${topname}</a>
@@ -35,7 +35,7 @@
                         <li>
                             <div class="mes">
                                 <a href="#">
-                                    <p>22</p>
+                                    <p>${UserInfo.follow}</p>
                                     关注<i class="iconfont icon-more"></i>
                                 </a>
                             </div>
@@ -43,7 +43,7 @@
                         <li>
                             <div class="mes">
                                 <a href="#">
-                                    <p>1</p>
+                                    <p>${UserInfo.fans}</p>
                                     粉丝<i class="iconfont icon-more"></i>
                                 </a>
                             </div>
@@ -51,7 +51,7 @@
                         <li>
                             <div class="mes">
                                 <a href="#">
-                                    <p>2</p>
+                                    <p>${UserInfo.articleNum}</p>
                                     文章<i class="iconfont icon-more"></i>
                                 </a>
                             </div>
@@ -59,7 +59,7 @@
                         <li>
                             <div class="mes">
                                 <a href="#">
-                                    <p>3</p>
+                                    <p>${UserInfo.wordNum}</p>
                                     字数<i class="iconfont icon-more"></i>
                                 </a>
                             </div>
@@ -67,7 +67,7 @@
                         <li>
                             <div class="mes" style="border:none;">
                                 <a href="#">
-                                    <p>1000000</p>
+                                    <p>99800</p>
                                     收获粉丝<i class="iconfont icon-more"></i>
                                 </a>
                             </div>
@@ -77,23 +77,31 @@
             </div>
             <ul class="center">
                 <li class="option active">
-                    <a href="#"> 喜欢的文章11</a>
+                    <a href="#"> 喜欢的文章2</a>
                 </li>
                 <li class="option">
-                    <a href="/janebook/mycollection">收藏的专题/文集2</a>
+                    <a href="/janebook/mycollection">收藏的专题/文集3</a>
                 </li>
             </ul>
             <div class="bottom">
                 <ul class="ming-list" style="border:none;">
                   <c:forEach items="${TFavor}" var="tFavors">
                     <li class="ming">
-                        <a href="#" class="ming-img">
-                            <img src="images/green.jpg" alt="">
-                        </a>
+
+
+
+                        <c:forEach items="${Articleslist}" var="Articleslist">
+                            <c:if test="${tFavors.articleId==Articleslist.id}">
+                                <a href="#" class="ming-img">
+                                    <img src="${Articleslist.img}" alt="">
+                                </a>
+                            </c:if>
+                        </c:forEach>
+
                         <div class="ming-content">
                             <div class="ming-author">
                                 <a href="#" class="avatar">
-                                    <img src="images/user.jpg" alt="">
+                                    <img src="${user.avatar}" alt="">
                                 </a>
                                 <c:forEach items="${Articleslist}" var="Articleslist">
                                     <c:if test="${tFavors.articleId==Articleslist.id}">
@@ -136,7 +144,7 @@
                 <i class="iconfont icon-edit">编辑</i>
             </a>
             <div class="discrition">
-                <div class="ming-text">我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比</div>
+                <div class="ming-text">${user.info}</div>
             </div>
             <ul class="ming-list">
                 <li>
@@ -161,8 +169,8 @@
                     </a>
                     <ul class="topic-list">
                         <li>
-                            <a href="" class="ming-collection"><img src="images/user.jpg"></a>
-                            <a href="" class="ming-name ming-list-sp">aaaaaaa</a>
+                            <a href="/janebook/mytopic" class="ming-collection"><img src="images/test.jpg"></a>
+                            <a href="/janebook/mytopic" class="ming-name ming-list-sp">历史文化</a>
                         </li>
                     </ul>
                 </div>
@@ -173,7 +181,7 @@
                             <a href="">
                                 <i class="iconfont icon-wenji"></i>
                             </a>
-                            <a href="" class="name">我是真的很帅</a>
+                            <a href="" class="name">三十六计</a>
                         </li>
                     </ul>
                 </div>

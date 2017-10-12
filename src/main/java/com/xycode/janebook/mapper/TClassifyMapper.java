@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 
 public interface TClassifyMapper {
 
+
     List<TClassify> gettClassifies();
 
     int countByExample(TClassifyExample example);

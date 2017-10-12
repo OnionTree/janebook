@@ -185,23 +185,28 @@ public class StartController {
         List<TCollection> tCollections = collectionService.getallcollections(name);
         List<TArticle> Articleslist = new ArrayList<TArticle>();
         int lenght =tCollections.size();
-        //tCollections.get(0).getArticleId();
         System.out.println(lenght);
         for(int i=0;i<lenght;i++){
             System.out.println(tCollections.get(i).getArticleId());
             int index=Integer.parseInt(tCollections.get(i).getArticleId());
-            // System.out.println(index);
-//           int index = new Integer(tCollections.get(i).getArticleId());
-//            System.out.println(index);
             TArticle tArticle = articleService.getArticle(index);
-            //   System.out.println(tArticle);
-            Articleslist.add(tArticle);
 
+            TUser tu = userService.getUserByUserName(tCollections.get(i).getUserId());
+            Articleslist.add(tArticle);
+        }
+        log_.info("Size=="+Articleslist.size());
+        RegExp re = new RegExp();
+        for(int k=0;k<Articleslist.size();k++){
+            String str = Articleslist.get(k).getContent();
+            String temp = re.getTextFromHtml(str)+"...";
+            log_.info("temp==="+temp);
+            Articleslist.get(k).setContent(temp);
         }
         // System.out.println("here");
         // System.out.println(Articleslist.size());
         mv.addObject("TCollection",tCollections);
         mv.addObject("Articleslist",Articleslist);
+        mv.addObject("user",userService.getUserByUserName(name));
         mv.setViewName("mycollection");
         return mv;
     }
@@ -220,19 +225,23 @@ public class StartController {
         for(int i=0;i<lenght;i++){
             System.out.println(tFavors.get(i).getArticleId());
             int index=tFavors.get(i).getArticleId();
-            // System.out.println(index);
-//           int index = new Integer(tCollections.get(i).getArticleId());
-//            System.out.println(index);
             TArticle tArticle = articleService.getArticle(index);
-            //   System.out.println(tArticle);
             Articleslist.add(tArticle);
 
         }
-        // System.out.println("here");
-        // System.out.println(Articleslist.size());
+        log_.info("Size=="+Articleslist.size());
+        RegExp re = new RegExp();
+        for(int k=0;k<Articleslist.size();k++){
+            String str = Articleslist.get(k).getContent();
+            String temp = re.getTextFromHtml(str)+"...";
+            log_.info("temp==="+temp);
+            Articleslist.get(k).setContent(temp);
+        }
         mv.addObject("topname", tFavors.get(0).getUserId());
         mv.addObject("TFavor",tFavors);
         mv.addObject("Articleslist",Articleslist);
+        mv.addObject("user",userService.getUserByUserName(name));
+        mv.addObject("UserInfo",userService.selectUserMsg(name));
         mv.setViewName("myfavourart");
         return mv;
     }
@@ -250,10 +259,11 @@ public class StartController {
         }
         ModelAndView mv = new ModelAndView();
         mv.setViewName("mytopic");
-        mv.addObject("TArticle",tArticles);
 
-        mv.addObject("toptitle", tArticles.get(0).getTag());
-        System.out.println(tArticles);
+        mv.addObject("TArticle",tArticles);
+        mv.addObject("classify",classifyService.selectByPrimaryKey(id));
+        //mv.addObject("toptitle", tArticles.get(0).getTag());
+        //System.out.println("hhhhhhhhhhhhh"+classifyService.selectByPrimaryKey(id));
         return mv;
     }
     @RequestMapping("/mynewtopic")
@@ -297,9 +307,13 @@ public class StartController {
     //文章跳转
     @RequestMapping("article/show/{id}")
     public ModelAndView toArticle(@PathVariable Integer id, Model model){
+
+
+        TArticle tArticles = articleService.getArticle(id);
         model.addAttribute("article", id);
         ModelAndView mv = new ModelAndView();
         mv.setViewName("article");
+        mv.addObject("user",userService.getUserByUserName(tArticles.getAuthorName()));
         return mv;
     }
 

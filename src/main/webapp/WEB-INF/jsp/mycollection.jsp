@@ -28,15 +28,33 @@
 			<ul class="ming-list" style="border:none;">
 				<c:forEach items="${TCollection}" var="tCollections">
 				<li class="ming">
-					<a href="#" class="ming-img">
-						<img src="images/green.jpg" alt="">
-					</a>
+
+					<c:forEach items="${Articleslist}" var="Articleslist">
+						<c:if test="${tCollections.articleId==Articleslist.id}">
+							<a href="#" class="ming-img">
+								<img src="${Articleslist.img}" alt="">
+							</a>
+						</c:if>
+					</c:forEach>
+
+
+
 					<div class="ming-content">
 						<div class="ming-author">
-							<a href="#" class="avatar">
-								<img src="images/user.jpg" alt="">
-							</a>
+
+
+									<a href="#" class="avatar">
+										<img src="${user.avatar}" alt="">
+									</a>
+
+
+
+
+
+
 							<c:forEach items="${Articleslist}" var="Articleslist">
+
+
 								<c:if test="${tCollections.articleId==Articleslist.id}">
 									<div class="ming-info">
 										<a target="_blank" href="/janebook/myhomepage?name=${Articleslist.authorName}" class="avatar-name">${Articleslist.authorName}</a>

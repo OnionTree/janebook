@@ -1538,10 +1538,10 @@
                     <h1 id="article-title" class="title">燃烧你的梦！</h1>
                     <div class="author">
                         <a href="#" class="author-avatar">
-                            <img src="/janebook/images/avatar/quin.jpg" alt="">
+                            <img src="/janebook/${user.avatar}" alt="">
                         </a>
                         <div class="info">
-                            <span class="tag">Gay</span>
+                            <span class="tag">${user.userId}</span>
                             <span id="article-author" class="name"><a href="#">乌石堰</a></span>
                             <a class="btn btn-success follow">+ 关注</a>
                             <div class="meta">
@@ -1591,7 +1591,7 @@
                 <div class="author-detail">
                     <div class="info">
                         <a class="avatar" href="#">
-                            <img src="/janebook/images/avatar/quin.jpg" alt="cmn">
+                            <img src="/janebook/${user.avatar}" alt="cmn">
                         </a>
                         <a class="btn btn-success follow"><span>+ 关注</span></a>
                         <a id = "nickname"class="title" href="#">吴氏炎</a>
@@ -1622,7 +1622,7 @@
                 <div class="comment-list">
                     <div>
                         <form class="new-comment">
-                            <a class="avatar"><img src="${userInfo.avatar}"></a>
+                            <a class="avatar"><img src="/janebook/${user.avatar}"></a>
                             <textarea placeholder="写下你的评论..." id="subText"></textarea>
                             <div class="write-function-block">
                                 <div class="emoji-modal-wrap">

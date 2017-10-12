@@ -27,7 +27,7 @@
 		<div class="col-md-8 topic-left">
 			<div class="topic-left-top">
 				<a href="#" class="topic-img">
-					<img src="images/user.jpg">
+					<img src="${classify.classifyImg}">
 				</a>
 				<a href="" class="btn btn-defualt topic-follow">
 					<i class="iconfont icon-selected">
@@ -36,10 +36,10 @@
 				</a>
 				<div class="btn btn-hollow topic-collection">收录</div>
 				<div class="topic-title">
-					<a href="" class="title">${toptitle}</a>
+					<a href="" class="title">${classify.classifyName}</a>
 				</div>
 				<div class="topic-info">
-					收录了一篇文章-0人关注
+					收录了一篇文章-1人关注
 				</div>
 			</div>
 			<ul class="topic-left-center">
@@ -58,12 +58,12 @@
 					<c:forEach items="${TArticle}" var="tArticles">
 					<li class="ming">
 						<a href="#" class="ming-img">
-							<img src="images/green.jpg" alt="">
+							<img src="${tArticles.img}" alt="">
 						</a>
 						<div class="ming-content">
 							<div class="ming-author">
 								<a href="#" class="avatar">
-									<img src="images/user.jpg" alt="">
+									<img src="images/user/3.jpg" alt="">
 								</a>
 								<div class="ming-info">
 									<a target="_blank" href="/janebook/myhomepage?name=${tArticles.authorName}" class="avatar-name">${tArticles.authorName}</a>

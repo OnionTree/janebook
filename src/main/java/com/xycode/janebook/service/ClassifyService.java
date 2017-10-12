@@ -18,6 +18,10 @@ public class ClassifyService {
     @Autowired
     TClassifyMapper classifyMapper;
 
+    public  TClassify selectByPrimaryKey(Integer id){
+        return classifyMapper.selectByPrimaryKey(id);
+    };
+
     public  List<TClassify> gettClassifies(){
         return classifyMapper.gettClassifies();
     }

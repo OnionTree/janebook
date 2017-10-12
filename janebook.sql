@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50636
 File Encoding         : 65001
 
-Date: 2017-10-12 15:14:55
+Date: 2017-10-12 17:39:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -131,11 +131,17 @@ CREATE TABLE `t_collection` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `article_id` (`article_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='收藏表';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='收藏表';
 
 -- ----------------------------
 -- Records of t_collection
 -- ----------------------------
+INSERT INTO `t_collection` VALUES ('1', '怀左同学', '1', '2017-10-07 15:34:27');
+INSERT INTO `t_collection` VALUES ('2', '怀左同学', '2', '2017-09-15 15:34:52');
+INSERT INTO `t_collection` VALUES ('3', '怀左同学', '3', '2017-08-17 15:35:01');
+INSERT INTO `t_collection` VALUES ('4', 'admin', '1', '2017-10-08 15:35:23');
+INSERT INTO `t_collection` VALUES ('5', 'admin', '2', '2017-09-30 15:35:32');
+INSERT INTO `t_collection` VALUES ('6', 'admin', '3', '2017-08-07 15:35:40');
 
 -- ----------------------------
 -- Table structure for `t_commentary_fir`
@@ -190,11 +196,13 @@ CREATE TABLE `t_favor` (
   `article_id` int(11) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
 -- Records of t_favor
 -- ----------------------------
+INSERT INTO `t_favor` VALUES ('1', '怀左同学', '1', '1', '2017-10-17 15:37:42');
+INSERT INTO `t_favor` VALUES ('2', '怀左同学', '2', '2', '2017-09-09 15:37:55');
 
 -- ----------------------------
 -- Table structure for `t_message`
@@ -319,11 +327,11 @@ CREATE TABLE `t_user` (
 -- Records of t_user
 -- ----------------------------
 INSERT INTO `t_user` VALUES ('admin', 'admin', '管理员', '男', '是的撒', null, '51321', '456431', '451', '2017-08-21 09:34:07', null, null, './images/user/1.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('二九七月', '123456', null, null, null, null, null, null, null, null, null, null, './images/user/9.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('奇奇漫悦读', '123456', null, null, null, null, null, null, null, null, null, null, './images/user/2.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('怀左同学', '123456', '家伟', '男', '我很帅', '', null, null, null, null, null, null, './images/user/3.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('捕手志', '123456', null, null, null, null, null, null, null, null, null, null, './images/user/4.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('沐丞', '123456', null, null, null, null, null, null, null, null, null, null, './images/user/5.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('眼镜姑娘_ ', '123456', null, null, null, null, null, null, null, null, null, null, './images/user/6.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('金春妙', '123456', null, null, null, null, null, null, null, null, null, null, './images/user/7.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('魏清萍', '123456', null, null, null, null, null, null, null, null, null, null, './images/user/8.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('二九七月', '123456', '二九七月', '女', null, null, null, null, null, null, null, null, './images/user/9.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('奇奇漫悦读', '123456', '奇奇漫悦读', '男', null, null, null, null, null, null, null, null, './images/user/2.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('怀左同学', '123456', '怀左同学', '女', '打破你的原则，成为你的例外', '', null, null, null, null, null, null, './images/user/3.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('捕手志', '123456', '捕手志', '男', null, null, null, null, null, null, null, null, './images/user/4.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('沐丞', '123456', '沐丞', '女', null, null, null, null, null, null, null, null, './images/user/5.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('眼镜姑娘_ ', '123456', '眼镜姑娘_ ', '女', null, null, null, null, null, null, null, null, './images/user/6.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('金春妙', '123456', '金春妙', '女', null, null, null, null, null, null, null, null, './images/user/7.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('魏清萍', '123456', '魏清萍', null, null, null, null, null, null, null, null, null, './images/user/8.jpg', null, null, null, '0');
