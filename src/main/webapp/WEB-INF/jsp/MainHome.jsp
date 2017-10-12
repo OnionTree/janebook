@@ -113,7 +113,11 @@
 							<div class="note-content">
 								<div class="author">
 									<a class="avatar" target="_blank" href="#">
-										<img class="img-rounded" src="./images/avatar/kaziya.jpg">
+										<c:forEach items="${uu}" var="uu">
+										<c:if test="${at.authorName==uu.userId}">
+										<img class="img-rounded" src="${uu.avatar}">
+										</c:if>
+										</c:forEach>
 									</a>
 									<div class="name">
 										<a target="_blank" href="/janebook/myhomepage?name=${at.authorName}">${at.authorName}</a>

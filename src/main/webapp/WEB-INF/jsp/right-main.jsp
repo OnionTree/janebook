@@ -14,7 +14,7 @@
                     ($.each(data,function (n,v) {
                         $("#recul").append('<li class="author-item">'+
                             '<a class="avatar"  href="#">'+
-                            '<img class="img-rounded" src="./images/avatar/ha.jpg">'+
+                            '<img class="img-rounded" src="'+v.avatar+'">'+
                             '</a>'+
                             '<a class="follow following" state="0"><i class="iconfont icon-selected"></i> 已关注</a>'+
                             '<a href="/janebook/myhomepage?name='+v.userId+'" target="_blank" class="name">'+v.userId+'</a>'+
@@ -54,15 +54,15 @@
 			<a href="#">查看往期</a>
 		</div>
 		<a href="#" class="daily-content">
-			<img src="./images/daily/neko.jpg" alt="">
+			<img src="./images/daily/1.png" alt="">
 			<div class="note-title">
-				<p>燃烧你的梦！神秘！惊了！绝了！rua！无能狂怒！黑暗剑!</p>
+				<p>黛玉早报171012 —— 《年轻的我们到底该如何相爱》</p>
 			</div>
 		</a>
 		<a href="#" class="daily-content">
-			<img src="./images/daily/goushi.jpg" alt="">
+			<img src="./images/daily/2.png" alt="">
 			<div class="note-title">
-				<p>燃烧你的梦！神秘！惊了！绝了！rua！无能狂怒！黑暗剑!</p>
+				<p>茶点故事011——自己在家分娩的我，把孩子生在了卫生间里</p>
 			</div>
 		</a>
 	</div>
@@ -75,7 +75,7 @@
 			<c:forEach items="${TUser}" var="user">
 				<li class="author-item">
 					<a class="avatar"  href="#">
-						<img class="img-rounded" src="./images/avatar/ha.jpg">
+						<img class="img-rounded" src="${user.avatar}">
 					</a>
 					<a class="follow following" state="0"><i class="iconfont icon-selected"></i> 已关注</a>
 					<a href="/janebook/myhomepage?name=${user.userId}" target="_blank" class="name">${user.userId}</a>

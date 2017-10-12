@@ -101,18 +101,23 @@
             <div class="split-line"></div>
             <div class="list-container">
                 <ul class="note-list">
+
                     <c:forEach items="${TArticle}" var="at">
                         <li class="note-item">
-                            <a class="note-img" href="/janebook/article/show/${at.id}">
+                            <a class="note-img"  target="_blank" href="/janebook/article/show/${at.id}">
                                 <img src="${at.img}">
                             </a>
                             <div class="note-content">
                                 <div class="author">
-                                    <a class="avatar" target="_blank" href="">
-                                        <img class="img-rounded" src="./images/avatar/kaziya.jpg">
+                                    <a class="avatar" target="_blank" href="#">
+                                        <c:forEach items="${uu}" var="uu">
+                                            <c:if test="${at.authorName==uu.userId}">
+                                                <img class="img-rounded" src="${uu.avatar}">
+                                            </c:if>
+                                        </c:forEach>
                                     </a>
                                     <div class="name">
-                                        <a target="_blank" target="_blank" href="/janebook/myhomepage?name=${at.authorName}">${at.authorName}</a>
+                                        <a target="_blank" href="/janebook/myhomepage?name=${at.authorName}">${at.authorName}</a>
                                         <span class="time" id="time" data-shared-at="2017-09-09T20:13:35+08:00">${at.createTime}</span>
                                     </div>
                                 </div>

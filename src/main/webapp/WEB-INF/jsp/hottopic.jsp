@@ -48,7 +48,7 @@
 		<div class="col-md-4 list-container">
 			<div class="collection-wrap">
 				<a href="/janebook/mytopic?id=${tClassify.id}">
-					<img src="images/user.jpg" class="collrction-img">
+					<img src="${tClassify.classifyImg}" class="collrction-img">
 					<h4>${tClassify.classifyName}</h4>
 					<p>${tClassify.classifyInfo}</p>
 				</a>
@@ -58,7 +58,7 @@
 				</a>
 				<hr>
 				<div class="count">
-					<a href="">17777篇文章</a> .112313人关注
+					<a href="">${tClassify.articleNum}篇文章</a> .${tClassify.follow}人关注
 				</div>
 			</div>
 		</div>

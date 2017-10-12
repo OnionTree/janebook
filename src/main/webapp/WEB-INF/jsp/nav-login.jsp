@@ -26,7 +26,7 @@
 				<li class="user-avatar">
 					<div class="dropdown" style="padding: 10px 15px;">
 						<a class="avatar dropdown-toggle" id="user-dropdownMenu" data-toggle="dropdown">
-							<img src="/janebook/images/avatar/user.png" alt="">
+							<img src="/janebook/images/user/3.jpg" alt="">
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="user-dropdownMenu">
@@ -48,7 +48,7 @@
 						</ul>
 					</div>
 				</li>
-				<li><a href="/janebook/editor"><button class="btn btn-custom btn-write"><span class="glyphicon glyphicon-pencil"></span>我TM写</button></a></li>
+				<li><a href="/janebook/editor"><button class="btn btn-custom btn-write"><span class="glyphicon glyphicon-pencil"></span>写文章</button></a></li>
 			</ul>
 		</div>
 		<div class="container-fluid">

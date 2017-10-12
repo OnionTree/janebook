@@ -1730,61 +1730,37 @@
                 <div class="list">
                     <div class="note have-img">
                         <a class="cover" target="_blank" href="#">
-                            <img src="/janebook/images/note/neko.gif" alt="">
+                            <img src="/janebook/images/article/11.jpg" alt="">
                         </a>
-                        <a target="_blank" href="#" class="title">你的问题在于你想的太多，又做的太少</a>
-                        <p class="description">文|紫苏 离杨绛先生辞世，差不多快满一年，但杨先生的经典语录还在网上流传着。其中一句很受用又一针见血的话：“你的问题主要在于读书不多，而想得太多。”不过我觉得，读书少见识浅，是最容易想太多而做的又少。我说的这种“想”，基本上就等同于白日梦似的坐地空想，虽说是种心理活动，但是少了身体力行就变味了。 01 我有所感，是因为前一阵一个朋友发的消息问我，“你说现在干什么挣钱快”，她觉得现下“以人生钱实在太难，钱生钱就貌似很容易”，总眼红的看别人干什么来钱来得都容易，又常能看到新闻头条里什么“90后网红年入百万”，什么“大学生回乡当农民都能发家致富”…她也坐不住了，想干点什么，但又犹犹豫豫得瞻前顾...</p>
+                        <a target="_blank" href="/janebook/article/show/3" class="title">年轻的我们到底该如何相爱</a>
+                        <p class="description">随着年岁渐长，我渐渐成了那个倾听亲友们说起子女早恋、子女苦恋、子女遭遇渣男（女）的准中年人。我听说的种种烦忧事件，不外乎以下几个版本：甲女和乙男高中早恋，学业一落千丈。两人不顾家长劝说，一意孤行。甲女高考失败，巨大压力下，复读成绩平平...</p>
                         <a target="_blank" href="#" class="author">
                             <div class="avatar" style="">
-                                <img src="/janebook/images/avatar/shuangye.png" alt=""><span class="name">孔明君</span>
+                                <img src="/janebook/images/user/7.jpg" alt=""><span class="name">金春妙</span>
                             </div>
                         </a>
                     </div>
                     <div class="note have-img">
                         <a class="cover" target="_blank" href="#">
-                            <img src="/janebook/images/note/hu.gif" alt="">
+                            <img src="/janebook/images/article/10.jpg" alt="">
                         </a>
-                        <a target="_blank" href="#" class="title">你的问题在于你想的太多，又做的太少</a>
-                        <p class="description">文|紫苏 离杨绛先生辞世，差不多快满一年，但杨先生的经典语录还在网上流传着。其中一句很受用又一针见血的话：“你的问题主要在于读书不多，而想得太多。”不过我觉得，读书少见识浅，是最容易想太多而做的又少。我说的这种“想”，基本上就等同于白日梦似的坐地空想，虽说是种心理活动，但是少了身体力行就变味了。 01 我有所感，是因为前一阵一个朋友发的消息问我，“你说现在干什么挣钱快”，她觉得现下“以人生钱实在太难，钱生钱就貌似很容易”，总眼红的看别人干什么来钱来得都容易，又常能看到新闻头条里什么“90后网红年入百万”，什么“大学生回乡当农民都能发家致富”…她也坐不住了，想干点什么，但又犹犹豫豫得瞻前顾...</p>
+                        <a target="_blank" href="/janebook/article/show/10" class="title">OFF学：会玩的人，才会更加容易成功</a>
+                        <p class="description">文/小宋老师01.不知道你是否有着和我类似的体验：工作的时候，特别渴望假期的到来，但是当假期真正到来的时候，却又不知道该如何打发闲暇时间。叔本华曾经说过：“人的一生就像是一个钟摆，欲望得不到满足就痛苦，欲望得到满足就无聊。人就是在痛苦与无聊之间摇...</p>
                         <a target="_blank" href="#" class="author">
                             <div class="avatar" style="">
-                                <img src="/janebook/images/avatar/shuangye.png" alt=""><span class="name">孔明君</span>
+                                <img src="/janebook/images/user/2.jpg" alt=""><span class="name">奇奇漫悦读</span>
                             </div>
                         </a>
                     </div>
                     <div class="note have-img">
                         <a class="cover" target="_blank" href="#">
-                            <img src="/janebook/images/note/mahuateng.gif" alt="">
+                            <img src="/janebook/images/article/1.jpg" alt="">
                         </a>
-                        <a target="_blank" href="#" class="title">你的问题在于你想的太多，又做的太少</a>
-                        <p class="description">文|紫苏 离杨绛先生辞世，差不多快满一年，但杨先生的经典语录还在网上流传着。其中一句很受用又一针见血的话：“你的问题主要在于读书不多，而想得太多。”不过我觉得，读书少见识浅，是最容易想太多而做的又少。我说的这种“想”，基本上就等同于白日梦似的坐地空想，虽说是种心理活动，但是少了身体力行就变味了。 01 我有所感，是因为前一阵一个朋友发的消息问我，“你说现在干什么挣钱快”，她觉得现下“以人生钱实在太难，钱生钱就貌似很容易”，总眼红的看别人干什么来钱来得都容易，又常能看到新闻头条里什么“90后网红年入百万”，什么“大学生回乡当农民都能发家致富”…她也坐不住了，想干点什么，但又犹犹豫豫得瞻前顾...</p>
+                        <a target="_blank" href="/janebook/article/show/1" class="title">四年的异国恋，我们没有输给时差与距离</a>
+                        <p class="description">你说从你在小学见我的第一面时，你便认定了，我就是你这辈子要共度一生的女孩。于是，你央求班主任老师将我安排在你的旁边，与你同桌。当时的班主任老师，因为受了你那远在香港的父母之托，答应会好好关照你。所以，对于你提出的要求，她二话没说就答应了。可是，我却无论如何也不曾记得自己与你同桌的那段时光。或许是因为我是一名转校生的缘故吧，所以，在一开始的那半年里...</p>
                         <a target="_blank" href="#" class="author">
                             <div class="avatar" style="">
-                                <img src="/janebook/images/avatar/shuangye.png" alt=""><span class="name">孔明君</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="note have-img">
-                        <a class="cover" target="_blank" href="#">
-                            <img src="/janebook/images/note/xueyou.png" alt="">
-                        </a>
-                        <a target="_blank" href="#" class="title">你的问题在于你想的太多，又做的太少</a>
-                        <p class="description">文|紫苏 离杨绛先生辞世，差不多快满一年，但杨先生的经典语录还在网上流传着。其中一句很受用又一针见血的话：“你的问题主要在于读书不多，而想得太多。”不过我觉得，读书少见识浅，是最容易想太多而做的又少。我说的这种“想”，基本上就等同于白日梦似的坐地空想，虽说是种心理活动，但是少了身体力行就变味了。 01 我有所感，是因为前一阵一个朋友发的消息问我，“你说现在干什么挣钱快”，她觉得现下“以人生钱实在太难，钱生钱就貌似很容易”，总眼红的看别人干什么来钱来得都容易，又常能看到新闻头条里什么“90后网红年入百万”，什么“大学生回乡当农民都能发家致富”…她也坐不住了，想干点什么，但又犹犹豫豫得瞻前顾...</p>
-                        <a target="_blank" href="#" class="author">
-                            <div class="avatar" style="">
-                                <img src="/janebook/images/avatar/shuangye.png" alt=""><span class="name">孔明君</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="note have-img">
-                        <a class="cover" target="_blank" href="#">
-                            <img src="/janebook/images/note/ws.gif" alt="">
-                        </a>
-                        <a target="_blank" href="#" class="title">你的问题在于你想的太多，又做的太少</a>
-                        <p class="description">文|紫苏 离杨绛先生辞世，差不多快满一年，但杨先生的经典语录还在网上流传着。其中一句很受用又一针见血的话：“你的问题主要在于读书不多，而想得太多。”不过我觉得，读书少见识浅，是最容易想太多而做的又少。我说的这种“想”，基本上就等同于白日梦似的坐地空想，虽说是种心理活动，但是少了身体力行就变味了。 01 我有所感，是因为前一阵一个朋友发的消息问我，“你说现在干什么挣钱快”，她觉得现下“以人生钱实在太难，钱生钱就貌似很容易”，总眼红的看别人干什么来钱来得都容易，又常能看到新闻头条里什么“90后网红年入百万”，什么“大学生回乡当农民都能发家致富”…她也坐不住了，想干点什么，但又犹犹豫豫得瞻前顾...</p>
-                        <a target="_blank" href="#" class="author">
-                            <div class="avatar" style="">
-                                <img src="/janebook/images/avatar/shuangye.png" alt=""><span class="name">孔明君</span>
+                                <img src="/janebook/images/user/3.jpg" alt=""><span class="name">怀左同学</span>
                             </div>
                         </a>
                     </div>

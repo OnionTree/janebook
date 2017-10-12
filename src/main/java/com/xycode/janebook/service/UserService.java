@@ -26,6 +26,12 @@ public class UserService {
     }
 
     //获取首页文章
+    public List<TUser> getUser(){
+
+        return tUserMapper.getUser();
+    }
+
+    //获取所有用户
     public List<TUser> getHomeUser(){
 
         return tUserMapper.getHomeUser();

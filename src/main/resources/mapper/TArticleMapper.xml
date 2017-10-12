@@ -21,7 +21,9 @@
 
   <!--获取首页前五条数据-->
   <select id="getHomeArticle" resultMap="BaseResultMap"  >
-     SELECT * FROM t_article order by rand() LIMIT 5
+     SELECT id,title,LEFT(content,200)AS content,hot,author_name,browse,collection
+,tag,classify_id,create_time,word_num,reward,img FROM t_article order by rand() LIMIT 5
+     /*SELECT id, FROM t_article order by rand() LIMIT 5*/
   </select>
 
   <select id="getallArticle" resultMap="BaseResultMap" parameterType="java.lang.Integer" >

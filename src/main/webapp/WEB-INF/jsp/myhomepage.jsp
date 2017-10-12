@@ -26,10 +26,10 @@
 		<div class="col-md-8 ho-leftpart">
 			<div class="top">
 				<a href="#" class="avatar">
-					<img src="images/user.jpg">
+					<img src="${user.avatar}">
 				</a>
 				<div class="title">
-					<a href="#" class="name">${topname}</a>
+					<a href="#" class="name">${user.userId}</a>
 				</div>
 				<div class="info">
 
@@ -97,12 +97,12 @@
 					<c:forEach items="${TArticle}" var="tArticles">
 						<li class="ming">
 							<a href="#" class="ming-img">
-								<img src="images/green.jpg" alt="">
+								<img src="${tArticles.img}" alt="">
 							</a>
 							<div class="ming-content">
 								<div class="ming-author">
 									<a href="#" class="avatar">
-										<img src="images/user.jpg" alt="">
+										<img src="${user.avatar}" alt="">
 									</a>
 									<div class="ming-info">
 										<a target="_blank" href="/janebook/myhomepage?name=${tArticles.getAuthorName()}" class="avatar-name">${tArticles.getAuthorName()}</a>
@@ -136,7 +136,7 @@
 				<i class="iconfont icon-edit">编辑</i>
 			</a>
 			<div class="discrition">
-				<div class="ming-text">${info}</div>
+				<div class="ming-text">${user.info}</div>
 			</div>
 			<ul class="ming-list">
 				<li>
@@ -161,8 +161,8 @@
 					</a>
 					<ul class="topic-list">
 						<li>
-							<a href="/janebook/mytopic" class="ming-collection"><img src="images/user.jpg"></a>
-							<a href="/janebook/mytopic" class="ming-name ming-list-sp">aaaaaaa</a>
+							<a href="/janebook/mytopic" class="ming-collection"><img src="images/test.jpg"></a>
+							<a href="/janebook/mytopic" class="ming-name ming-list-sp">历史文化</a>
 						</li>
 					</ul>
 				</div>

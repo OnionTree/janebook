@@ -32,4 +32,6 @@ public interface TUserMapper {
     List<TUser> getHomeUser();
 
     List<TUser> getrecTuer();
+
+    List<TUser> getUser();
 }

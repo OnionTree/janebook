@@ -25,6 +25,10 @@
     select * from t_user order by rand() LIMIT 5
   </select>
 
+  <select id="getUser" resultMap="BaseResultMap" >
+    SELECT * FROM t_user
+  </select>
+
   <select id="getHomeUser" resultMap="BaseResultMap" >
     SELECT * FROM t_user LIMIT 5
   </select>

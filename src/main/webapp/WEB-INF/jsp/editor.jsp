@@ -601,7 +601,7 @@
                     <ul id="article-box" class="nav nav-list notes">
                         <li class="one-note active" data-model="note">
                             <i class="iconfont icon-note stop-share"></i>
-                            <p class="abbreviate">sb</p>
+                            <p class="abbreviate">这里填写你的内容</p>
                             <p class="wordage win-text">字数: 0</p>
                             <a href="javascript:void(0)" class="note-link title">无标题文章</a>
                             <a href="javascript:void(0)" class="share-note dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i></a> 
@@ -618,7 +618,7 @@
                         </li> 
                         <li class="one-note" data-model="note">
                             <i class="iconfont icon-note stop-share"></i>
-                            <p class="abbreviate">sb</p>
+                            <p class="abbreviate">这里填写你的内容</p>
                             <p class="wordage win-text">字数: 0</p>
                             <a href="javascript:void(0)" class="note-link title">无标题文章</a>
                             <a href="javascript:void(0)" class="share-note dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i></a>
@@ -659,7 +659,7 @@
                         <div style="clear: both"></div>
                     </div>
                     <div class="editor" id="editor" > 
-                        <p>CNM！</p>
+                        <p>这里填写你的内容</p>
                     </div>
                 </div>
             </div>

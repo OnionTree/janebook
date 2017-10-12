@@ -94,15 +94,15 @@
 		<div class="col-md-3 ho-rightpart">
 			<div class="title">专题公告</div>
 			<div class="discrition">
-				<div class="ming-text">我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比</div>
+				<div class="ming-text">投稿须知：1.请作者用心管理自己的作品，为作品建立文集和专题，在文章中加上目录和上下章节的链接，排版优美的作品优先收录。请参考管理员的做法</div>
 			</div>
 			<div>
 				<div class="add-border">
 					<div class="title">管理员</div>
 					<ul class="topic-list">
 						<li>
-							<a href="" class="ming-collection"><img src="images/user.jpg"></a>
-							<a href="" class="ming-name ming-list-sp">我啊</a>
+							<a href="" class="ming-collection"><img src="images/user/3.jpg"></a>
+							<a href="" class="ming-name ming-list-sp">怀左同学</a>
 						</li>
 					</ul>
 				</div>
@@ -110,9 +110,9 @@
 					<div class="title">关注的人</div>
 					<ul class="topic-list">
 						<li>
-							<a href="" class="ming-collection-pre"><img src="images/user.jpg"></a>
-							<a href="" class="ming-collection-pre"><img src="images/user.jpg"></a>
-							<a href="" class="ming-collection-pre"><img src="images/user.jpg"></a>
+							<a href="" class="ming-collection-pre"><img src="images/user/4.jpg"></a>
+							<a href="" class="ming-collection-pre"><img src="images/user/5.jpg"></a>
+							<a href="" class="ming-collection-pre"><img src="images/user/6.jpg"></a>
 						</li>
 					</ul>
 				</div>

@@ -59,7 +59,18 @@ public class StartController {
     public ModelAndView indexPage(HttpServletRequest request) {
         log_.info("indexPage invoke ....");
         List<TArticle> at = articleService.getHomeArticle();
-        List<TUser> user = userService.getrecTuer();
+        log_.info("Size=="+at.size());
+        RegExp re = new RegExp();
+        for(int k=0;k<at.size();k++){
+            String str = at.get(k).getContent();
+            log_.info("str==="+str);
+            String temp = re.getTextFromHtml(str)+"...";
+            log_.info("temp==="+temp);
+            at.get(k).setContent(temp);
+        }
+
+        List<TUser> user = userService.getHomeUser();
+        List<TUser> uu = userService.getUser();
         ModelAndView mv = new ModelAndView();
         if(request.getSession().getAttribute("tuser")!=null){
             mv.setViewName("MainHome-login");
@@ -68,6 +79,7 @@ public class StartController {
         }
         mv.addObject("TArticle", at);
         mv.addObject("TUser",user);
+        mv.addObject("uu",uu);
         return mv;
     }
 
@@ -93,12 +105,24 @@ public class StartController {
             subject.login(token);//会跳到我们自定义的realm中
             request.getSession().setAttribute("tuser", tuser);
             List<TArticle> at = articleService.getHomeArticle();
+            log_.info("Size=="+at.size());
+            RegExp re = new RegExp();
+            for(int k=0;k<at.size();k++){
+                String str = at.get(k).getContent();
+                String temp = re.getTextFromHtml(str)+"...";
+                log_.info("temp==="+temp);
+                at.get(k).setContent(temp);
+            }
+
+
             List<TUser> user = userService.getrecTuer();
+            List<TUser> uu = userService.getUser();
             TUser userInfo = userService.getUserByUserName(tuser.getUserId());
             request.getSession().setAttribute("userInfo", userInfo);
             mv.setViewName("MainHome-login");
             mv.addObject("TArticle", at);
             mv.addObject("TUser",user);
+            mv.addObject("uu",uu);
             return mv;
 
         } catch (Exception e) {
@@ -163,6 +187,14 @@ public class StartController {
     @RequestMapping("/mytopic")
     public ModelAndView mytopicPage(int id) {
         List<TArticle> tArticles = articleService.getallArticle(id);
+        log_.info("Size=="+tArticles.size());
+        RegExp re = new RegExp();
+        for(int k=0;k<tArticles.size();k++){
+            String str = tArticles.get(k).getContent();
+            String temp = re.getTextFromHtml(str)+"...";
+            log_.info("temp==="+temp);
+            tArticles.get(k).setContent(temp);
+        }
         ModelAndView mv = new ModelAndView();
         mv.setViewName("mytopic");
         mv.addObject("TArticle",tArticles);
@@ -186,17 +218,25 @@ public class StartController {
         return "mySettingaccount";
     }
 
+    //没登录的情况
     @RequestMapping("/myhomepage")
     public ModelAndView myhomepagePage(String name) {
 
         List<TArticle> tArticles = articleService.getmenberArticle(name);
-
+        log_.info("Size=="+tArticles.size());
+        RegExp re = new RegExp();
+        for(int k=0;k<tArticles.size();k++){
+            String str = tArticles.get(k).getContent();
+            String temp = re.getTextFromHtml(str)+"...";
+            log_.info("temp==="+temp);
+            tArticles.get(k).setContent(temp);
+        }
         ModelAndView mv = new ModelAndView();
         mv.setViewName("myhomepage");
         mv.addObject("TArticle",tArticles);
         mv.addObject("topname", tArticles.get(0).getAuthorName());
         mv.addObject("UserInfo",userService.selectUserMsg(name));
-        mv.addObject("info",userService.getUserByUserName(name).getInfo());
+        log_.info("info=="+userService.getUserByUserName(name));
         System.out.println(tArticles);
         return mv;
     }
@@ -217,14 +257,22 @@ public class StartController {
         name = user.getUserId();
 
         List<TArticle> tArticles = articleService.getmenberArticle(name);
+        log_.info("Size=="+tArticles.size());
+        RegExp re = new RegExp();
+        for(int k=0;k<tArticles.size();k++){
+            String str = tArticles.get(k).getContent();
+            String temp = re.getTextFromHtml(str)+"...";
+            log_.info("temp==="+temp);
+            tArticles.get(k).setContent(temp);
+        }
 
         ModelAndView mv = new ModelAndView();
         mv.setViewName("myhomepage");
         mv.addObject("TArticle",tArticles);
-        mv.addObject("topname", tArticles.get(0).getAuthorName());
+        /*mv.addObject("topname", tArticles.get(0).getAuthorName());*/
         mv.addObject("UserInfo",userService.selectUserMsg(name));
-        mv.addObject("info",userService.getUserByUserName(name).getInfo());
-        System.out.println(tArticles);
+        mv.addObject("user",userService.getUserByUserName(name));
+
         return mv;
     }
 
