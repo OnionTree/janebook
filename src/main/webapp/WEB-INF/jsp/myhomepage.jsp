@@ -110,9 +110,9 @@
 									</div>
 								</div>
 								<a target="_blank" href="/janebook/article/show/${tArticles.getId()}" class="ming-title">${tArticles.getTitle()}</a>
-								<p class="ming-abstract">
+								<div class="ming-abstract">
                                  ${tArticles.getContent()}
-								</p>
+								</div>
 								<div class="ming-meta">
 									<a href="#">
 										<i class="iconfont icon-liulan"></i>12

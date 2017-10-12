@@ -39,11 +39,6 @@ public class StartController {
     ClassifyService classifyService;
 
 
-    @RequestMapping("/editor")
-    public String toEditor(){
-        return "editor";
-    }
-
     //登陆后的主页
     @RequestMapping("/MainHome-login")
     public String homeLogined(){
@@ -230,6 +225,18 @@ public class StartController {
         mv.addObject("UserInfo",userService.selectUserMsg(name));
         mv.addObject("info",userService.getUserByUserName(name).getInfo());
         System.out.println(tArticles);
+        return mv;
+    }
+
+    @RequestMapping("/editor")
+    public ModelAndView toEditor(String name){
+        TUser user = (TUser) SecurityUtils.getSubject().getPrincipal();
+        System.out.println( "getPrincipal............"+user.getUserId());
+        name = user.getUserId();
+        List<TArticle> tArticles = articleService.getmenberArticle(name);
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("TArticle",tArticles);
+        mv.setViewName("editor");
         return mv;
     }
 

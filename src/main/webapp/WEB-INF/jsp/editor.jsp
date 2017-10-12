@@ -599,11 +599,11 @@
                         </a> 
                     </div>
                     <ul id="article-box" class="nav nav-list notes">
-                        <li class="one-note active" data-model="note"> 
+                        <li class="one-note active" data-model="note">
                             <i class="iconfont icon-note stop-share"></i>
                             <p class="abbreviate">sb</p>
-                            <p class="wordage win-text">字数: 0</p> 
-                            <a href="javascript:void(0)" class="note-link title">无标题文章</a> 
+                            <p class="wordage win-text">字数: 0</p>
+                            <a href="javascript:void(0)" class="note-link title">无标题文章</a>
                             <a href="javascript:void(0)" class="share-note dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i></a> 
                             <ul class="dropdown-menu arrow-top">   
                                 <li> <a href="javascript:void(0)" class="share-link" data-action="open-share-note"> <i class="fa fa-share"></i> 直接发布 </a> 
@@ -616,16 +616,16 @@
                                 </li>
                             </ul>
                         </li> 
-                        <li class="one-note" data-model="note"> 
+                        <li class="one-note" data-model="note">
                             <i class="iconfont icon-note stop-share"></i>
                             <p class="abbreviate">sb</p>
-                            <p class="wordage win-text">字数: 0</p> 
-                            <a href="javascript:void(0)" class="note-link title">无标题文章</a> 
-                            <a href="javascript:void(0)" class="share-note dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i></a> 
-                            <ul class="dropdown-menu arrow-top">   
-                                <li> <a href="javascript:void(0)" class="share-link" data-action="open-share-note"> <i class="fa fa-share"></i> 直接发布 </a> 
-                                </li> 
-                                <li class="divider"></li> 
+                            <p class="wordage win-text">字数: 0</p>
+                            <a href="javascript:void(0)" class="note-link title">无标题文章</a>
+                            <a href="javascript:void(0)" class="share-note dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i></a>
+                            <ul class="dropdown-menu arrow-top">
+                                <li> <a href="javascript:void(0)" class="share-link" data-action="open-share-note"> <i class="fa fa-share"></i> 直接发布 </a>
+                                </li>
+                                <li class="divider"></li>
                                 <li> <a href="javascript:void(0)" class="open-move-note"><i class="fa fa-folder-open"></i> 移动文章 </a>
                                 </li>
                                 <li class="divider"></li>
@@ -747,7 +747,7 @@
                             '<i class="iconfont icon-note stop-share"></i>' +
                             '<p class="abbreviate"></p>' +
                             '<p class="wordage win-text">'+obj.wordNum+'</p>' +
-                            '<a href="javascript:void(0)" class="note-link title">'+obj.title.substring(0,18)+'...</a>' +
+                            '<a href="javascript:void(0)" class="note-link title">'+obj.title.substring(0,10)+'...</a>' +
                             '<a href="javascript:void(0)" class="share-note dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i></a>' +
                             '<ul class="dropdown-menu arrow-top">' +
                             '<li> <a href="javascript:void(0)" class="share-link" data-action="open-share-note"> <i class="fa fa-share"></i> 直接发布 </a>' +
