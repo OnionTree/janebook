@@ -8,6 +8,11 @@
     <result column="article_id" property="articleId" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
+
+    <select id="getallfavor" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        SELECT * FROM t_favor WHERE user_id = #{name}
+    </select>
+
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

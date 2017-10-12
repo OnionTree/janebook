@@ -14,6 +14,10 @@ public class FavorService {
     @Autowired
     TFavorMapper favorMapper;
 
+    public  List<TFavor> getallfavor(String name){
+        return favorMapper.getallfavor(name);
+    }
+
     public List<TFavor> getFavors(String userId){
         TFavorExample favorExample = new TFavorExample();
         TFavorExample.Criteria criteria = favorExample.createCriteria();

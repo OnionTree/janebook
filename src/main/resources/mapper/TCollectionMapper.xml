@@ -7,6 +7,11 @@
     <result column="article_id" property="articleId" jdbcType="VARCHAR" />
     <result column="collection_time" property="collectionTime" jdbcType="TIMESTAMP" />
   </resultMap>
+
+  <select id="getallcollections" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    SELECT * FROM t_collection WHERE user_id = #{name}
+  </select>
+
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

@@ -3,12 +3,8 @@ package com.xycode.janebook.controller;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.xycode.janebook.model.TArticle;
-import com.xycode.janebook.model.TClassify;
-import com.xycode.janebook.model.TUser;
-import com.xycode.janebook.service.ArticleService;
-import com.xycode.janebook.service.ClassifyService;
-import com.xycode.janebook.service.UserService;
+import com.xycode.janebook.model.*;
+import com.xycode.janebook.service.*;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -21,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +34,10 @@ public class StartController {
     UserService userService;
     @Autowired
     ClassifyService classifyService;
+    @Autowired
+    CollectionService collectionService;
+    @Autowired
+    FavorService favorService;
 
 
     //登陆后的主页
@@ -175,13 +176,65 @@ public class StartController {
     }
 
     @RequestMapping("/mycollection")
-    public String mycollectionPage() {
-        return "mycollection";
+    public ModelAndView mycollectionPage(String name) {
+        TUser user = (TUser) SecurityUtils.getSubject().getPrincipal();
+        System.out.println( "getPrincipal............"+user.getUserId());
+        name = user.getUserId();
+        ModelAndView mv = new ModelAndView();
+
+        List<TCollection> tCollections = collectionService.getallcollections(name);
+        List<TArticle> Articleslist = new ArrayList<TArticle>();
+        int lenght =tCollections.size();
+        //tCollections.get(0).getArticleId();
+        System.out.println(lenght);
+        for(int i=0;i<lenght;i++){
+            System.out.println(tCollections.get(i).getArticleId());
+            int index=Integer.parseInt(tCollections.get(i).getArticleId());
+            // System.out.println(index);
+//           int index = new Integer(tCollections.get(i).getArticleId());
+//            System.out.println(index);
+            TArticle tArticle = articleService.getArticle(index);
+            //   System.out.println(tArticle);
+            Articleslist.add(tArticle);
+
+        }
+        // System.out.println("here");
+        // System.out.println(Articleslist.size());
+        mv.addObject("TCollection",tCollections);
+        mv.addObject("Articleslist",Articleslist);
+        mv.setViewName("mycollection");
+        return mv;
     }
 
     @RequestMapping("/myfavourart")
-    public String myfavourartPage() {
-        return "myfavourart";
+    public ModelAndView myfavourartPage(String name) {
+        TUser user = (TUser) SecurityUtils.getSubject().getPrincipal();
+        System.out.println( "getPrincipal............"+user.getUserId());
+        name = user.getUserId();
+        ModelAndView mv = new ModelAndView();
+        List<TFavor> tFavors = favorService.getallfavor(name);
+        List<TArticle> Articleslist = new ArrayList<TArticle>();
+        int lenght =tFavors.size();
+        //tCollections.get(0).getArticleId();
+        System.out.println(lenght);
+        for(int i=0;i<lenght;i++){
+            System.out.println(tFavors.get(i).getArticleId());
+            int index=tFavors.get(i).getArticleId();
+            // System.out.println(index);
+//           int index = new Integer(tCollections.get(i).getArticleId());
+//            System.out.println(index);
+            TArticle tArticle = articleService.getArticle(index);
+            //   System.out.println(tArticle);
+            Articleslist.add(tArticle);
+
+        }
+        // System.out.println("here");
+        // System.out.println(Articleslist.size());
+        mv.addObject("topname", tFavors.get(0).getUserId());
+        mv.addObject("TFavor",tFavors);
+        mv.addObject("Articleslist",Articleslist);
+        mv.setViewName("myfavourart");
+        return mv;
     }
 
     @RequestMapping("/mytopic")

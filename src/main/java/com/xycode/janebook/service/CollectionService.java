@@ -14,6 +14,10 @@ public class CollectionService {
     @Autowired
     TCollectionMapper collectionMapper;
 
+    public  List<TCollection> getallcollections(String name){
+        return collectionMapper.getallcollections(name);
+    }
+
     public String addCollection(TCollection collection){
         if(collectionMapper.insertSelective(collection)>0){
             return "success";

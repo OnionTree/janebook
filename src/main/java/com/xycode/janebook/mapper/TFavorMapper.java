@@ -7,6 +7,9 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface TFavorMapper {
+
+    List<TFavor> getallfavor(String name);
+
     int countByExample(TFavorExample example);
 
     int deleteByExample(TFavorExample example);

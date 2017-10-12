@@ -1,4 +1,5 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -25,6 +26,7 @@
 		<div class="mycollection col-md-8 col-md-offset-2">
 			<img src="images/collect-note.png">
 			<ul class="ming-list" style="border:none;">
+				<c:forEach items="${TCollection}" var="tCollections">
 				<li class="ming">
 					<a href="#" class="ming-img">
 						<img src="images/green.jpg" alt="">
@@ -34,15 +36,29 @@
 							<a href="#" class="avatar">
 								<img src="images/user.jpg" alt="">
 							</a>
-							<div class="ming-info">
-								<a href="" class="avatar-name">孔明Kun</a>
-								<span class="avatar-time">2017:10:24</span>
-							</div>
+							<c:forEach items="${Articleslist}" var="Articleslist">
+								<c:if test="${tCollections.articleId==Articleslist.id}">
+									<div class="ming-info">
+										<a target="_blank" href="/janebook/myhomepage?name=${Articleslist.authorName}" class="avatar-name">${Articleslist.authorName}</a>
+										<span class="avatar-time">${tCollections.collectionTime}</span>
+									</div>
+								</c:if>
+							</c:forEach>
+
 						</div>
-						<a href="#" class="ming-title">食盐实验誓言势焰石岩</a>
-						<p class="ming-abstract">
-							我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比,我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比
-						</p>
+						<c:forEach items="${Articleslist}" var="Articleslist">
+							<c:if test="${tCollections.articleId==Articleslist.id}">
+								<a target="_blank" href="/janebook/article/show/${Articleslist.id}" class="ming-title">${Articleslist.title}</a>
+								<%--<img class="img-rounded" src="${uu.avatar}">--%>
+							</c:if>
+						</c:forEach>
+						<c:forEach items="${Articleslist}" var="Articleslist">
+						<c:if test="${tCollections.articleId==Articleslist.id}">
+							<p class="ming-abstract">
+									${Articleslist.content}
+							</p>
+						</c:if>
+						</c:forEach>
 						<div class="ming-meta">
 							<a href="#">
 								<i class="iconfont icon-liulan"></i>12
@@ -56,37 +72,7 @@
 						</div>
 					</div>
 				</li>
-				<li class="ming">
-					<a href="#" class="ming-img">
-						<img src="images/green.jpg" alt="">
-					</a>
-					<div class="ming-content">
-						<div class="ming-author">
-							<a href="#" class="avatar">
-								<img src="images/user.jpg" alt="">
-							</a>
-							<div class="ming-info">
-								<a href="" class="avatar-name">孔明Kun</a>
-								<span class="avatar-time">2017:10:24</span>
-							</div>
-						</div>
-						<a href="#" class="ming-title">食盐实验誓言势焰石岩</a>
-						<p class="ming-abstract">
-							我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比,我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比我想说，我真的是帅的一比
-						</p>
-						<div class="ming-meta">
-							<a href="#">
-								<i class="iconfont icon-liulan"></i>12
-							</a>
-							<a href="#">
-								<i class="iconfont icon-comments"></i>1
-							</a>
-							<span>
-                                        <i class="iconfont icon-Love"></i>2
-                                    </span>
-						</div>
-					</div>
-				</li>
+				</c:forEach>
 			</ul>
 		</div>
 	</div>

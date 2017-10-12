@@ -7,6 +7,9 @@ import com.xycode.janebook.model.TCollectionExample;
 import org.apache.ibatis.annotations.Param;
 
 public interface TCollectionMapper {
+
+    List<TCollection> getallcollections(String name);
+
     int countByExample(TCollectionExample example);
 
     int deleteByExample(TCollectionExample example);
