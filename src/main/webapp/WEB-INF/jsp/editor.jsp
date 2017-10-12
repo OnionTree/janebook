@@ -555,7 +555,7 @@
         <div class="row normal-mode">
             <div class="col-sm-2 col-md-2 aside">
                 <div class="home-wrap"> 
-                    <a href="/janebook/MainHome-login.html" class="go-home"><i class="fa fa-home" aria-hidden="true"></i><span>回首页</span></a>
+                    <a href="/janebook/index" class="go-home"><i class="fa fa-home" aria-hidden="true"></i><span>回首页</span></a>
                 </div>
                 <div class="new-notebook">
                     <a href="#" class="create-notebook"><i class="fa fa-plus"></i> 新建专题 </a>
