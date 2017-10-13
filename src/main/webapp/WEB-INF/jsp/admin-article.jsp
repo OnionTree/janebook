@@ -126,12 +126,12 @@
                     shade: 0.7,
                     id: 'edit-box' //设定一个id，防止重复弹出
                         ,
-                    btn: ['确认修改'],
+                    btn: ['结束预览'],
                     moveType: 1 //拖拽模式，0或者1
                         ,
-                    content: '<div style="padding:20px; margin：auto;">' +  '这理由文章！</div>',
+                    content: '<div style="padding:20px; margin：auto;">' + data.content +'</div>',
                     yes: function() {
-                        layer.msg($("#classify-send").prop('checked'));
+                        layer.close(layer.index);
                     }
                 });
             }

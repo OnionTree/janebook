@@ -189,24 +189,24 @@
                         var send = flag ? '1' : '0';
                         flag = $("#classify-check").prop('checked');
                         var check = flag ? '1' : '0';
-                        layer.msg(send);
+                        //layer.msg(send);
 
-                        // $.ajax({
-                        //   type:'POST',
-                        //   url:'http://localhost/janebook/classify'
-                        //   contentType:'application/json',
-                        //   data:JSON.stringify({
-                        //     classifyName: title,
-                        //     classifyInfo: info,
-                        //     classifyAdimin: admim,
-                        //     isSend: send,
-                        //     sendCheck:check
-                        //   }),
-                        //   success:function(){
+                         $.ajax({
+                           type:'POST',
+                           url:'http://localhost/janebook/classify',
+                           contentType:'application/json',
+                           data:JSON.stringify({
+                             classifyName: title,
+                             classifyInfo: info,
+                             classifyAdmin: admin,
+                             isSend: send,
+                             sendCheck:check
+                           }),
+                           success:function(){
+                               layer.close(layer.index);
+                           }
 
-                        //   }
-
-                        // })
+                         })
                     }
                 });
             },
@@ -230,7 +230,33 @@
                         ,
                     content: '<div style="padding:20px">' + text + '</div>',
                     yes: function() {
-                        layer.msg($("#classify-send").prop('checked'));
+                        var title = $("#classify-title").val();
+                        var info = $("#classify-info").val();
+                        var admin = $("#classify-admin").val();
+                        var flag = $("#classify-send").prop('checked');
+                        var send = flag ? '1' : '0';
+                        flag = $("#classify-check").prop('checked');
+                        var check = flag ? '1' : '0';
+                        //layer.msg(send);
+
+                        $.ajax({
+                            type:'PUT',
+                            url:'http://localhost/janebook/classify',
+                            contentType:'application/json',
+                            data:JSON.stringify({
+                                id:data.id,
+                                classifyName: title,
+                                classifyInfo: info,
+                                classifyAdmin: admin,
+                                isSend: send,
+                                sendCheck:check
+                            }),
+                            success:function(){
+                                layer.msg("success");
+                                layer.close(layer.index-1);
+                            }
+
+                        })
                     }
                 });
             }
@@ -246,7 +272,6 @@
                 $("#classify-title").val(data.classifyName);
                 $("#classify-info").val(data.classifyInfo);
                 $("#classify-admin").val(data.classifyAdmin);
-
                 if (data.isSend == '1') $("#classify-send").attr('checked', true);
                 if (data.sendCheck == '1') $("#classify-check").attr('checked', true);
                 form.render();
