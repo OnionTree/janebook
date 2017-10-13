@@ -34,7 +34,7 @@
 						<span>已关注</span>
 					</i>
 				</a>
-				<div class="btn btn-hollow topic-collection">收录</div>
+				<div class="btn btn-hollow topic-collection" id="shoulu">收录</div>
 				<div class="topic-title">
 					<a href="" class="title">${classify.classifyName}</a>
 				</div>
@@ -127,3 +127,26 @@
 </body>
 
 </html>
+<script>
+    $(function(follow) {
+        $("#shoulu").on("mouseenter mouseleave click", function(event) {
+            var _this = $(".follow");
+            if ($(this).hasClass('following')) {
+
+                if (event.type == 'mouseenter') {
+                    $(_this).text("取消收录");
+                } else if (event.type == 'mouseleave') {
+                    $(_this).text("正在收录");
+                } else {
+                    $(_this).removeClass('following');
+                    $(_this).text("+ 收录");
+                }
+            } else {
+                if (event.type == 'click') {
+                    $(_this).addClass('following');
+                    $(_this).text("正在收录");
+                }
+            }
+        });
+    });
+</script>
