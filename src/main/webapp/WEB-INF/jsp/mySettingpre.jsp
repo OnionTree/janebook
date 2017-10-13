@@ -74,11 +74,11 @@
                             <span>男</span>
                         </div>
                         <div class="col-md-2">
-                            <input type="radio" value="" >
+                            <input type="radio" value="" checked>
                             <span>女</span>
                         </div>
                         <div class="col-md-2">
-                            <input type="radio" value="" checked>
+                            <input type="radio" value="" >
                             <span>男同</span>
                         </div>
                         <div class="col-md-2">
@@ -95,23 +95,30 @@
                     <td class="setting-title">个人简介</td>
                     <td>
                         <form>
-                            <textarea placeholder="填写你的性取向">通吃</textarea>
+                            <textarea placeholder="个人简介">${user.info}</textarea>
                         </form>
                     </td>
                 </tr>
                 <tr>
                     <td class="setting-title">个人网站</td>
                     <td>
-                        <input type="email" placeholder="http://你的网址?  填写后会在个人主页显示图标">
+                        <input type="email" placeholder="${user.personalWebsite}" id="psweb">
                     </td>
                 </tr>
 
                 </tbody>
             </table>
-            <input type="submit"  class="btn btn-success setting-save" value="保存">
+            <input type="submit"  class="btn btn-success setting-save" value="保存" id="save-info">
         </div>
     </div>
 </div>
 </body>
 
 </html>
+<script>
+    $(document).ready(function() {
+        $("#save-info").click(function () {
+            alert("开发中，敬请期待");
+        });
+    });
+</script>

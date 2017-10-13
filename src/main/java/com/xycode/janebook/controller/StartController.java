@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -378,14 +379,37 @@ public class StartController {
     }
 
     @RequestMapping("/mySettingpre")
-    public String mySettingprePage() {
-        return "mySettingpre";
+    public ModelAndView mySettingprePage() {
+        TUser user = (TUser) SecurityUtils.getSubject().getPrincipal();
+        System.out.println( "getPrincipal............"+user.getUserId());
+        String name = user.getUserId();
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("user",userService.getUserByUserName(name));
+        mv.setViewName("mySettingpre");
+        return mv;
+
     }
 
+    @RequestMapping("/updateInfo")
+    public String updateInfo(@RequestParam("email")String em,@RequestParam("neckname")String nn) {
+        System.out.println("email=="+em);
+        System.out.println("neckname=="+nn);
+        TUser user = (TUser) SecurityUtils.getSubject().getPrincipal();
+        user.setNickname(nn);
+        user.setEmail(em);
+        userService.updateUser(user);
+        return "mySetting";
+    }
 
     @RequestMapping("/mySetting")
-    public String mySettingPage() {
-        return "mySetting";
+    public ModelAndView mySettingPage() {
+        TUser user = (TUser) SecurityUtils.getSubject().getPrincipal();
+        System.out.println( "getPrincipal............"+user.getUserId());
+        String name = user.getUserId();
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("user",userService.getUserByUserName(name));
+        mv.setViewName("mySetting");
+        return mv;
     }
 
     @RequestMapping("/hottopic")

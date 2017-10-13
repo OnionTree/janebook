@@ -69,7 +69,7 @@
                 <tr>
                     <td class="toptd">
                         <div>
-                            <img src="images/user.jpg ">
+                            <img src="${user.avatar}">
                         </div>
                     </td>
                     <td class="toptd">
@@ -79,13 +79,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="setting-title">尊姓大名</td>
-                    <td><input type="text" placeholder="你叫咩名啊？"></td>
+                    <td class="setting-title">昵称</td>
+                    <td><input type="text" placeholder="${user.userId}" id="nen"></td>
                 </tr>
                 <tr>
-                    <td class="setting-title">你噶Email</td>
+                    <td class="setting-title">电子邮箱</td>
                     <td>
-                        <input type="email" placeholder="你噶常用邮箱？">
+                        <input type="email" placeholder="${user.email}" id="ema">
                         <input type="button" class="btn btn-hollow button-send" value="发送">
                     </td>
                 </tr>
@@ -143,10 +143,34 @@
                 </tr>
                 </tbody>
             </table>
-            <input type="submit"  class="btn btn-success setting-save" value="保存">
+            <input type="submit"  class="btn btn-success setting-save" value="保存" id="save-info">
         </div>
     </div>
 </div>
 </body>
 
 </html>
+<script>
+    $(document).ready(function(){
+        $("#save-info").click(function(){
+            var email = $("#nen").val();
+            var neckname =$("#ema").val();
+            alert("this=="+email+neckname);
+            $.ajax({
+                url:'/janebook/updateInfo',
+                type:'POST', //GET
+                async:true,    //或false,是否异步
+                data:{
+                    email:email,
+                    neckname:neckname
+                },
+                success: function (data, status) {
+                    alert("success");
+                },
+                fail: function (err, status) {
+                    alert("error");
+                }
+            })
+        });
+    });
+</script>

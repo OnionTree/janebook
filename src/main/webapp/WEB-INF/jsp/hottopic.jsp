@@ -14,7 +14,12 @@
 </head>
 
 <body>
-<jsp:include page="nav.jsp"></jsp:include>
+<shiro:authenticated>
+	<%@include file="nav-login.jsp"%>
+</shiro:authenticated>
+<shiro:guest>
+	<%@include file="nav.jsp"%>
+</shiro:guest>
 <div class="container hottopic">
 	<img class="hottopicimg" src="images/hottopic.png">
 	<ul class="triggle-menu">
@@ -52,7 +57,7 @@
 					<h4>${tClassify.classifyName}</h4>
 					<p>${tClassify.classifyInfo}</p>
 				</a>
-				<a href="" class="btn btn-success follow">
+				<a href="javascript:void(0)" class="btn btn-success follow"  id="guanzhu">
 					<i class="iconfont icon-add"></i>
 					<span>关注</span>
 				</a>
@@ -66,5 +71,29 @@
 	</div>
 </div>
 </body>
+<script>
+    $(function(follow) {
 
+        $("#guanzhu").on("mouseenter mouseleave click", function(event) {
+
+            var _this = $(".follow");
+            if ($(this).hasClass('following')) {
+
+                if (event.type == 'mouseenter') {
+                    $(_this).text("取消关注");
+                } else if (event.type == 'mouseleave') {
+                    $(_this).text("正在关注");
+                } else {
+                    $(_this).removeClass('following');
+                    $(_this).text("+ 关注");
+                }
+            } else {
+                if (event.type == 'click') {
+                    $(_this).addClass('following');
+                    $(_this).text("正在关注");
+                }
+            }
+        });
+    });
+</script>
 </html>
