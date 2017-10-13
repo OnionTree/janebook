@@ -4,6 +4,7 @@ package com.xycode.janebook.controller;
 import com.xycode.janebook.model.TRec;
 import com.xycode.janebook.service.RecService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,7 @@ public class RecController {
         return recService.changeRec(rec);
     }
 
-    @GetMapping("rec");
+    @GetMapping("rec")
     public List<TRec> getRec(){
         return recService.getRec();
     }

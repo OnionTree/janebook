@@ -55,6 +55,23 @@
             </a>
         </div>
     </div>
+    <script>
+        
+        var lbox = $(".carousel-inner");
+        var ldata = null;
+
+        $.ajax({
+            type:"GET",
+            async:false,
+            url:"/janebook/rec",
+            success:function(data){
+                ldata = data;
+            }
+        })
+
+
+
+    </script>
     <div class="row main">
         <div class="main-left col-md-8 col-xs-8">
             <div class="recommend-collection">
