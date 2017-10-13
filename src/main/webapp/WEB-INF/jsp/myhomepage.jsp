@@ -140,7 +140,7 @@
 			</div>
 			<ul class="ming-list">
 				<li>
-					<a href="#" class="ming-list-sp">
+					<a href="/janebook/myfollow" class="ming-list-sp">
 						<i class="iconfont icon-qrcode"></i>
 						<span >我关注的专题/文集</span>
 					</a>

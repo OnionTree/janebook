@@ -184,6 +184,8 @@ public class StartController {
 
         List<TCollection> tCollections = collectionService.getallcollections(name);
         List<TArticle> Articleslist = new ArrayList<TArticle>();
+        List<TUser> tUsers = new ArrayList<TUser>();
+
         int lenght =tCollections.size();
         System.out.println(lenght);
         for(int i=0;i<lenght;i++){
@@ -193,6 +195,7 @@ public class StartController {
 
             TUser tu = userService.getUserByUserName(tCollections.get(i).getUserId());
             Articleslist.add(tArticle);
+            tUsers.add(tu);
         }
         log_.info("Size=="+Articleslist.size());
         RegExp re = new RegExp();
@@ -207,6 +210,7 @@ public class StartController {
         mv.addObject("TCollection",tCollections);
         mv.addObject("Articleslist",Articleslist);
         mv.addObject("user",userService.getUserByUserName(name));
+        mv.addObject("tUsers",tUsers);
         mv.setViewName("mycollection");
         return mv;
     }
@@ -272,8 +276,21 @@ public class StartController {
     }
 
     @RequestMapping("/myfollow")
-    public String myfollowPage() {
-        return "myfollow";
+    public ModelAndView myfollowPage() {
+        TUser user = (TUser) SecurityUtils.getSubject().getPrincipal();
+        System.out.println( "getPrincipal............"+user.getUserId());
+        String name = user.getUserId();
+        List<TClassify> classifies = classifyService.getUserClassifys(name);
+        for(int j=0;j<classifies.size();j++){
+            System.out.println("myfollow ConTroller+++++++"+classifies.get(j).getClassifyName());
+        }
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("myfollow");
+        /*mv.addObject("topname", tArticles.get(0).getAuthorName());*/
+        mv.addObject("UserInfo",userService.selectUserMsg(name));
+        mv.addObject("user",userService.getUserByUserName(name));
+        mv.addObject("classifies",classifies);
+        return mv;
     }
 
     @RequestMapping("/mySettingaccount")

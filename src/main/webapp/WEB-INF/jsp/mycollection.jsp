@@ -43,23 +43,24 @@
 						<div class="ming-author">
 
 
+							<c:forEach items="${Articleslist}" var="Articleslist">
+								<c:if test="${tCollections.articleId==Articleslist.id}">
+
+									<c:forEach items="${tUsers}" var="tUsers">
+										<c:if test="${tUsers.userId==Articleslist.authorName}">
+											666
+										</c:if>
+									</c:forEach>
+
 									<a href="#" class="avatar">
 										<img src="${user.avatar}" alt="">
 									</a>
-
-
-
-
-
-
-							<c:forEach items="${Articleslist}" var="Articleslist">
-
-
-								<c:if test="${tCollections.articleId==Articleslist.id}">
 									<div class="ming-info">
 										<a target="_blank" href="/janebook/myhomepage?name=${Articleslist.authorName}" class="avatar-name">${Articleslist.authorName}</a>
 										<span class="avatar-time">${tCollections.collectionTime}</span>
 									</div>
+
+
 								</c:if>
 							</c:forEach>
 
@@ -75,18 +76,20 @@
 							<p class="ming-abstract">
 									${Articleslist.content}
 							</p>
-						</c:if>
-						</c:forEach>
+						<%--</c:if>
+						</c:forEach>--%>
 						<div class="ming-meta">
 							<a href="#">
-								<i class="iconfont icon-liulan"></i>12
+								<i class="iconfont icon-liulan"></i>${Articleslist.browse}
 							</a>
 							<a href="#">
-								<i class="iconfont icon-comments"></i>1
+								<i class="iconfont icon-comments"></i>${Articleslist.collection}
 							</a>
 							<span>
-                                        <i class="iconfont icon-Love"></i>2
+                                        <i class="iconfont icon-Love"></i>${Articleslist.reward}
                                     </span>
+							</c:if>
+							</c:forEach>
 						</div>
 					</div>
 				</li>
