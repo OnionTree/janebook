@@ -1732,7 +1732,7 @@
                         <a class="cover" target="_blank" href="#">
                             <img src="/janebook/images/article/11.jpg" alt="">
                         </a>
-                        <a target="_blank" href="/janebook/article/show/3" class="title">年轻的我们到底该如何相爱</a>
+                        <a target="_blank" href="/janebook/article/show/11" class="title">年轻的我们到底该如何相爱</a>
                         <p class="description">随着年岁渐长，我渐渐成了那个倾听亲友们说起子女早恋、子女苦恋、子女遭遇渣男（女）的准中年人。我听说的种种烦忧事件，不外乎以下几个版本：甲女和乙男高中早恋，学业一落千丈。两人不顾家长劝说，一意孤行。甲女高考失败，巨大压力下，复读成绩平平...</p>
                         <a target="_blank" href="#" class="author">
                             <div class="avatar" style="">
