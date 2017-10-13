@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 127.0.0.1
-Source Server Version : 50636
+Source Server         : date
+Source Server Version : 50620
 Source Host           : localhost:3306
 Source Database       : janebook
 
 Target Server Type    : MYSQL
-Target Server Version : 50636
+Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2017-10-12 17:39:29
+Date: 2017-10-13 09:08:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -99,9 +99,9 @@ CREATE TABLE `t_classify` (
 -- ----------------------------
 -- Records of t_classify
 -- ----------------------------
-INSERT INTO `t_classify` VALUES ('1', '连载小说', '本专题收录的作品类型：各种类别的小说、有特定主题的专栏文章。 投稿指...', '101', null, './images/classify/1.jpg', null, '9032', '1014', null);
-INSERT INTO `t_classify` VALUES ('2', '城市故事', '世界上有那么多的城镇，城镇中有那么多的酒馆，她却偏偏走进了我的酒馆。 ...', '101', null, './images/classify/2jpg', null, '3234', '1695', null);
-INSERT INTO `t_classify` VALUES ('3', '谈写作', '本专题主要收录写作者关于文学写作及其他写作的思考。 投稿须知详情...', '101', null, './images/classify/3.jpg', null, '31204', '13738', null);
+INSERT INTO `t_classify` VALUES ('1', '连载小说', '本专题收录的作品类型：各种类别的小说、有特定主题的专栏文章。 投稿指...', '怀左同学', null, './images/classify/1.jpg', null, '9032', '1014', null);
+INSERT INTO `t_classify` VALUES ('2', '城市故事', '世界上有那么多的城镇，城镇中有那么多的酒馆，她却偏偏走进了我的酒馆。 ...', '怀左同学', null, './images/classify/2jpg', null, '3234', '1695', null);
+INSERT INTO `t_classify` VALUES ('3', '谈写作', '本专题主要收录写作者关于文学写作及其他写作的思考。 投稿须知详情...', '怀左同学', null, './images/classify/3.jpg', null, '31204', '13738', null);
 INSERT INTO `t_classify` VALUES ('4', '微小说', '本专题收录各种类型微型小说，内容须言之有物，结构完整。 投稿指南：...', null, null, './images/classify/4.jpg', null, '16845', '1263', null);
 INSERT INTO `t_classify` VALUES ('5', '世间事', '「世间事」是一个专门收录故事的专题。 故事包括但不限于：身边故事...', null, null, './images/classify/5.jpg', null, '121996', '4347', null);
 INSERT INTO `t_classify` VALUES ('6', '乡土故事', '投稿须知： 1.本专题收录各种类型乡土故事，内容须真情实感，言之有...', null, null, './images/classify/6.jpg', null, '7574', '8512', null);
@@ -149,7 +149,7 @@ INSERT INTO `t_collection` VALUES ('6', 'admin', '3', '2017-08-07 15:35:40');
 DROP TABLE IF EXISTS `t_commentary_fir`;
 CREATE TABLE `t_commentary_fir` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '评论id',
-  `reviewer_id` varchar(11) DEFAULT NULL COMMENT '评论者',
+  `reviewer_id` varchar(255) DEFAULT NULL COMMENT '评论者',
   `comment_cont` varchar(255) DEFAULT NULL COMMENT '评论内容',
   `review_time` datetime DEFAULT NULL COMMENT '评论时间',
   `favor` varchar(11) DEFAULT NULL COMMENT '赞赏评论',
@@ -159,11 +159,16 @@ CREATE TABLE `t_commentary_fir` (
   `article_id` int(11) DEFAULT NULL COMMENT '被回复文章id',
   PRIMARY KEY (`id`),
   KEY `reviewer_id` (`reviewer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='评论管理表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='评论管理表';
 
 -- ----------------------------
 -- Records of t_commentary_fir
 -- ----------------------------
+INSERT INTO `t_commentary_fir` VALUES ('1', './images/user/3.jpg', '[:baidu_2_png:][:baidu_2_png:]', '2017-10-13 08:19:59', null, null, '怀左同学', null, '3');
+INSERT INTO `t_commentary_fir` VALUES ('2', './images/user/3.jpg', '[:baidu_3_png:][:baidu_3_png:]', '2017-10-13 08:23:39', null, null, '怀左同学', null, '13');
+INSERT INTO `t_commentary_fir` VALUES ('3', './images/user/3.jpg', 'CCC[:baidu_4_png:]', '2017-10-13 08:27:36', null, null, '怀左同学', null, '18');
+INSERT INTO `t_commentary_fir` VALUES ('4', './images/user/3.jpg', '[:baidu_3_png:][:baidu_3_png:]', '2017-10-13 08:29:43', null, null, '怀左同学', null, '10');
+INSERT INTO `t_commentary_fir` VALUES ('5', '/janebook/./images/user/3.jpg', '[:baidu_6_png:][:baidu_6_png:]', '2017-10-13 08:38:44', null, null, '怀左同学', null, '4');
 
 -- ----------------------------
 -- Table structure for `t_commentary_sec`
@@ -179,11 +184,14 @@ CREATE TABLE `t_commentary_sec` (
   `be_reviewer_id` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `reviewer_id` (`reviewer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='评论表2';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='评论表2';
 
 -- ----------------------------
 -- Records of t_commentary_sec
 -- ----------------------------
+INSERT INTO `t_commentary_sec` VALUES ('1', '怀左同学', null, '@怀左同学 [:baidu_33_png:][:baidu_33_png:]', '2017-10-13 08:30:15', '10', 'undefined');
+INSERT INTO `t_commentary_sec` VALUES ('2', '怀左同学', null, '@怀左同学 [:baidu_16_png:][:baidu_16_png:]', '2017-10-13 08:30:22', '10', 'undefined');
+INSERT INTO `t_commentary_sec` VALUES ('3', '怀左同学', null, '@怀左同学 [:baidu_2_png:][:baidu_2_png:][:baidu_2_png:]我怀左啦', '2017-10-13 08:38:59', '4', 'undefined');
 
 -- ----------------------------
 -- Table structure for `t_favor`

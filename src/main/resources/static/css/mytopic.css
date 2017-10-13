@@ -15,7 +15,7 @@ body {
     display: block;
     margin-bottom: 15px;
     padding: 0;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #333;
 }
 
 .topic-left .topic-img {

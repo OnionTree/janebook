@@ -26,7 +26,7 @@
 				<li class="user-avatar">
 					<div class="dropdown" style="padding: 10px 15px;">
 						<a class="avatar dropdown-toggle" id="user-dropdownMenu" data-toggle="dropdown">
-							<img src="/janebook/images/user/3.jpg" alt="">
+							<img src="/janebook/${userInfo.avatar}" alt="">
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="user-dropdownMenu">

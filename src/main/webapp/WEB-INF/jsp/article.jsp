@@ -1541,7 +1541,7 @@
                             <img src="/janebook/${user.avatar}" alt="">
                         </a>
                         <div class="info">
-                            <span class="tag">${user.userId}</span>
+                            <%--<span class="tag"></span>--%>
                             <span id="article-author" class="name"><a href="#">乌石堰</a></span>
                             <a class="btn btn-success follow">+ 关注</a>
                             <div class="meta">
@@ -1552,7 +1552,7 @@
                             </div>
                         </div>
                         <!-- 如果是当前作者，加入编辑按钮 -->
-                        <a href="#" target="_blank" class="edit">编辑文章</a>
+                        <%--<a href="#" target="_blank" class="edit">编辑文章</a>--%>
                     </div>
                     <div class="note-content">
                         <div class="note-text">
@@ -1595,7 +1595,7 @@
                         </a>
                         <a class="btn btn-success follow"><span>+ 关注</span></a>
                         <a id = "nickname"class="title" href="#">吴氏炎</a>
-                        <i  class="iconfont icon-man"></i>
+                        <%--<i  class="iconfont icon-man"></i>--%>
                         <p id="user-msg">写了 114514 字，被 233 人关注，获得了 233 个喜欢</p>
                     </div>
                     <div id="user-info" class="signature">情场杀手，原谅达人。</div>
@@ -1622,7 +1622,7 @@
                 <div class="comment-list">
                     <div>
                         <form class="new-comment">
-                            <a class="avatar"><img src="/janebook/${user.avatar}"></a>
+                            <a class="avatar"><img src="/janebook/${userInfo.avatar}"></a>
                             <textarea placeholder="写下你的评论..." id="subText"></textarea>
                             <div class="write-function-block">
                                 <div class="emoji-modal-wrap">
@@ -1853,10 +1853,10 @@
             success:function(data){
                 authorName = data.user.nickname;
                 $(".avatar").attr('src', data.user.avatar);
-                $("#nickname").html(data.user.nickname);
+                $("#nickname").html(author);
                 $("#user-msg").html('写了 '+data.articleNum+' 篇文章 '+data.wordNum+ '字，被 '+data.follow+' 人关注，获得了 '+data.fans+' 个喜欢')
                 $("#user-info").html(data.user.info);
-                $("#article-author").html(data.user.nickname);
+                $("#article-author").html(author);
             }
         })
 
@@ -2257,7 +2257,7 @@
                     '<div>' +
                     '<div class="author">' +
                     '<a href="#" target="_blank" class="avatar">' +
-                    '<img src="${userInfo.avatar}">' +
+                    '<img src="/janebook/${userInfo.avatar}">' +
                     '</a>' +
                     '<div class="info">' +
                     '<a  href="#" target="_blank" class="name fir-name">${userInfo.nickname}</a>' +
@@ -2277,6 +2277,7 @@
                     '</div><div class="sub-comment-list"><div>' +
                     '</div>';
                 $(".note .post .comment-list .normal-comment-list").append(new_comment);
+
                 $(".note .post .comment-list .comment:last .comment-wrap p").html(we.explain(newVal));
                 floor_num++;
                 var thumupNum = 0;
@@ -2312,12 +2313,11 @@
         $(".new-comment .write-function-block #btn-send-fir").on('click', function(event) {
             firCommentSend();
         });
-        layer.msg('${userInfo.userId}');
 
         function firCommentSend(){
             var reviewerName = '${userInfo.nickname}';
             var commentCont = $("#subText").val();
-            var avatar = '${userInfo.avatar}';
+            var avatar = '/janebook/'+'${userInfo.avatar}';
             var reviewTime = new Date();
             if(reviewerName == ''){
                 layer.msg("请先登录")
@@ -2335,6 +2335,7 @@
                     }),
                     success:function(){
                         publish_comment();
+                        $("#subText").val("");
                     }
                 })
             }
@@ -2404,7 +2405,7 @@
         });
 
         function secCommentSend(event){
-            var id = $(event.target).parents(".comment").attr('id');
+            var id = $(event.target).parents(".comment").attr('id')+"";
             id = id.substring(id.lastIndexOf('-')+1);
             var cont = $("#subText2").val();
             var reviewTime = new Date();
