@@ -1,5 +1,6 @@
 <%@ page language="java" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -57,7 +58,7 @@
 					<h4>${tClassify.classifyName}</h4>
 					<p>${tClassify.classifyInfo}</p>
 				</a>
-				<a href="javascript:void(0)" class="btn btn-success follow"  id="guanzhu">
+				<a href="javascript:void(0)" class="btn btn-success follow">
 					<i class="iconfont icon-add"></i>
 					<span>关注</span>
 				</a>
@@ -74,24 +75,24 @@
 <script>
     $(function(follow) {
 
-        $("#guanzhu").on("mouseenter mouseleave click", function(event) {
+        $(".follow").on("click", function(event) {
 
-            var _this = $(".follow");
             if ($(this).hasClass('following')) {
-
-                if (event.type == 'mouseenter') {
-                    $(_this).text("取消关注");
-                } else if (event.type == 'mouseleave') {
-                    $(_this).text("正在关注");
-                } else {
-                    $(_this).removeClass('following');
-                    $(_this).text("+ 关注");
-                }
+					$(this).removeClass("following");
+                    $(this).text("+关注");
+//                if (event.type == 'mouseenter') {
+//                    $(_this).text("取消关注");
+//                } else if (event.type == 'mouseleave') {
+//                    $(_this).text("正在关注");
+//                } else {
+//                    $(_this).removeClass('following');
+//                    $(_this).text("+ 关注");
+//                }
             } else {
-                if (event.type == 'click') {
-                    $(_this).addClass('following');
-                    $(_this).text("正在关注");
-                }
+
+                    $(this).addClass('following');
+                    $(this).text("正在关注");
+
             }
         });
     });
