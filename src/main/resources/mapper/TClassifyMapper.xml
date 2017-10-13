@@ -14,6 +14,10 @@
     <result column="is_city" property="isCity" jdbcType="INTEGER" />
   </resultMap>
 
+  <select id="getUserClassifys" parameterType="String" resultMap="BaseResultMap"  >
+    select * from  t_classify where classify_admin = #{name}
+  </select>
+
   <select id="gettClassifies" resultMap="BaseResultMap"  >
     select * from  t_classify order by rand() LIMIT 9
   </select>
