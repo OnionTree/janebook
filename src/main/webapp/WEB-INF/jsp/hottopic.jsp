@@ -30,24 +30,6 @@
 				推荐
 			</a>
 		</li>
-		<li class="">
-			<a href="">
-				<i class="iconfont icon-hot"></i>
-				热门
-			</a>
-		</li>
-		<li class="">
-			<a href="">
-				<i class="iconfont icon-chengshi"></i>
-				城市
-			</a>
-		</li>
-		<li class="">
-			<a href="">
-				<i class="iconfont icon-xiaoyuan"></i>
-				校园
-			</a>
-		</li>
 	</ul>
 	<div class="row">
 		<c:forEach items="${TClassify}" var="tClassify">

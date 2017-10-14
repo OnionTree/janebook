@@ -148,13 +148,13 @@
             </div>
             <ul class="ming-list">
                 <li>
-                    <a href="#" class="ming-list-sp">
+                    <a href="/janebook/myfollow" class="ming-list-sp">
                         <i class="iconfont icon-qrcode"></i>
                         <span >我关注的专题/文集</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="ming-list-sp">
+                    <a href="/janebook/myfavourart" class="ming-list-sp">
                         <i class="iconfont icon-Love"></i>
                         <span>我喜欢的文章</span>
                     </a>
@@ -169,8 +169,12 @@
                     </a>
                     <ul class="topic-list">
                         <li>
-                            <a href="/janebook/mytopic" class="ming-collection"><img src="images/test.jpg"></a>
-                            <a href="/janebook/mytopic" class="ming-name ming-list-sp">历史文化</a>
+                            <c:forEach items="${TClassify}" var="tClassify">
+                            <li>
+                            <a href="/janebook/mytopic?id=${tClassify.id}" class="ming-collection"><img src="${tClassify.classifyImg}"></a>
+                            <a href="/janebook/mytopic?id=${tClasssify.id}" class="ming-name ming-list-sp">${tClassify.classifyName}</a>
+                            </li>
+                            </c:forEach>
                         </li>
                     </ul>
                 </div>

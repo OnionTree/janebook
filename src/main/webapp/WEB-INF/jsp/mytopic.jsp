@@ -39,18 +39,12 @@
 					<a href="" class="title">${classify.classifyName}</a>
 				</div>
 				<div class="topic-info">
-					收录了一篇文章-1人关注
+					收录了一篇文章-332人关注
 				</div>
 			</div>
 			<ul class="topic-left-center">
 				<li class="option active">
-					<a href="#"><i class="iconfont icon-comments"></i> 最新评论</a>
-				</li>
-				<li class="option">
-					<a href="#"><i class="iconfont icon-articles"></i> 最新目录</a>
-				</li>
-				<li class="option">
-					<a href="#"><i class="iconfont icon-hot"></i> 热门</a>
+					<a href="#"><i class="iconfont icon-comments"></i> 最新文章</a>
 				</li>
 			</ul>
 			<div class="bottom">
@@ -76,13 +70,13 @@
 							</p>
 							<div class="ming-meta">
 								<a href="#">
-									<i class="iconfont icon-liulan"></i>12
+									<i class="iconfont icon-liulan"></i>${tArticles.browse}
 								</a>
 								<a href="#">
-									<i class="iconfont icon-comments"></i>1
+									<i class="iconfont icon-comments"></i>${tArticles.collection}
 								</a>
 								<span>
-                                        <i class="iconfont icon-Love"></i>2
+                                        <i class="iconfont icon-Love"></i>${tArticles.reward}
                                     </span>
 							</div>
 						</div>
@@ -94,7 +88,7 @@
 		<div class="col-md-3 ho-rightpart">
 			<div class="title">专题公告</div>
 			<div class="discrition">
-				<div class="ming-text">投稿须知：1.请作者用心管理自己的作品，为作品建立文集和专题，在文章中加上目录和上下章节的链接，排版优美的作品优先收录。请参考管理员的做法</div>
+				<div class="ming-text">${classify.classifyInfo}</div>
 			</div>
 			<div>
 				<div class="add-border">
@@ -102,7 +96,7 @@
 					<ul class="topic-list">
 						<li>
 							<a href="" class="ming-collection"><img src="images/user/3.jpg"></a>
-							<a href="" class="ming-name ming-list-sp">怀左同学</a>
+							<a href="" class="ming-name ming-list-sp">${classify.classifyAdmin}</a>
 						</li>
 					</ul>
 				</div>

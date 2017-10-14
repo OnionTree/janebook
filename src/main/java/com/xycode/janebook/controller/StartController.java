@@ -79,6 +79,8 @@ public class StartController {
         }else{
             mv.setViewName("MainHome");
         }
+        List<TClassify> tClassify = classifyService.gettClassifies();
+        mv.addObject("TClassify",tClassify);
         mv.addObject("TArticle", at);
         mv.addObject("TUser",user);
         mv.addObject("uu",uu);
@@ -247,6 +249,8 @@ public class StartController {
         mv.addObject("Articleslist",Articleslist);
         mv.addObject("user",userService.getUserByUserName(name));
         mv.addObject("UserInfo",userService.selectUserMsg(name));
+        List<TClassify> tClassify = classifyService.getClassify(name);
+        mv.addObject("TClassify",tClassify);
         mv.setViewName("myfavourart");
         return mv;
     }
@@ -290,6 +294,8 @@ public class StartController {
         /*mv.addObject("topname", tArticles.get(0).getAuthorName());*/
         mv.addObject("UserInfo",userService.selectUserMsg(name));
         mv.addObject("user",userService.getUserByUserName(name));
+        List<TClassify> tClassify = classifyService.getClassify(name);
+        mv.addObject("TClassify",tClassify);
         mv.addObject("classifies",classifies);
         return mv;
     }
@@ -312,13 +318,16 @@ public class StartController {
             log_.info("temp==="+temp);
             tArticles.get(k).setContent(temp);
         }
+
         ModelAndView mv = new ModelAndView();
+
         mv.setViewName("myhomepage");
         mv.addObject("TArticle",tArticles);
-        mv.addObject("topname", tArticles.get(0).getAuthorName());
+        /*mv.addObject("topname", tArticles.get(0).getAuthorName());*/
         mv.addObject("UserInfo",userService.selectUserMsg(name));
-        log_.info("info=="+userService.getUserByUserName(name));
-        System.out.println(tArticles);
+        mv.addObject("user",userService.getUserByUserName(name));
+        List<TClassify> tClassify = classifyService.getClassify(name);
+        mv.addObject("TClassify",tClassify);
         return mv;
     }
 
@@ -352,11 +361,14 @@ public class StartController {
         }
 
         ModelAndView mv = new ModelAndView();
+
         mv.setViewName("myhomepage");
         mv.addObject("TArticle",tArticles);
         /*mv.addObject("topname", tArticles.get(0).getAuthorName());*/
         mv.addObject("UserInfo",userService.selectUserMsg(name));
         mv.addObject("user",userService.getUserByUserName(name));
+        List<TClassify> tClassify = classifyService.getClassify(name);
+        mv.addObject("TClassify",tClassify);
 
         return mv;
     }

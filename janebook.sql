@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : date
-Source Server Version : 50620
+Source Server         : 127.0.0.1
+Source Server Version : 50636
 Source Host           : localhost:3306
 Source Database       : janebook
 
 Target Server Type    : MYSQL
-Target Server Version : 50620
+Target Server Version : 50636
 File Encoding         : 65001
 
-Date: 2017-10-13 09:08:32
+Date: 2017-10-14 16:09:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -100,24 +100,24 @@ CREATE TABLE `t_classify` (
 -- Records of t_classify
 -- ----------------------------
 INSERT INTO `t_classify` VALUES ('1', '连载小说', '本专题收录的作品类型：各种类别的小说、有特定主题的专栏文章。 投稿指...', '怀左同学', null, './images/classify/1.jpg', null, '9032', '1014', null);
-INSERT INTO `t_classify` VALUES ('2', '城市故事', '世界上有那么多的城镇，城镇中有那么多的酒馆，她却偏偏走进了我的酒馆。 ...', '怀左同学', null, './images/classify/2jpg', null, '3234', '1695', null);
+INSERT INTO `t_classify` VALUES ('2', '城市故事', '世界上有那么多的城镇，城镇中有那么多的酒馆，她却偏偏走进了我的酒馆。 ...', '怀左同学', null, './images/classify/2.jpg', null, '3234', '1695', null);
 INSERT INTO `t_classify` VALUES ('3', '谈写作', '本专题主要收录写作者关于文学写作及其他写作的思考。 投稿须知详情...', '怀左同学', null, './images/classify/3.jpg', null, '31204', '13738', null);
-INSERT INTO `t_classify` VALUES ('4', '微小说', '本专题收录各种类型微型小说，内容须言之有物，结构完整。 投稿指南：...', null, null, './images/classify/4.jpg', null, '16845', '1263', null);
-INSERT INTO `t_classify` VALUES ('5', '世间事', '「世间事」是一个专门收录故事的专题。 故事包括但不限于：身边故事...', null, null, './images/classify/5.jpg', null, '121996', '4347', null);
-INSERT INTO `t_classify` VALUES ('6', '乡土故事', '投稿须知： 1.本专题收录各种类型乡土故事，内容须真情实感，言之有...', null, null, './images/classify/6.jpg', null, '7574', '8512', null);
-INSERT INTO `t_classify` VALUES ('7', '散文', '一缕墨香伴清茶。 散文专题投稿须知： 1.字数适量。散文虽形式...', null, null, './images/classify/7.jpg', null, '25677', '9927', null);
-INSERT INTO `t_classify` VALUES ('8', '行业故事汇', '金融、互联、快消、广告、教育、媒体、物流、销售......这里有只有行...', null, null, './images/classify/8.jpg', null, '1740', '428', null);
-INSERT INTO `t_classify` VALUES ('9', '旅行·在路上', '邂逅一座城池，讲述一段故事。 投稿须知： 1.既为旅行，必有拍图，...', null, null, './images/classify/9.jpg', null, '49207', '7466', null);
-INSERT INTO `t_classify` VALUES ('10', '成长励志', '成长励志投稿须知： 1.本专题收录有关成长，蜕变，励志，追梦等文章，...', null, null, './images/classify/10.jpg', null, '33462', '9878', null);
-INSERT INTO `t_classify` VALUES ('11', '大学生活', '本专题收录大学相关文章。要求文内不得带有公众号信息等推广内容。 详细规...', null, null, './images/classify/11.jpg', null, '8321', '810', null);
-INSERT INTO `t_classify` VALUES ('12', '哲思', '投稿须知: 1、字数不限，收入以哲学思辨（中西方哲学观点和作者本人的...', null, null, './images/classify/12.jpg', null, '1473', '1574', null);
-INSERT INTO `t_classify` VALUES ('13', '谈谈情，说说爱', '柏拉图说每个恋爱中的人都是诗人，这里并不要求你一定要写得诗情画意，态度...', null, null, './images/classify/13.jpg', null, '108444', '7446', null);
-INSERT INTO `t_classify` VALUES ('14', '漫画手绘', '手绘、漫画爱好者分享交流学习的地方 (≧∇≦)ﾉ ，无论高手还是菜鸟都...', null, null, './images/classify/14.jpg', null, '84522', '13456', null);
-INSERT INTO `t_classify` VALUES ('15', '书法', '你好。 见字如面。 这里是简书书法专题。 欢迎每日打卡，我们一起...', null, null, './images/classify/15.jpg', null, '1639', '2245', null);
-INSERT INTO `t_classify` VALUES ('16', '美食', '美食不可辜负。看美食没有配图不幸福啊！请投稿的亲们配图啊！ 详细...', null, null, './images/classify/16.jpg', null, '4678', '6450', null);
-INSERT INTO `t_classify` VALUES ('17', '社会热点', '有思想、有深度、有分享、有见解的热点交流平台，在这里你能寻找到全球最快...', null, null, './images/classify/17.jpg', null, '137', '7866', null);
-INSERT INTO `t_classify` VALUES ('18', '摄影', '生活本无趣   光影挽留年 用图片 说故事 记录生活 记录美好...', null, null, './images/classify/18.jpg', null, '77788', '781', null);
-INSERT INTO `t_classify` VALUES ('19', '上班这点事儿', '本专题仅收录求职、简历、换工作、职业规划、招聘、职场干货、上班感悟、管...', null, null, './images/classify/19.jpg', null, '41110', '135', null);
+INSERT INTO `t_classify` VALUES ('4', '微小说', '本专题收录各种类型微型小说，内容须言之有物，结构完整。 投稿指南：...', '二九七月', null, './images/classify/4.jpg', null, '16845', '1263', null);
+INSERT INTO `t_classify` VALUES ('5', '世间事', '「世间事」是一个专门收录故事的专题。 故事包括但不限于：身边故事...', '二九七月', null, './images/classify/5.jpg', null, '121996', '4347', null);
+INSERT INTO `t_classify` VALUES ('6', '乡土故事', '投稿须知： 1.本专题收录各种类型乡土故事，内容须真情实感，言之有...', '二九七月', null, './images/classify/6.jpg', null, '7574', '8512', null);
+INSERT INTO `t_classify` VALUES ('7', '散文', '一缕墨香伴清茶。 散文专题投稿须知： 1.字数适量。散文虽形式...', '奇奇漫悦读', null, './images/classify/7.jpg', null, '25677', '9927', null);
+INSERT INTO `t_classify` VALUES ('8', '行业故事汇', '金融、互联、快消、广告、教育、媒体、物流、销售......这里有只有行...', '奇奇漫悦读', null, './images/classify/8.jpg', null, '1740', '428', null);
+INSERT INTO `t_classify` VALUES ('9', '旅行·在路上', '邂逅一座城池，讲述一段故事。 投稿须知： 1.既为旅行，必有拍图，...', '奇奇漫悦读', null, './images/classify/9.jpg', null, '49207', '7466', null);
+INSERT INTO `t_classify` VALUES ('10', '成长励志', '成长励志投稿须知： 1.本专题收录有关成长，蜕变，励志，追梦等文章，...', '捕手志', null, './images/classify/10.jpg', null, '33462', '9878', null);
+INSERT INTO `t_classify` VALUES ('11', '大学生活', '本专题收录大学相关文章。要求文内不得带有公众号信息等推广内容。 详细规...', '捕手志', null, './images/classify/11.jpg', null, '8321', '810', null);
+INSERT INTO `t_classify` VALUES ('12', '哲思', '投稿须知: 1、字数不限，收入以哲学思辨（中西方哲学观点和作者本人的...', '捕手志', null, './images/classify/12.jpg', null, '1473', '1574', null);
+INSERT INTO `t_classify` VALUES ('13', '谈谈情，说说爱', '柏拉图说每个恋爱中的人都是诗人，这里并不要求你一定要写得诗情画意，态度...', '沐丞', null, './images/classify/13.jpg', null, '108444', '7446', null);
+INSERT INTO `t_classify` VALUES ('14', '漫画手绘', '手绘、漫画爱好者分享交流学习的地方 (≧∇≦)ﾉ ，无论高手还是菜鸟都...', '沐丞', null, './images/classify/14.jpg', null, '84522', '13456', null);
+INSERT INTO `t_classify` VALUES ('15', '书法', '你好。 见字如面。 这里是简书书法专题。 欢迎每日打卡，我们一起...', '沐丞', null, './images/classify/15.jpg', null, '1639', '2245', null);
+INSERT INTO `t_classify` VALUES ('16', '美食', '美食不可辜负。看美食没有配图不幸福啊！请投稿的亲们配图啊！ 详细...', '眼镜姑娘_ ', null, './images/classify/16.jpg', null, '4678', '6450', null);
+INSERT INTO `t_classify` VALUES ('17', '社会热点', '有思想、有深度、有分享、有见解的热点交流平台，在这里你能寻找到全球最快...', '金春妙', null, './images/classify/17.jpg', null, '137', '7866', null);
+INSERT INTO `t_classify` VALUES ('18', '摄影', '生活本无趣   光影挽留年 用图片 说故事 记录生活 记录美好...', '魏清萍', null, './images/classify/18.jpg', null, '77788', '781', null);
+INSERT INTO `t_classify` VALUES ('19', '上班这点事儿', '本专题仅收录求职、简历、换工作、职业规划、招聘、职场干货、上班感悟、管...', '眼镜姑娘_ ', null, './images/classify/19.jpg', null, '41110', '135', null);
 
 -- ----------------------------
 -- Table structure for `t_collection`
@@ -149,7 +149,7 @@ INSERT INTO `t_collection` VALUES ('6', 'admin', '3', '2017-08-07 15:35:40');
 DROP TABLE IF EXISTS `t_commentary_fir`;
 CREATE TABLE `t_commentary_fir` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '评论id',
-  `reviewer_id` varchar(255) DEFAULT NULL COMMENT '评论者',
+  `reviewer_id` varchar(11) DEFAULT NULL COMMENT '评论者',
   `comment_cont` varchar(255) DEFAULT NULL COMMENT '评论内容',
   `review_time` datetime DEFAULT NULL COMMENT '评论时间',
   `favor` varchar(11) DEFAULT NULL COMMENT '赞赏评论',
@@ -159,16 +159,11 @@ CREATE TABLE `t_commentary_fir` (
   `article_id` int(11) DEFAULT NULL COMMENT '被回复文章id',
   PRIMARY KEY (`id`),
   KEY `reviewer_id` (`reviewer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='评论管理表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='评论管理表';
 
 -- ----------------------------
 -- Records of t_commentary_fir
 -- ----------------------------
-INSERT INTO `t_commentary_fir` VALUES ('1', './images/user/3.jpg', '[:baidu_2_png:][:baidu_2_png:]', '2017-10-13 08:19:59', null, null, '怀左同学', null, '3');
-INSERT INTO `t_commentary_fir` VALUES ('2', './images/user/3.jpg', '[:baidu_3_png:][:baidu_3_png:]', '2017-10-13 08:23:39', null, null, '怀左同学', null, '13');
-INSERT INTO `t_commentary_fir` VALUES ('3', './images/user/3.jpg', 'CCC[:baidu_4_png:]', '2017-10-13 08:27:36', null, null, '怀左同学', null, '18');
-INSERT INTO `t_commentary_fir` VALUES ('4', './images/user/3.jpg', '[:baidu_3_png:][:baidu_3_png:]', '2017-10-13 08:29:43', null, null, '怀左同学', null, '10');
-INSERT INTO `t_commentary_fir` VALUES ('5', '/janebook/./images/user/3.jpg', '[:baidu_6_png:][:baidu_6_png:]', '2017-10-13 08:38:44', null, null, '怀左同学', null, '4');
 
 -- ----------------------------
 -- Table structure for `t_commentary_sec`
@@ -184,14 +179,11 @@ CREATE TABLE `t_commentary_sec` (
   `be_reviewer_id` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `reviewer_id` (`reviewer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='评论表2';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='评论表2';
 
 -- ----------------------------
 -- Records of t_commentary_sec
 -- ----------------------------
-INSERT INTO `t_commentary_sec` VALUES ('1', '怀左同学', null, '@怀左同学 [:baidu_33_png:][:baidu_33_png:]', '2017-10-13 08:30:15', '10', 'undefined');
-INSERT INTO `t_commentary_sec` VALUES ('2', '怀左同学', null, '@怀左同学 [:baidu_16_png:][:baidu_16_png:]', '2017-10-13 08:30:22', '10', 'undefined');
-INSERT INTO `t_commentary_sec` VALUES ('3', '怀左同学', null, '@怀左同学 [:baidu_2_png:][:baidu_2_png:][:baidu_2_png:]我怀左啦', '2017-10-13 08:38:59', '4', 'undefined');
 
 -- ----------------------------
 -- Table structure for `t_favor`
@@ -334,10 +326,10 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('admin', 'admin', '管理员', '男', '是的撒', null, '51321', '456431', '451', '2017-08-21 09:34:07', null, null, './images/user/1.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('admin', 'admin', '管理员', '男', '是的撒', null, '51321', 'xianyuCode@126.com', '451', '2017-08-21 09:34:07', null, null, './images/user/1.jpg', null, null, null, '0');
 INSERT INTO `t_user` VALUES ('二九七月', '123456', '二九七月', '女', null, null, null, null, null, null, null, null, './images/user/9.jpg', null, null, null, '0');
 INSERT INTO `t_user` VALUES ('奇奇漫悦读', '123456', '奇奇漫悦读', '男', null, null, null, null, null, null, null, null, './images/user/2.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('怀左同学', '123456', '怀左同学', '女', '打破你的原则，成为你的例外', '', null, null, null, null, null, null, './images/user/3.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('怀左同学', '123456', '', '女', '打破你的原则，成为你的例外', 'www.baidu.com', null, '', null, null, null, null, './images/user/3.jpg', null, null, null, '0');
 INSERT INTO `t_user` VALUES ('捕手志', '123456', '捕手志', '男', null, null, null, null, null, null, null, null, './images/user/4.jpg', null, null, null, '0');
 INSERT INTO `t_user` VALUES ('沐丞', '123456', '沐丞', '女', null, null, null, null, null, null, null, null, './images/user/5.jpg', null, null, null, '0');
 INSERT INTO `t_user` VALUES ('眼镜姑娘_ ', '123456', '眼镜姑娘_ ', '女', null, null, null, null, null, null, null, null, './images/user/6.jpg', null, null, null, '0');

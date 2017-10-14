@@ -58,42 +58,13 @@
 	<div class="row main">
 		<div class="main-left col-md-8 col-xs-8">
 			<div class="recommend-collection">
-				<a href="/janebook/mytopic?id=1"  target="_blank" class="collection">
-					<img src="./images/collection/EntertainmentGossip.png" alt="">
-					<div class="collection-name">连载小说</div>
+				<c:forEach items="${TClassify}" var="tClassify">
+				<a href="/janebook/mytopic?id=${tClassify.id}"  target="_blank" class="collection">
+					<img src="${tClassify.classifyImg}" alt="">
+					<div class="collection-name">${tClassify.classifyName}</div>
 				</a>
-				<a href="/janebook/mytopic?id=3" target="_blank" class="collection">
-					<img src="./images/collection/Animate.jpg" alt="">
-					<div class="collection-name">谈写作</div>
-				</a>
-				<a href="/janebook/mytopic?id=17"  target="_blank" class="collection">
-					<img src="./images/collection/Books.jpg" alt="">
-					<div class="collection-name">社会热点</div>
-				</a>
-				<a href="/janebook/mytopic?id=4"  target="_blank" class="collection">
-					<img src="./images/collection/Prose.jpg" alt="">
-					<div class="collection-name">微小说</div>
-				</a>
-				<a href="/janebook/mytopic?id=5"  target="_blank" class="collection">
-					<img src="./images/collection/Camera.png" alt="">
-					<div class="collection-name">世间事</div>
-				</a>
-				<a href="/janebook/mytopic?id=6" target="_blank" class="collection">
-					<img src="./images/collection/Moyu.jpg" alt="">
-					<div class="collection-name">乡土故事</div>
-				</a>
-				<a href="/janebook/mytopic?id=7" target="_blank" class="collection">
-					<img src="./images/collection/Rua.jpg" alt="">
-					<div class="collection-name">散文</div>
-				</a>
-				<a href="/janebook/mytopic?id=8"  target="_blank" class="collection">
-					<img src="./images/collection/RPG.jpg" alt="">
-					<div class="collection-name">行业故事汇</div>
-				</a>
-				<a href="/janebook/mytopic?id=9"  target="_blank" class="collection">
-					<img src="./images/collection/Music.png" alt="">
-					<div class="collection-name">旅行、在路上</div>
-				</a>
+				</c:forEach>
+
 				<a href="/janebook/hottopic" class="more-collection">
 					更多热门专题  >
 				</a>

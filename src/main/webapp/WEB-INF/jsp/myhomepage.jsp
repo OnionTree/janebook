@@ -115,13 +115,13 @@
 								</div>
 								<div class="ming-meta">
 									<a href="#">
-										<i class="iconfont icon-liulan"></i>12
+										<i class="iconfont icon-liulan"></i>${tArticles.browse}
 									</a>
 									<a href="#">
-										<i class="iconfont icon-comments"></i>1
+										<i class="iconfont icon-comments"></i>${tArticles.collection}
 									</a>
 									<span>
-                                        <i class="iconfont icon-Love"></i>2
+                                        <i class="iconfont icon-Love"></i>${tArticles.reward}
                                     </span>
 								</div>
 							</div>
@@ -160,10 +160,12 @@
 						<span style="color: #9aff9a">新建专题</span>
 					</a>
 					<ul class="topic-list">
-						<li>
-							<a href="/janebook/mytopic" class="ming-collection"><img src="images/test.jpg"></a>
-							<a href="/janebook/mytopic" class="ming-name ming-list-sp">历史文化</a>
-						</li>
+						<c:forEach items="${TClassify}" var="tClassify">
+							<li>
+								<a href="/janebook/mytopic?id=${tClassify.id}" class="ming-collection"><img src="${tClassify.classifyImg}"></a>
+								<a href="/janebook/mytopic?id=${tClasssify.id}" class="ming-name ming-list-sp">${tClassify.classifyName}</a>
+							</li>
+						</c:forEach>
 					</ul>
 				</div>
 				<div>

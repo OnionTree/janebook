@@ -77,10 +77,10 @@
 			</div>
 			<ul class="center">
 				<li class="option active">
-					<a href="#"> 关注的专题/文集3</a>
+					<a href="/janebook/myfollow"> 关注的专题/文集3</a>
 				</li>
 				<li class="option">
-					<a href="#"> 喜欢的文章2</a>
+					<a href="/janebook/myfavourart"> 喜欢的文章2</a>
 				</li>
 			</ul>
 			<div class="bottom">
@@ -91,7 +91,7 @@
 							<img src="${classifies.classifyImg}">
 						</a>
 						<div class="co-info">
-							<a href="" class="co-title">美食</a>
+							<a href="" class="co-title">${classifies.classifyName}</a>
 							<div class="co-meta">
 								<a href="">简书</a> 收录了${classifies.articleNum}篇文章，${classifies.follow}人关注
 							</div>
@@ -137,10 +137,12 @@
 						<span style="color: #9aff9a">新建专题</span>
 					</a>
 					<ul class="topic-list">
-						<li>
-							<a href="/janebook/mytopic" class="ming-collection"><img src="images/test.jpg"></a>
-							<a href="/janebook/mytopic" class="ming-name ming-list-sp">历史文化</a>
-						</li>
+						<c:forEach items="${TClassify}" var="tClassify">
+							<li>
+								<a href="/janebook/mytopic?id=${tClassify.id}" class="ming-collection"><img src="${tClassify.classifyImg}"></a>
+								<a href="/janebook/mytopic?id=${tClasssify.id}" class="ming-name ming-list-sp">${tClassify.classifyName}</a>
+							</li>
+						</c:forEach>
 					</ul>
 				</div>
 				<div>

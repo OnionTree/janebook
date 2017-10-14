@@ -46,11 +46,7 @@
 							<c:forEach items="${Articleslist}" var="Articleslist">
 								<c:if test="${tCollections.articleId==Articleslist.id}">
 
-									<c:forEach items="${tUsers}" var="tUsers">
-										<c:if test="${tUsers.userId==Articleslist.authorName}">
-											666
-										</c:if>
-									</c:forEach>
+									
 
 									<a href="#" class="avatar">
 										<img src="${user.avatar}" alt="">
