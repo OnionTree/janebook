@@ -188,6 +188,7 @@ public class StartController {
         List<TCollection> tCollections = collectionService.getallcollections(name);
         List<TArticle> Articleslist = new ArrayList<TArticle>();
         List<TUser> tUsers = new ArrayList<TUser>();
+        Map map=new HashMap();
 
         int lenght =tCollections.size();
         System.out.println(lenght);
@@ -199,6 +200,8 @@ public class StartController {
             TUser tu = userService.getUserByUserName(tCollections.get(i).getUserId());
             Articleslist.add(tArticle);
             tUsers.add(tu);
+
+
         }
         log_.info("Size=="+Articleslist.size());
         RegExp re = new RegExp();
@@ -207,13 +210,18 @@ public class StartController {
             String temp = re.getTextFromHtml(str)+"...";
             log_.info("temp==="+temp);
             Articleslist.get(k).setContent(temp);
+            TUser userTemp = userService.getUserByUserName(Articleslist.get(k).getAuthorName());
+            map.put(userTemp.getUserId(),userTemp.getAvatar());
         }
+
+        log_.info("collcetion Size=="+map.size());
         // System.out.println("here");
-        // System.out.println(Articleslist.size());
+        // System.out.println(Articlseslist.size());
         mv.addObject("TCollection",tCollections);
         mv.addObject("Articleslist",Articleslist);
         mv.addObject("user",userService.getUserByUserName(name));
         mv.addObject("tUsers",tUsers);
+        mv.addObject("map",map);
         mv.setViewName("mycollection");
         return mv;
     }
@@ -258,21 +266,26 @@ public class StartController {
     @RequestMapping("/mytopic")
     public ModelAndView mytopicPage(int id) {
         List<TArticle> tArticles = articleService.getallArticle(id);
-        log_.info("Size=="+tArticles.size());
+        Map map=new HashMap();
         RegExp re = new RegExp();
         for(int k=0;k<tArticles.size();k++){
             String str = tArticles.get(k).getContent();
             String temp = re.getTextFromHtml(str)+"...";
             log_.info("temp==="+temp);
             tArticles.get(k).setContent(temp);
+            TUser userTemp = userService.getUserByUserName(tArticles.get(k).getAuthorName());
+
+            map.put(userTemp.getUserId(),userTemp.getAvatar());
         }
+        log_.info("Map Size=="+map.size());
         ModelAndView mv = new ModelAndView();
         mv.setViewName("mytopic");
-
+        //文章的图片
+        //管理员图片
+        mv.addObject("img",userService.getUserByUserName(classifyService.selectByPrimaryKey(id).getClassifyAdmin()).getAvatar());
         mv.addObject("TArticle",tArticles);
         mv.addObject("classify",classifyService.selectByPrimaryKey(id));
-        //mv.addObject("toptitle", tArticles.get(0).getTag());
-        //System.out.println("hhhhhhhhhhhhh"+classifyService.selectByPrimaryKey(id));
+        mv.addObject("map",map);
         return mv;
     }
     @RequestMapping("/mynewtopic")

@@ -49,6 +49,7 @@
 			</ul>
 			<div class="bottom">
 				<ul class="ming-list" style="border:none;">
+
 					<c:forEach items="${TArticle}" var="tArticles">
 					<li class="ming">
 						<a href="#" class="ming-img">
@@ -56,9 +57,17 @@
 						</a>
 						<div class="ming-content">
 							<div class="ming-author">
-								<a href="#" class="avatar">
-									<img src="images/user/3.jpg" alt="">
-								</a>
+
+								<c:forEach items="${map}" var="entry">
+									<c:if test="${entry.key==tArticles.authorName}">
+										<a href="#" class="avatar">
+											<img src="${entry.value}" alt="">
+										</a>
+									</c:if>
+								</c:forEach>
+
+
+
 								<div class="ming-info">
 									<a target="_blank" href="/janebook/myhomepage?name=${tArticles.authorName}" class="avatar-name">${tArticles.authorName}</a>
 									<span class="avatar-time">${tArticles.createTime}</span>
@@ -95,7 +104,7 @@
 					<div class="title">管理员</div>
 					<ul class="topic-list">
 						<li>
-							<a href="" class="ming-collection"><img src="images/user/3.jpg"></a>
+							<a href="" class="ming-collection"><img src="${img}"></a>
 							<a href="" class="ming-name ming-list-sp">${classify.classifyAdmin}</a>
 						</li>
 					</ul>

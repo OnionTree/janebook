@@ -82,15 +82,6 @@
 				<li class="option active">
 					<a href="#"><i class="iconfont icon-articles"></i> 文章</a>
 				</li>
-				<li class="option">
-					<a href="#"><i class="iconfont icon-remind"></i> 动态</a>
-				</li>
-				<li class="option">
-					<a href="#"><i class="iconfont icon-comments"></i> 评论</a>
-				</li>
-				<li class="option">
-					<a href="#"><i class="iconfont icon-hot"></i> 热门</a>
-				</li>
 			</ul>
 			<div class="bottom">
 				<ul class="ming-list" style="border:none;">

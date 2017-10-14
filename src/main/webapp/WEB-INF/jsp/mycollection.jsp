@@ -46,11 +46,15 @@
 							<c:forEach items="${Articleslist}" var="Articleslist">
 								<c:if test="${tCollections.articleId==Articleslist.id}">
 
-									
+									<c:forEach items="${map}" var="entry">
+										<c:if test="${entry.key==Articleslist.authorName}">
+											<a href="#" class="avatar">
+												<img src="${entry.value}" alt="">
+											</a>
+										</c:if>
+									</c:forEach>
 
-									<a href="#" class="avatar">
-										<img src="${user.avatar}" alt="">
-									</a>
+
 									<div class="ming-info">
 										<a target="_blank" href="/janebook/myhomepage?name=${Articleslist.authorName}" class="avatar-name">${Articleslist.authorName}</a>
 										<span class="avatar-time">${tCollections.collectionTime}</span>
@@ -64,7 +68,6 @@
 						<c:forEach items="${Articleslist}" var="Articleslist">
 							<c:if test="${tCollections.articleId==Articleslist.id}">
 								<a target="_blank" href="/janebook/article/show/${Articleslist.id}" class="ming-title">${Articleslist.title}</a>
-								<%--<img class="img-rounded" src="${uu.avatar}">--%>
 							</c:if>
 						</c:forEach>
 						<c:forEach items="${Articleslist}" var="Articleslist">
