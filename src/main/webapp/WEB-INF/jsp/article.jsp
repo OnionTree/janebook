@@ -2187,6 +2187,7 @@
             $.ajax({
                 type:"GET",
                 url:"/janebook/commentaryfirs/"+articleid+'/'+pageNum+'/'+'6',
+                async:false,
                 success:function(data){
                     var box = $("#comment-box");
                     $.each(data, function(index, obj){
@@ -2224,6 +2225,7 @@
             $.ajax({
                 type:"GET",
                 url:"/janebook/commentarysecs/"+articleid+'/0/0',
+                async:false,
                 success:function(data){
                     $.each(data, function(n, obj){
                         var num = obj.beReviewerId;

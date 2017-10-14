@@ -561,9 +561,9 @@
                     <a href="#" class="create-notebook"><i class="fa fa-plus"></i> 新建专题 </a>
                     <div class="new-notebook-form"> 
                         <form class="create-notebook-form"> 
-                            <input placeholder="请输入文集名..." type="text" name="name" class="input-medium notebook-input input-group"> 
+                            <input id="new-classify-name" placeholder="请输入文集名..." type="text" name="name" class="input-medium notebook-input input-group">
                             <a href="javascript:void(0)" class="btn cancel" data-action="cancel-create-notebook"> 取消 </a>
-                            <input class="btn submit" name="commit" type="submit" value="提交"> 
+                            <input id="classify-create" class="btn submit" name="commit" type="submit" value="提交">
                         </form> 
                     </div>
                 </div>
@@ -587,9 +587,9 @@
                         </ul>                        
                     </li>
                 </ul>
-                <div class="recycle"> 
-                    <a class="btn" href="/janebook/recycle.html" data-action="recycle-mode"><i class="fa fa-trash"></i><span>回收站</span></a>
-                </div>             
+                <%--<div class="recycle"> --%>
+                    <%--<a class="btn" href="/janebook/recycle.html" data-action="recycle-mode"><i class="fa fa-trash"></i><span>回收站</span></a>--%>
+                <%--</div>             --%>
             </div>
             <div class="col-sm-3 col-md-3 middle">
                 <div class="note-list">
@@ -645,12 +645,12 @@
                         <div class="tool-menu floppy-o">
                             <i class="fa fa-floppy-o" aria-hidden="true"></i>
                         </div>
-                        <div class="tool-menu expand">
-                            <a href="/janebook/editor-ful.html"><i class="fa fa-expand" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="tool-menu forward">
-                            <i class="fa fa-mail-forward" aria-hidden="true"></i>
-                        </div>
+                        <%--<div class="tool-menu expand">--%>
+                            <%--<a href="/janebook/editor-ful.html"><i class="fa fa-expand" aria-hidden="true"></i></a>--%>
+                        <%--</div>--%>
+                        <%--<div class="tool-menu forward">--%>
+                            <%--<i class="fa fa-mail-forward" aria-hidden="true"></i>--%>
+                        <%--</div>--%>
                     </div>
                 </div>
                 <div class="wantEditor">
@@ -704,7 +704,7 @@
 
 </body>
 <script>
-    $(function(){
+
 
         var classifys = null;
         articleId = null;
@@ -731,7 +731,8 @@
             loadArticle(id);
 
         })
-
+        articleBox = $("#article-box");
+        articleBox.html("");
         articles = null
         function loadArticle(id){
             $.ajax({
@@ -740,7 +741,7 @@
                 url:"/janebook/article/c/"+id,
                 success:function(data){
                     articles=data;
-                    var articleBox = $("#article-box");
+
                     articleBox.html("");
                     $.each(data, function(index, obj){
                         var new_html = '<li class="one-note" data-model="note" id="'+index+'">' +
@@ -780,7 +781,28 @@
         classifyBox.find("li").eq(0).addClass('active');
         classifyId = classifyBox.find("li").eq(0).attr('id');
         loadArticle(classifyId);
-    })
+        $("#classify-create").on("click", function(){
+            classifyCreate();
+            window.location.reload()
+        })
+        function classifyCreate(){
+            $.ajax({
+                type:"POST",
+                url:"/janebook/classify",
+                contentType:"application/json",
+                data:JSON.stringify({
+                    classifyName:$("#new-classify-name").val(),
+                    classifyAdmin:'${userInfo.userId}',
+                    classifyImg:'./images/classify/1.jpg',
+                    articleNum:0,
+                    follow:0
+                }),
+                success:function(){
+                    layer.msg('classify created');
+                }
+            })
+        }
+
 </script>
 <script type="text/javascript">
     var E = window.wangEditor
@@ -852,10 +874,19 @@
                                 '</ul>' +
                             '</li>';
         $(".middle .new-note-link").on('click',function(){
-            $(".middle .notes").prepend(newNote);
+            if(classifyId==null){
+                layer.msg("请先选择一个专题");
+            }else{
+                $(".middle .notes").append(newNote);
+            }
         });
         $(".middle .new-note-bottom").on('click',function(){
-            $(".middle .notes").append(newNote);
+            if(classifyId==null){
+                layer.msg("请先选择一个专题");
+            }else{
+                $(".middle .notes").append(newNote);
+            }
+
         })
     });
     $(function(middle){
@@ -870,17 +901,27 @@
             //alert(articleId);
             console.log(0);
         });
-        $(".normal-mode .middle .notes").on('click','.delete-note',function(e){ 
-            $('.delete-modal').modal({
-                keyboard: true
-            });
+        $(".normal-mode .middle .notes").on('click','.delete-note',function(e){
+            var index=$(this).parents("ul").parents("li").attr("id");
+
+            $.ajax({
+                type:"DELETE",
+                 url:"/janebook/article/"+articles[index].id,
+                success:function(){
+                    layer.msg("article delete success");
+                }
+            })
+//            $('.delete-modal').modal({
+//                keyboard: true
+//            });
             var warp= $(this).parents('.one-note');
-            $(".delete-modal .btn-confirm").click(function(event){
-                $(this).unbind();
-                $(warp).remove();
-            });
-            // var id = Math.random();
-            $('.modal-backdrop').css("opacity",'0.8');
+            $(warp).remove();
+//            $(".delete-modal .btn-confirm").click(function(event){
+//                $(this).unbind();
+//
+//            });
+//            // var id = Math.random();
+//            $('.modal-backdrop').css("opacity",'0.8');
         });
         $(".normal-mode .middle .notes").on('click','.one-note',function(e){   //将文章名字 传递到右侧顶上input框
             var index= $(this).attr("id");
@@ -924,7 +965,9 @@
             var id = Math.random();
             $('.modal-backdrop').attr('id', id);
         });
-        $(".aside .notebooks").on('click','.delete-notebook',function(e){ 
+        $(".aside .notebooks").on('click','.delete-notebook',function(e){
+            var id=(this).parents("ul").parents("li").attr("id");
+            alert(id)
             $('.delete-modal').modal({
                 keyboard: true
             });
@@ -1023,6 +1066,7 @@
             });
             $('.right .function-tool .floppy-o').on('click',function(){
                 saveArticle();
+                window.location.reload()
             })          
     });    
     function saveArticle(){
