@@ -43,8 +43,12 @@ public class StartController {
 
     //登陆后的主页
     @RequestMapping("/MainHome-login")
-    public String homeLogined(){
-        return "MainHome-login";
+    public ModelAndView homeLogined(){
+        ModelAndView mv = new ModelAndView();
+        List<TClassify> tClassify = classifyService.gettClassifies();
+        mv.addObject("TClassify",tClassify);
+        mv.setViewName("MainHome-login");
+        return mv;
     }
     //用户注册
     @RequestMapping("/Userregister")
@@ -122,6 +126,11 @@ public class StartController {
             List<TUser> user = userService.getrecTuer();
             List<TUser> uu = userService.getUser();
             TUser userInfo = userService.getUserByUserName(tuser.getUserId());
+
+            List<TClassify> tClassify = classifyService.gettClassifies();
+            mv.addObject("TClassify",tClassify);
+            mv.setViewName("MainHome-login");
+
             request.getSession().setAttribute("userInfo", userInfo);
             mv.setViewName("MainHome-login");
             mv.addObject("TArticle", at);
