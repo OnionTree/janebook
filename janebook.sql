@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50636
 File Encoding         : 65001
 
-Date: 2017-10-14 16:09:26
+Date: 2017-10-14 17:25:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -330,8 +330,8 @@ INSERT INTO `t_user` VALUES ('admin', 'admin', '管理员', '男', '是的撒', 
 INSERT INTO `t_user` VALUES ('二九七月', '123456', '二九七月', '女', null, null, null, null, null, null, null, null, './images/user/9.jpg', null, null, null, '0');
 INSERT INTO `t_user` VALUES ('奇奇漫悦读', '123456', '奇奇漫悦读', '男', null, null, null, null, null, null, null, null, './images/user/2.jpg', null, null, null, '0');
 INSERT INTO `t_user` VALUES ('怀左同学', '123456', '', '女', '打破你的原则，成为你的例外', 'www.baidu.com', null, '', null, null, null, null, './images/user/3.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('捕手志', '123456', '捕手志', '男', null, null, null, null, null, null, null, null, './images/user/4.jpg', null, null, null, '0');
-INSERT INTO `t_user` VALUES ('沐丞', '123456', '沐丞', '女', null, null, null, null, null, null, null, null, './images/user/5.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('捕手志', '123456', '捕手志', '男', null, null, null, null, null, null, null, null, './images/user/5.jpg', null, null, null, '0');
+INSERT INTO `t_user` VALUES ('沐丞', '123456', '沐丞', '女', null, null, null, null, null, null, null, null, './images/user/4.jpg', null, null, null, '0');
 INSERT INTO `t_user` VALUES ('眼镜姑娘_ ', '123456', '眼镜姑娘_ ', '女', null, null, null, null, null, null, null, null, './images/user/6.jpg', null, null, null, '0');
 INSERT INTO `t_user` VALUES ('金春妙', '123456', '金春妙', '女', null, null, null, null, null, null, null, null, './images/user/7.jpg', null, null, null, '0');
 INSERT INTO `t_user` VALUES ('魏清萍', '123456', '魏清萍', null, null, null, null, null, null, null, null, null, './images/user/8.jpg', null, null, null, '0');
