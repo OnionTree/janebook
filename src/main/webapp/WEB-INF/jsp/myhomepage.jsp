@@ -154,7 +154,7 @@
 						<c:forEach items="${TClassify}" var="tClassify">
 							<li>
 								<a href="/janebook/mytopic?id=${tClassify.id}" class="ming-collection"><img src="${tClassify.classifyImg}"></a>
-								<a href="/janebook/mytopic?id=${tClasssify.id}" class="ming-name ming-list-sp">${tClassify.classifyName}</a>
+								<a href="/janebook/mytopic?id=${tClassify.id}" class="ming-name ming-list-sp">${tClassify.classifyName}</a>
 							</li>
 						</c:forEach>
 					</ul>
