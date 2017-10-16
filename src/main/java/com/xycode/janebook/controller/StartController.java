@@ -197,7 +197,7 @@ public class StartController {
         List<TCollection> tCollections = collectionService.getallcollections(name);
         List<TArticle> Articleslist = new ArrayList<TArticle>();
         List<TUser> tUsers = new ArrayList<TUser>();
-        Map map=new HashMap();
+        Map<String, Object> map=new HashMap<String, Object>();
 
         int lenght =tCollections.size();
         System.out.println(lenght);
@@ -275,7 +275,7 @@ public class StartController {
     @RequestMapping("/mytopic")
     public ModelAndView mytopicPage(int id) {
         List<TArticle> tArticles = articleService.getallArticle(id);
-        Map map=new HashMap();
+        Map<String, Object> map=new HashMap<String, Object>();
         RegExp re = new RegExp();
         for(int k=0;k<tArticles.size();k++){
             String str = tArticles.get(k).getContent();

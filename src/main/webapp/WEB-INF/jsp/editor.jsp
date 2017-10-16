@@ -709,6 +709,7 @@
         var classifys = null;
         articleId = null;
         classifyId = null;
+        classifyName = null;
         $.ajax({
             type:"GET",
             async:false,
@@ -728,6 +729,12 @@
                 id = _this.attr("id");
             }
             classifyId = id;
+            $.each(classifys, function (n, now) {
+                if(now.id == id){
+                    classifyName = now.classifyName;
+                }
+            })
+            layer.msg(classifyName);
             loadArticle(id);
 
         })
@@ -1084,6 +1091,7 @@
                     createTime:createTime,
                     id:articleId,
                     wordNum:content.length,
+                    tag:classifyName,
                     img:$(content).find("img").eq(0).attr('src'),
                 }),
                 success:function(){
@@ -1105,6 +1113,7 @@
                     browse:0,
                     collection:0,
                     wordNum:content.length,
+                    tag:classifyName,
                     img:$(content).find("img").eq(0).attr('src'),
                 }),
                 success:function(){

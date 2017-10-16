@@ -171,17 +171,19 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.xycode.janebook.Application</mainClass>
-                </configuration>
+                <!--<configuration>-->
+                    <!--<mainClass>com.xycode.janebook.Application</mainClass>-->
+                <!--</configuration>-->
             </plugin>
             <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.2</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
                 <configuration>
-                    <verbose>true</verbose>
-                    <overwrite>true</overwrite>
+                    <source>1.8</source>
+                    <target>1.8</target>
+
+
                 </configuration>
             </plugin>
         </plugins>

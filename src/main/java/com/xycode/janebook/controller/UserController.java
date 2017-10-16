@@ -33,6 +33,7 @@ public class UserController {
 
     @GetMapping("/user/getUser")
     @ResponseBody
+    @SuppressWarnings("unchecked")
     public Msg getUser(@RequestParam("page")int page, @RequestParam("limit")int limit) {
 
         PageHelper.startPage(page, limit);
