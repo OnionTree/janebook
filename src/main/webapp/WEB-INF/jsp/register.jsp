@@ -28,13 +28,13 @@
 			<form class="new_user" id="new_user" action="/janebook/Userregister" accept-charset="UTF-8" method="post">
 				<div class="input-prepend restyle">
 					<input placeholder="你的昵称" type="text"
-						   value name="userId" id="user_nickname" style="border-bottom: 0px; border-radius: 0px;">
+						   value name="nickname" id="user_nickname" style="border-bottom: 0px; border-radius: 0px;">
 					<i class="iconfont icon-yonghu1"></i>
 				</div>
 				<div class="input-prepend restyle no-radius js-normal">
 					<input type="hidden" value="CN" name="user[mobile_number_country_code]"
 						   id="user_mobile_number_country_code" style="border-bottom: 0px; border-radius: 0px;">
-					<input placeholder="手机号" type="tel" name="phone"
+					<input placeholder="账号" type="tel" name="userId"
 						   id="user_mobile_number" style="border-bottom: 0px; border-radius: 0px;">
 					<i class="iconfont icon-shouji2"></i>
 				</div>
@@ -45,6 +45,8 @@
 						   name="password" id="user_password" style=" border-radius: 0px;">
 					<i class="iconfont icon-suo"></i>
 				</div>
+				<input placeholder="touxiang" type="hidden" name="avatar"
+					   id="user_mobile_number" val="./images/user/1.jpg" style="border-bottom: 0px; border-radius: 0px;">
 				<input type="submit" name="commit" value="注册"
 					   class="sign-up-button" data-disable-with="注册">
 				<p class="sign-up-msg">

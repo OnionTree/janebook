@@ -27,7 +27,7 @@ public class ResourcesUploadController {
 
     @PostMapping("/multiUpload")
     public Image multiUpload(HttpServletRequest request){
-        return  resourceUploadService.multiUpload(request, "files", "http://localhost:8081/img/","D:\\Desktop\\img\\");
+        return  resourceUploadService.multiUpload(request, "files", "http://120.78.147.255/img/","/root/image/");
 //        return  resourceUploadService.multiUpload(request, "files", "file:///D:/Desktop/img/","D:\\Desktop\\img\\");
 
     }

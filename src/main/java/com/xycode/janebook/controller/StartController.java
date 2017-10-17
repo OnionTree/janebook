@@ -57,7 +57,11 @@ public class StartController {
         System.out.println("User:" + tuser.getUserId());
         System.out.println("Password:" + tuser.getPassword());
         tuser.setRoleId(1);
+        tuser.setAvatar("./images/user/6.jpg");
         userService.addUser(tuser);
+        request.getSession().setAttribute("tuser", tuser);
+        TUser userInfo =userService.getUserByUserName(tuser.getUserId());
+        request.getSession().setAttribute("userInfo", userInfo);
         return "redirect:/index";
     }
 
@@ -129,10 +133,12 @@ public class StartController {
 
             List<TClassify> tClassify = classifyService.gettClassifies();
             mv.addObject("TClassify",tClassify);
-            mv.setViewName("MainHome-login");
 
             request.getSession().setAttribute("userInfo", userInfo);
             mv.setViewName("MainHome-login");
+            if(tuser.getUserId().equals("admin")){
+                mv.setViewName("admin-user");
+            }
             mv.addObject("TArticle", at);
             mv.addObject("TUser",user);
             mv.addObject("uu",uu);

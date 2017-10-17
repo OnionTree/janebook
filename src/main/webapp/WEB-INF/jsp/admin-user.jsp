@@ -190,7 +190,7 @@
                 var id = obj.data.userId;
                 $.ajax({
                   type:"DELETE",
-                  url:"http://localhost/janebook/user/"+id,
+                  url:"/janebook/user/"+id,
                   success:function(msg){
                     layer.msg(msg);
                     obj.del();                    
@@ -256,7 +256,7 @@
             //方法级渲染
             table.render({
                 elem: '#LAY_table_user',
-                url: 'http://localhost/janebook/users/' + parm,
+                url: '/janebook/users/' + parm,
                 cols: [
                     [
                         { field: 'id', title: 'ID', width: 80, sort: true, fixed: true }, { field: 'userId', title: '用户名', width: 200 }, { field: 'nickname', title: '昵称', width: 200 }, { field: 'info', title: '简介', width: 900 }, { fixed: 'right', title: '搞事!?', width: 200, align: 'center', toolbar: '#barDemo' }

@@ -153,7 +153,7 @@
 
                         $.ajax({
                             type: 'POST',
-                            url: 'http://localhost/janebook/search',
+                            url: '/janebook/search',
                             contentType: 'application/json',
                             data: JSON.stringify({
                                 searchName: name,
@@ -187,7 +187,7 @@
                         var click = $("#search-click").val();
                         $.ajax({
                             type: 'PUT',
-                            url: 'http://localhost/janebook/search',
+                            url: '/janebook/search',
                             contentType: 'application/json',
                             data: JSON.stringify({
                                 id: data.id,
@@ -220,7 +220,7 @@
 
                 $.ajax({
                     type:"DELETE",
-                    url:"http://localhost/janebook/search/"+id,
+                    url:"/janebook/search/"+id,
                     success:function(msg){
                         layer.msg(msg);
                         obj.del();
@@ -257,7 +257,7 @@
             //方法级渲染
             table.render({
                 elem: '#LAY_table_user',
-                url: 'http://localhost/janebook/searchs/' + parm,
+                url: '/janebook/searchs/' + parm,
                 cols: [
                     [
                         { field: 'id', title: 'ID', width: 80, sort: true, fixed: true }, { field: 'searchName', title: '关键字', sort: true, width: 600 }, { field: 'click', title: '点击量', sort: true, width: 900 }, { fixed: 'right', title: '你要搞事!?', width: 200, align: 'center', toolbar: '#barDemo' }

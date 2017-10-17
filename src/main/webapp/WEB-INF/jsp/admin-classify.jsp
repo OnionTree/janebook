@@ -193,7 +193,7 @@
 
                          $.ajax({
                            type:'POST',
-                           url:'http://localhost/janebook/classify',
+                           url:'/janebook/classify',
                            contentType:'application/json',
                            data:JSON.stringify({
                              classifyName: title,
@@ -241,7 +241,7 @@
 
                         $.ajax({
                             type:'PUT',
-                            url:'http://localhost/janebook/classify',
+                            url:'/janebook/classify',
                             contentType:'application/json',
                             data:JSON.stringify({
                                 id:data.id,
@@ -280,7 +280,7 @@
                 var id = obj.data.id;
                 $.ajax({
                   type:"DELETE",
-                  url:"http://localhost/janebook/classify/"+id,
+                  url:"/janebook/classify/"+id,
                   success:function(msg){
                     layer.msg(msg);
                     obj.del();                    
@@ -346,7 +346,7 @@
             //方法级渲染
             table.render({
                 elem: '#LAY_table_user',
-                url: 'http://localhost/janebook/classifys/' + parm,
+                url: '/janebook/classifys/' + parm,
                 cols: [
                     [
                         { field: 'id', title: 'ID', width: 80, sort: true, fixed: true }, { field: 'classifyName', title: 'classifyName', width: 600 }, { field: 'classifyInfo', title: 'classifyInfo', width: 900 }, { fixed: 'right', title: '你要搞事!?', width: 200, align: 'center', toolbar: '#barDemo' }

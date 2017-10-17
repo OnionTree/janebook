@@ -713,7 +713,7 @@
         $.ajax({
             type:"GET",
             async:false,
-            url:"/janebook/classify/"+'${tuser.userId}',
+            url:"/janebook/classify/"+'${userInfo.userId}',
             success:function(data){
                 classifys = data;
             }
@@ -790,7 +790,7 @@
         loadArticle(classifyId);
         $("#classify-create").on("click", function(){
             classifyCreate();
-            window.location.reload()
+            //window.location.reload()
         })
         function classifyCreate(){
             $.ajax({
@@ -806,6 +806,7 @@
                 }),
                 success:function(){
                     layer.msg('classify created');
+                    window.location.reload();
                 }
             })
         }

@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div style="width:93%; height: 100%; margin:auto;">
-                <!--  <table class="layui-table" lay-data="{ url:'http://localhost/janebook/articles/0/0/', page:true, id:'idTest'}" lay-filter="demo">
+                <!--  <table class="layui-table" lay-data="{ url:'/janebook/articles/0/0/', page:true, id:'idTest'}" lay-filter="demo">
                 <thead>
                   <tr>
                     <th lay-data="{field:'id', width:50, sort: true, fixed: true}">ID</th>
@@ -216,7 +216,7 @@
                 //方法级渲染
                 table.render({
                     elem: '#LAY_table_user',
-                    url: 'http://localhost/janebook/articles/' + parm,
+                    url: '/janebook/articles/' + parm,
                     cols: [
                         [
                             { field: 'id', title: 'ID', width: 80, sort: true, fixed: true }, { field: 'title', title: 'Title', width: 800 }, { field: 'authorName', title: 'Author', width: 100 }, { fixed: 'right', width: 200, align: 'center', toolbar: '#barDemo' }
@@ -253,7 +253,7 @@
         function changeImg(index, articleId) {
             $.ajax({
                 type: "PUT",
-                url: 'http://localhost/janebook/rec',
+                url: '/janebook/rec',
                 contentType: 'application/json',
                 data: JSON.stringify({
                     id: index,

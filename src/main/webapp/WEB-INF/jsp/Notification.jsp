@@ -897,7 +897,7 @@
                                             '<div>' +
                                             '<a class="user" href="#">'+sender.nickname+'</a>' +
                                             '<span class="comment-slogan">评论了你的文章</span>' +
-                                            '<a class="note-name" href="'+obj.acid+'">'+obj.article+'</a>' +
+                                            '<a class="note-name" href="/janebook/article/show/'+obj.acid+'">'+obj.article+'</a>' +
                                             '</div>' +
                                             '<div class="time">'+(new Date(obj.time).Format("yyyy-MM-dd"))+'</div>' +
                                             '</div>' +

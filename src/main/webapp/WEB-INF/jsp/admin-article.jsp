@@ -6,9 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>《捡书大本营》</title>
-    <link rel="stylesheet" href="./layui/css/layui.css">
-    <link rel="stylesheet" href="./layui/css/iconfont.css">
-    <script src="./layui/layui.js"></script>
+    <link rel="stylesheet" href="/janebook/layui/css/layui.css">
+    <link rel="stylesheet" href="/janebook/layui/css/iconfont.css">
+    <script src="/janebook/layui/layui.js"></script>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <style>
     body {
@@ -47,7 +47,7 @@
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
                     <a href="javascript:;">
-          <img src="./pic/timg.jpg" class="layui-nav-img">
+          <img src="/janebook/pic/timg.jpg" class="layui-nav-img">
           叫我管理猿！
         </a>
                     <dl class="layui-nav-child">
@@ -156,7 +156,7 @@
                 var id = obj.data.id;
                 $.ajax({
                   type:"DELETE",
-                  url:"http://localhost/janebook/article/"+id,
+                  url:"/janebook/article/"+id,
                   success:function(msg){
                     layer.msg(msg);
                     obj.del();                    
@@ -222,7 +222,7 @@
             //方法级渲染
             table.render({
                 elem: '#LAY_table_user',
-                url: 'http://localhost/janebook/articles/' + parm,
+                url: '/janebook/articles/' + parm,
                 cols: [
                     [
                         { field: 'id', title: 'ID', width: 80, sort: true, fixed: true }, { field: 'title', title: 'Title', width: 800 }, { field: 'authorName', title: 'Author', width: 100 }, { fixed: 'right', width: 200, align: 'center', toolbar: '#barDemo' }

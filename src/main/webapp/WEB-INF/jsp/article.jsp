@@ -1622,7 +1622,12 @@
                 <div class="comment-list">
                     <div>
                         <form class="new-comment">
-                            <a class="avatar"><img src="/janebook/${userInfo.avatar}"></a>
+                            <a class="avatar"><img id="avatar-you" src="/janebook/images/user/7.jpg"></a>
+                            <script>
+                                if('${userInfo.avatar}' != ''){
+                                    $("#avatar-you").attr('src', '/janebook/${userInfo.avatar}');
+                                }
+                            </script>
                             <textarea placeholder="写下你的评论..." id="subText"></textarea>
                             <div class="write-function-block">
                                 <div class="emoji-modal-wrap">
@@ -1851,7 +1856,7 @@
             url:"/janebook/user-msg/"+author,
             async:false,
             success:function(data){
-                authorName = data.user.nickname;
+                authorName = data.user.userId;
                 $(".avatar").attr('src', data.user.avatar);
                 $("#nickname").html(author);
                 $("#user-msg").html('写了 '+data.articleNum+' 篇文章 '+data.wordNum+ '字，被 '+data.follow+' 人关注，获得了 '+data.fans+' 个喜欢')
@@ -2317,7 +2322,7 @@
         });
 
         function firCommentSend(){
-            var reviewerName = '${userInfo.nickname}';
+            var reviewerName = '${userInfo.userId}';
             var commentCont = $("#subText").val();
             var avatar = '/janebook/'+'${userInfo.avatar}';
             var reviewTime = new Date();
@@ -2338,6 +2343,25 @@
                     success:function(){
                         publish_comment();
                         $("#subText").val("");
+                    }
+                })
+
+                $.ajax({
+                    type:"POST",
+                    url:"/janebook/message",
+                    contentType:"application/json",
+                    data:JSON.stringify({
+                        type:1,
+                        sendId:reviewerName,
+                        reciveId:author,
+                        mesContent:commentCont,
+                        time:new Date(),
+                        article:$("#article-title").html(),
+                        readed:1,
+                        acid:articleid
+                    }),
+                    success:function(){
+
                     }
                 })
             }
